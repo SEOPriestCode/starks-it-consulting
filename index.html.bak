@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starks IT Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#080e1a;--ink2:#0d1829;--ink3:#152236;
+  --gold:#c8a84b;--gold2:#e5c870;--gold3:#f0d98a;
+  --ash:#8fa0bc;--ash2:#b8c9e0;--ash3:#d8e4f0;
+  --white:#ffffff;--cream:#f5f0e8;
+  --ff-display:'Playfair Display',serif;
+  --ff-body:'Syne',sans-serif;
+  --ff-mono:'JetBrains Mono',monospace;
+  --ease:cubic-bezier(0.76,0,0.24,1);
+  --ease2:cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth;height:100%}
+body{font-family:var(--ff-body);background:var(--ink);color:var(--white);overflow-x:hidden;line-height:1.6}
+
+/* CUSTOM CURSOR */
+#cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s,width 0.3s var(--ease2),height 0.3s var(--ease2),background 0.3s;mix-blend-mode:normal}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,168,75,0.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform 0.15s,width 0.3s var(--ease2),height 0.3s var(--ease2),opacity 0.3s}
+body.cursor-hover #cursor{width:6px;height:6px;background:var(--gold2)}
+body.cursor-hover #cursor-ring{width:64px;height:64px;opacity:0.5}
+
+/* PAGE SYSTEM */
+.page{display:none;min-height:100vh;animation:pageIn 0.7s var(--ease) forwards}
+.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pageOut{from{opacity:1}to{opacity:0;transform:translateY(-16px)}}
+
+/* NAVBAR */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background 0.5s,box-shadow 0.5s}
+#nav.solid{background:rgba(8,14,26,0.96);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(200,168,75,0.12)}
+.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none}
+.nav-logo-box{width:42px;height:42px;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:var(--ff-mono);font-size:13px;color:var(--gold);letter-spacing:-1px;position:relative;overflow:hidden}
+.nav-logo-box::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform 0.4s var(--ease)}
+.nav-logo:hover .nav-logo-box::after{transform:translateY(0)}
+.nav-logo:hover .nav-logo-box span{color:var(--ink);position:relative;z-index:1}
+.nav-logo-box span{position:relative;z-index:1;transition:color 0.4s}
+.nav-brand{font-family:var(--ff-display);font-size:1.2rem;color:var(--white);letter-spacing:0.5px}
+.nav-brand b{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-links a{font-size:0.82rem;color:var(--ash2);text-decoration:none;letter-spacing:0.5px;font-weight:500;transition:color 0.3s;position:relative;cursor:pointer}
+.nav-links a::before{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a:hover::before,.nav-links a.active::before{width:100%}
+.nav-cta-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 24px;font-family:var(--ff-body);font-size:0.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.4s var(--ease);position:relative;overflow:hidden}
+.nav-cta-btn::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform 0.4s var(--ease);z-index:0}
+.nav-cta-btn span{position:relative;z-index:1;transition:color 0.4s}
+.nav-cta-btn:hover::after{transform:none}
+.nav-cta-btn:hover span{color:var(--ink)}
+
+/* HAMBURGER (mobile) */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--gold);transition:all 0.3s}
+
+/* ===== SCROLL ANIMATIONS ===== */
+[data-reveal]{opacity:0;transform:translateY(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+[data-reveal="left"]{transform:translateX(-40px)}
+[data-reveal="right"]{transform:translateX(40px)}
+[data-reveal="scale"]{transform:scale(0.9);opacity:0}
+[data-reveal].revealed{opacity:1;transform:none}
+[data-delay="1"]{transition-delay:0.1s}
+[data-delay="2"]{transition-delay:0.2s}
+[data-delay="3"]{transition-delay:0.3s}
+[data-delay="4"]{transition-delay:0.4s}
+[data-delay="5"]{transition-delay:0.5s}
+[data-delay="6"]{transition-delay:0.6s}
+
+/* SECTION LABELS */
+.label{display:inline-flex;align-items:center;gap:10px;margin-bottom:1.4rem}
+.label-line{width:36px;height:1px;background:var(--gold)}
+.label-text{font-family:var(--ff-mono);font-size:0.7rem;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase}
+h2.title{font-family:var(--ff-display);font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.12;color:var(--white);margin-bottom:1rem}
+h2.title em{font-style:italic;color:var(--gold)}
+.subtitle{font-size:1rem;color:var(--ash2);line-height:1.8;font-weight:300;max-width:540px}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-family:var(--ff-body);font-weight:600;font-size:0.85rem;letter-spacing:0.8px;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all 0.4s var(--ease);position:relative;overflow:hidden}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold::after{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform 0.4s var(--ease)}
+.btn-gold:hover::after{transform:none}
+.btn-gold span,.btn-gold svg{position:relative;z-index:1}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--white)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.arrow-btn{font-family:var(--ff-mono);font-size:0.75rem;color:var(--gold);letter-spacing:1px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;transition:gap 0.3s var(--ease)}
+.arrow-btn:hover{gap:14px}
+
+/* IMAGE WRAPPERS */
+.img-wrap{overflow:hidden;position:relative}
+.img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.img-wrap:hover img{transform:scale(1.05)}
+.img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,26,0.6) 0%,transparent 50%)}
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+#home-hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.home-hero-left{display:flex;flex-direction:column;justify-content:center;padding:120px 6% 80px 6%;position:relative;z-index:2}
+.home-hero-right{position:relative}
+.home-hero-right .img-wrap{position:absolute;inset:0}
+.home-hero-right .img-wrap img{height:100%;object-fit:cover}
+.hero-overlay-text{position:absolute;bottom:3rem;left:3rem;z-index:3;font-family:var(--ff-mono);font-size:0.7rem;color:rgba(255,255,255,0.4);letter-spacing:2px;writing-mode:vertical-rl;text-orientation:mixed}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.2);padding:8px 18px;margin-bottom:2rem;width:fit-content}
+.hero-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:blink 1.8s ease infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
+.hero-tag-text{font-family:var(--ff-mono);font-size:0.68rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+h1.hero-h{font-family:var(--ff-display);font-size:clamp(3rem,5.5vw,4.8rem);line-height:1.06;color:var(--white);margin-bottom:1.5rem}
+h1.hero-h em{font-style:italic;color:var(--gold)}
+.hero-p{font-size:1.05rem;color:var(--ash2);line-height:1.8;max-width:500px;font-weight:300;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:4rem}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.07)}
+.hs-num{font-family:var(--ff-display);font-size:2.6rem;color:var(--gold);line-height:1}
+.hs-label{font-size:0.72rem;color:var(--ash);letter-spacing:1.5px;text-transform:uppercase;margin-top:5px}
+/* grid overlay */
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,168,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,0.03) 1px,transparent 1px);background-size:56px 56px;pointer-events:none;z-index:1}
+/* floating number */
+.hero-float-num{position:absolute;right:-0.02em;top:50%;transform:translateY(-50%);font-family:var(--ff-display);font-size:22vw;color:rgba(200,168,75,0.04);pointer-events:none;user-select:none;line-height:1;white-space:nowrap;z-index:0}
+
+/* TICKER */
+.ticker-wrap{background:var(--ink2);border-top:1px solid rgba(200,168,75,0.08);border-bottom:1px solid rgba(200,168,75,0.08);padding:16px 0;overflow:hidden}
+.ticker-inner{display:flex;gap:4rem;white-space:nowrap;animation:scroll-left 28s linear infinite}
+.ticker-inner:hover{animation-play-state:paused}
+.ti{display:flex;align-items:center;gap:1rem;flex-shrink:0;font-family:var(--ff-mono);font-size:0.72rem;color:var(--ash);letter-spacing:2px;text-transform:uppercase}
+.ti::before{content:'◆';color:var(--gold);font-size:0.45rem}
+@keyframes scroll-left{to{transform:translateX(-50%)}}
+
+/* HOME SERVICES PREVIEW */
+#home-services{padding:120px 5%}
+.home-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,168,75,0.06);margin-top:4rem}
+.hsvc{background:var(--ink);padding:2.8rem 2.2rem;position:relative;overflow:hidden;cursor:pointer;transition:background 0.4s}
+.hsvc:hover{background:var(--ink3)}
+.hsvc-bar{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform 0.5s var(--ease)}
+.hsvc:hover .hsvc-bar{transform:scaleY(1)}
+.hsvc-num{font-family:var(--ff-mono);font-size:0.65rem;color:var(--gold);opacity:0.45;letter-spacing:1.5px;margin-bottom:2rem}
+.hsvc-icon{font-size:1.8rem;margin-bottom:1.2rem;display:block;filter:grayscale(0.3);transition:filter 0.3s,transform 0.4s var(--ease)}
+.hsvc:hover .hsvc-icon{filter:grayscale(0);transform:scale(1.1)}
+.hsvc-title{font-family:var(--ff-display);font-size:1.25rem;color:var(--white);margin-bottom:0.7rem}
+.hsvc-text{font-size:0.88rem;color:var(--ash2);line-height:1.72;font-weight:300}
+.hsvc-link{margin-top:1.5rem;display:inline-flex;align-items:center;gap:6px;font-family:var(--ff-mono);font-size:0.7rem;color:var(--gold);opacity:0;transition:opacity 0.3s,gap 0.3s}
+.hsvc:hover .hsvc-link{opacity:1}
+
+/* HOME WHY US */
+#home-why{padding:0 5% 120px;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.why-img-stack{position:relative;height:600px}
+.why-img-main{position:absolute;top:0;left:0;width:75%;height:80%;border:4px solid var(--ink)}
+.why-img-sec{position:absolute;bottom:0;right:0;width:65%;height:65%;border:4px solid var(--ink)}
+.why-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--gold);color:var(--ink);padding:1.5rem 1.8rem;text-align:center;z-index:10;white-space:nowrap}
+.why-badge-num{font-family:var(--ff-display);font-size:2.8rem;line-height:1;display:block;font-weight:700}
+.why-badge-text{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-top:4px;font-weight:600}
+.why-features{margin-top:2.5rem;display:flex;flex-direction:column;gap:0}
+.why-feat{display:grid;grid-template-columns:44px 1fr;gap:1.2rem;padding:1.4rem 0;border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.3s}
+.why-feat:hover{background:rgba(200,168,75,0.03)}
+.wf-icon{width:44px;height:44px;border:1px solid rgba(200,168,75,0.2);display:grid;place-items:center;font-size:1rem;flex-shrink:0;transition:background 0.3s,border-color 0.3s}
+.why-feat:hover .wf-icon{background:rgba(200,168,75,0.1);border-color:var(--gold)}
+.wf-title{font-weight:600;font-size:0.95rem;color:var(--white);margin-bottom:4px}
+.wf-text{font-size:0.84rem;color:var(--ash2);line-height:1.6;font-weight:300}
+
+/* HOME CASE PREVIEW */
+#home-cases{padding:0 5% 120px}
+.hcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,168,75,0.06);margin-top:3.5rem}
+.hcase{background:var(--ink2);overflow:hidden;position:relative;cursor:pointer}
+.hcase-img{width:100%;height:280px}
+.hcase-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease)}
+.hcase:hover .hcase-img img{transform:scale(1.07)}
+.hcase-body{padding:2rem}
+.hcase-ind{font-family:var(--ff-mono);font-size:0.68rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.8rem}
+.hcase-title{font-family:var(--ff-display);font-size:1.2rem;color:var(--white);line-height:1.35;margin-bottom:0.7rem}
+.hcase-text{font-size:0.85rem;color:var(--ash2);line-height:1.7;font-weight:300}
+.hcase-stat{display:inline-flex;align-items:center;gap:0.8rem;background:rgba(200,168,75,0.07);padding:0.7rem 1rem;margin-top:1.2rem}
+.hcase-val{font-family:var(--ff-display);font-size:1.6rem;color:var(--gold);line-height:1}
+.hcase-desc{font-size:0.78rem;color:var(--ash2)}
+
+/* HOME TESTIMONIAL */
+#home-testi{padding:0 0 120px;background:var(--ink2);margin-top:0}
+.testi-marquee-wrap{overflow:hidden;padding:60px 0}
+.testi-marquee{display:flex;gap:2rem;animation:scroll-left 40s linear infinite}
+.testi-marquee:hover{animation-play-state:paused}
+.tcard{background:var(--ink);border-top:2px solid var(--gold);padding:2.2rem;min-width:380px;flex-shrink:0}
+.tcard-stars{display:flex;gap:3px;margin-bottom:1rem}
+.tcard-stars span{color:var(--gold);font-size:0.8rem}
+.tcard-q{font-family:var(--ff-display);font-style:italic;font-size:0.98rem;color:var(--white);line-height:1.65;margin-bottom:1.5rem}
+.tcard-auth{display:flex;align-items:center;gap:0.9rem}
+.tcard-av{width:42px;height:42px;border-radius:50%;background:var(--ink2);border:1px solid rgba(200,168,75,0.2);display:grid;place-items:center;font-family:var(--ff-display);font-size:0.9rem;color:var(--gold);flex-shrink:0}
+.tcard-name{font-weight:600;font-size:0.88rem}
+.tcard-co{font-size:0.75rem;color:var(--ash);margin-top:2px}
+
+/* HOME CTA */
+#home-cta{padding:100px 5%;text-align:center;position:relative;overflow:hidden}
+.hcta-bg{position:absolute;inset:0}
+.hcta-bg img{width:100%;height:100%;object-fit:cover;opacity:0.12}
+.hcta-grad{position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,transparent 40%,transparent 60%,var(--ink) 100%)}
+.hcta-inner{position:relative;z-index:2}
+.hcta-title{font-family:var(--ff-display);font-size:clamp(2.2rem,5vw,4rem);color:var(--white);line-height:1.15;margin-bottom:1rem}
+.hcta-sub{font-size:1rem;color:var(--ash2);max-width:500px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8}
+
+/* ============================================================
+   SERVICES PAGE
+   ============================================================ */
+.page-hero{padding:160px 5% 100px;position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.08}
+.page-hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,transparent 30%,var(--ink) 80%)}
+.page-hero-inner{position:relative;z-index:2;max-width:700px}
+.ph-num{font-family:var(--ff-mono);font-size:0.68rem;color:var(--gold);letter-spacing:2px;opacity:0.6;margin-bottom:2rem}
+
+/* SERVICES GRID */
+#svc-page{padding:0 5% 120px}
+.svc-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,168,75,0.06)}
+.svc-item{background:var(--ink2);overflow:hidden;position:relative}
+.svc-img{width:100%;height:240px}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease);filter:grayscale(20%)}
+.svc-item:hover .svc-img img{transform:scale(1.06);filter:grayscale(0)}
+.svc-body{padding:2.5rem}
+.svc-num2{font-family:var(--ff-mono);font-size:0.65rem;color:var(--gold);opacity:0.4;letter-spacing:1.5px;margin-bottom:1.2rem}
+.svc-t{font-family:var(--ff-display);font-size:1.4rem;color:var(--white);margin-bottom:0.8rem}
+.svc-d{font-size:0.9rem;color:var(--ash2);line-height:1.75;font-weight:300}
+.svc-tags2{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.5rem}
+.stag{font-size:0.68rem;background:rgba(200,168,75,0.07);color:var(--gold);padding:5px 11px;font-family:var(--ff-mono);letter-spacing:0.5px}
+.svc-hover-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease)}
+.svc-item:hover .svc-hover-bar{transform:scaleX(1)}
+
+/* PROCESS SECTION */
+#svc-process{padding:100px 5%;background:var(--ink3)}
+.process-timeline{margin-top:4rem;position:relative;padding-left:3rem}
+.process-timeline::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),rgba(200,168,75,0.1))}
+.pt-step{position:relative;margin-bottom:3rem;padding-left:2.5rem}
+.pt-step:last-child{margin-bottom:0}
+.pt-dot{position:absolute;left:-3rem;top:2px;width:24px;height:24px;border:1px solid var(--gold);background:var(--ink3);display:grid;place-items:center}
+.pt-dot-inner{width:8px;height:8px;background:var(--gold)}
+.pt-num{font-family:var(--ff-mono);font-size:0.68rem;color:var(--gold);letter-spacing:2px;margin-bottom:0.6rem}
+.pt-title{font-family:var(--ff-display);font-size:1.3rem;color:var(--white);margin-bottom:0.6rem}
+.pt-text{font-size:0.9rem;color:var(--ash2);line-height:1.75;font-weight:300;max-width:640px}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+#about-story{padding:0 5% 100px;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.about-img-main{width:100%;aspect-ratio:4/5;position:relative}
+.about-img-main .img-wrap{height:100%}
+.about-img-main .img-wrap img{height:100%}
+.about-gold-box{position:absolute;bottom:-2rem;right:-2rem;background:var(--gold);color:var(--ink);padding:2rem;text-align:center;width:150px;z-index:5}
+.agb-num{font-family:var(--ff-display);font-size:3rem;font-weight:700;line-height:1;display:block}
+.agb-text{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-top:5px}
+.about-text p{font-size:0.95rem;color:var(--ash2);line-height:1.85;font-weight:300;margin-bottom:1.2rem}
+.about-certs{margin-top:2rem;display:flex;flex-direction:column;gap:0.8rem}
+.acert{display:flex;align-items:center;gap:1rem;padding:0.8rem 1.2rem;background:var(--ink2);border-left:2px solid var(--gold);font-size:0.88rem;color:var(--ash2)}
+.acert-icon{color:var(--gold);font-size:0.9rem}
+
+/* VALUES */
+#about-values{padding:0 5% 100px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.val-card{padding:2.5rem;border:1px solid rgba(200,168,75,0.1);position:relative;overflow:hidden;transition:border-color 0.4s,background 0.4s}
+.val-card:hover{border-color:rgba(200,168,75,0.35);background:var(--ink2)}
+.val-card::before{content:'';position:absolute;top:0;right:0;width:60px;height:60px;border-left:1px solid rgba(200,168,75,0.08);border-bottom:1px solid rgba(200,168,75,0.08);transition:opacity 0.4s}
+.val-icon{font-size:1.8rem;margin-bottom:1.4rem;display:block}
+.val-title{font-family:var(--ff-display);font-size:1.2rem;color:var(--white);margin-bottom:0.7rem}
+.val-text{font-size:0.87rem;color:var(--ash2);line-height:1.72;font-weight:300}
+
+/* NUMBERS */
+#about-numbers{padding:80px 5%;background:var(--ink3);margin:0}
+.numbers-band{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(200,168,75,0.1)}
+.nb{padding:2.5rem 2rem;text-align:center;border-right:1px solid rgba(200,168,75,0.1);position:relative}
+.nb:last-child{border-right:none}
+.nb-val{font-family:var(--ff-display);font-size:3.2rem;color:var(--gold);line-height:1;display:block}
+.nb-label{font-family:var(--ff-mono);font-size:0.65rem;color:var(--ash);letter-spacing:2px;text-transform:uppercase;margin-top:0.6rem;display:block}
+.nb-desc{font-size:0.8rem;color:var(--ash2);margin-top:0.7rem;font-weight:300;line-height:1.5}
+
+/* ============================================================
+   CASE STUDIES PAGE
+   ============================================================ */
+#cases-hero-img{position:absolute;right:0;top:0;width:45%;height:100%;z-index:0;opacity:0.15}
+#cases-hero-img img{width:100%;height:100%;object-fit:cover}
+.cases-filter{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:3rem}
+.filter-btn{background:transparent;border:1px solid rgba(200,168,75,0.15);color:var(--ash);padding:8px 20px;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s}
+.filter-btn:hover,.filter-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(200,168,75,0.05)}
+.cases-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.case-card2{background:var(--ink2);overflow:hidden;cursor:pointer;transition:transform 0.4s var(--ease)}
+.case-card2:hover{transform:translateY(-6px)}
+.case-card2.featured{grid-column:span 2}
+.cc-img{width:100%;height:220px}
+.case-card2.featured .cc-img{height:340px}
+.cc-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease);filter:saturate(0.8)}
+.case-card2:hover .cc-img img{transform:scale(1.06);filter:saturate(1)}
+.cc-body{padding:1.8rem}
+.cc-ind{font-family:var(--ff-mono);font-size:0.65rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.7rem}
+.cc-title{font-family:var(--ff-display);font-size:1.15rem;color:var(--white);line-height:1.35;margin-bottom:0.6rem}
+.case-card2.featured .cc-title{font-size:1.4rem}
+.cc-text{font-size:0.84rem;color:var(--ash2);line-height:1.7;font-weight:300}
+.cc-result{display:flex;align-items:baseline;gap:0.5rem;margin-top:1rem}
+.cc-val{font-family:var(--ff-display);font-size:1.6rem;color:var(--gold)}
+.cc-unit{font-size:0.78rem;color:var(--ash2)}
+
+/* ============================================================
+   TEAM PAGE
+   ============================================================ */
+#team-grid-section{padding:0 5% 120px}
+.team-grid2{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.team-member{cursor:pointer}
+.tm-photo{width:100%;aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--ink2)}
+.tm-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease);filter:grayscale(30%)}
+.tm-photo:hover img{transform:scale(1.06);filter:grayscale(0)}
+.tm-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,14,26,0.8) 0%,transparent 60%);opacity:0;transition:opacity 0.4s}
+.tm-photo:hover .tm-photo-overlay{opacity:1}
+.tm-social{position:absolute;bottom:1rem;left:1rem;display:flex;gap:0.5rem;opacity:0;transition:opacity 0.4s}
+.tm-photo:hover .tm-social{opacity:1}
+.tm-soc-btn{width:34px;height:34px;background:var(--gold);display:grid;place-items:center;font-size:0.75rem;color:var(--ink);font-weight:700;cursor:pointer}
+.tm-line{width:28px;height:2px;background:var(--gold);margin:1rem 0 0.4rem}
+.tm-name{font-family:var(--ff-display);font-size:1.1rem;color:var(--white)}
+.tm-role{font-size:0.78rem;color:var(--gold);margin-top:2px;letter-spacing:0.4px}
+.tm-bio{font-size:0.82rem;color:var(--ash2);line-height:1.65;margin-top:0.6rem;font-weight:300}
+.tm-certs{margin-top:0.8rem;display:flex;gap:5px;flex-wrap:wrap}
+.tc{font-size:0.63rem;background:rgba(200,168,75,0.08);color:var(--gold);padding:3px 9px;font-family:var(--ff-mono)}
+
+/* CULTURE */
+#team-culture{padding:0 5% 100px;display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--ink)}
+.culture-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:300px 200px;gap:4px}
+.culture-imgs .img-wrap:first-child{grid-row:span 2}
+.culture-text{padding:5rem 4rem;background:var(--ink2);display:flex;flex-direction:column;justify-content:center}
+.culture-perks{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.cperk{display:flex;align-items:center;gap:1rem;font-size:0.9rem;color:var(--ash2);font-weight:300}
+.cperk::before{content:'→';color:var(--gold);font-family:var(--ff-mono);flex-shrink:0}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+#contact-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 76px);margin-top:76px}
+.contact-left{padding:80px 5%;background:var(--ink3);position:relative;overflow:hidden}
+.contact-left-bg{position:absolute;inset:0;z-index:0}
+.contact-left-bg img{width:100%;height:100%;object-fit:cover;opacity:0.06}
+.contact-left-inner{position:relative;z-index:2}
+.cd{display:flex;align-items:flex-start;gap:1.2rem;margin-bottom:2rem;padding:1.2rem;transition:background 0.3s;cursor:default}
+.cd:hover{background:rgba(200,168,75,0.05)}
+.cd-ico{width:44px;height:44px;border:1px solid rgba(200,168,75,0.2);display:grid;place-items:center;color:var(--gold);font-size:1rem;flex-shrink:0;transition:background 0.3s,border-color 0.3s}
+.cd:hover .cd-ico{background:rgba(200,168,75,0.1);border-color:var(--gold)}
+.cd-lbl{font-family:var(--ff-mono);font-size:0.65rem;color:var(--ash);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.cd-val{font-size:0.92rem;color:var(--white)}
+.contact-map-placeholder{margin-top:2rem;height:200px;background:var(--ink2);border:1px solid rgba(200,168,75,0.1);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.map-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(200,168,75,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,0.06) 1px,transparent 1px);background-size:24px 24px}
+.map-dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12px;height:12px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 6px rgba(200,168,75,0.2),0 0 0 12px rgba(200,168,75,0.08)}
+.contact-right{padding:80px 5%;background:var(--ink2)}
+.cform .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.fg{margin-bottom:1.4rem}
+.fg label{display:block;font-family:var(--ff-mono);font-size:0.65rem;color:var(--ash);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--ink);border:1px solid rgba(200,168,75,0.12);color:var(--white);padding:13px 16px;font-size:0.9rem;font-family:var(--ff-body);outline:none;transition:border-color 0.3s,background 0.3s;appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(200,168,75,0.02)}
+.fg select option{background:var(--ink)}
+.fg textarea{height:120px;resize:vertical}
+.submit-btn{width:100%;background:var(--gold);color:var(--ink);border:none;padding:16px;font-family:var(--ff-body);font-weight:700;font-size:0.88rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.4s,transform 0.2s;position:relative;overflow:hidden}
+.submit-btn::after{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform 0.4s var(--ease)}
+.submit-btn span{position:relative;z-index:1}
+.submit-btn:hover::after{transform:none}
+.submit-btn:active{transform:scale(0.99)}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid rgba(200,168,75,0.06);padding:70px 5% 30px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.foot-brand-name{font-family:var(--ff-display);font-size:1.4rem;color:var(--white);margin:0.8rem 0}
+.foot-tagline{font-size:0.85rem;color:var(--ash2);line-height:1.7;font-weight:300;max-width:280px}
+.foot-certs{margin-top:1.5rem;display:flex;gap:0.6rem;flex-wrap:wrap}
+.fc{font-family:var(--ff-mono);font-size:0.6rem;background:rgba(200,168,75,0.07);color:var(--gold);padding:4px 10px;letter-spacing:0.5px}
+.foot-col-h{font-family:var(--ff-mono);font-size:0.65rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:1.2rem}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+.foot-links a{font-size:0.85rem;color:var(--ash2);text-decoration:none;font-weight:300;transition:color 0.3s;cursor:pointer}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.04);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--ff-mono);font-size:0.7rem;color:var(--ash)}
+.foot-legal{display:flex;gap:1.5rem}
+.foot-legal a{font-size:0.75rem;color:var(--ash);text-decoration:none;transition:color 0.3s;cursor:pointer}
+.foot-legal a:hover{color:var(--gold)}
+
+/* ============================================================
+   SCROLL PROGRESS BAR  (#13)
+   ============================================================ */
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0%;z-index:2000;transition:width 0.1s linear;pointer-events:none}
+
+/* ============================================================
+   BACK TO TOP  (#14)
+   ============================================================ */
+#back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--gold);color:var(--ink);border:none;display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(16px);transition:opacity 0.4s var(--ease),transform 0.4s var(--ease);font-size:1.1rem;font-weight:700}
+#back-top.visible{opacity:1;transform:none}
+#back-top:hover{background:var(--gold2)}
+
+/* ============================================================
+   PAGE TRANSITIONS  (#12)
+   ============================================================ */
+#page-curtain{position:fixed;inset:0;background:var(--ink);z-index:1500;pointer-events:none;transform:translateY(100%)}
+@keyframes curtainIn{0%{transform:translateY(100%)}45%{transform:translateY(0)}55%{transform:translateY(0)}100%{transform:translateY(-100%)}}
+#page-curtain.animating{animation:curtainIn 0.72s var(--ease) forwards}
+#page-curtain-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--ff-display);font-size:1.4rem;color:var(--gold);opacity:0;letter-spacing:2px}
+@keyframes logoFlash{0%{opacity:0}40%{opacity:1}60%{opacity:1}100%{opacity:0}}
+#page-curtain.animating #page-curtain-logo{animation:logoFlash 0.72s ease forwards}
+
+/* ============================================================
+   BLOG / INSIGHTS PAGE  (#10)
+   ============================================================ */
+.blog-hero-cats{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:2rem}
+.blog-cat-pill{background:transparent;border:1px solid rgba(200,168,75,0.2);color:var(--ash2);padding:8px 20px;font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;border-radius:0}
+.blog-cat-pill:hover,.blog-cat-pill.active{border-color:var(--gold);color:var(--gold);background:rgba(200,168,75,0.06)}
+
+/* Featured article */
+.blog-featured{display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:rgba(200,168,75,0.06);margin-bottom:1px}
+.blog-feat-img{position:relative;min-height:480px}
+.blog-feat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.9s var(--ease);filter:saturate(0.85)}
+.blog-feat-img:hover img{transform:scale(1.04);filter:saturate(1)}
+.blog-feat-img .img-overlay{background:linear-gradient(to right,rgba(8,14,26,0.5) 0%,transparent 60%)}
+.blog-feat-body{background:var(--ink2);padding:3rem;display:flex;flex-direction:column;justify-content:center}
+.blog-feat-label{font-family:var(--ff-mono);font-size:0.65rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.8rem}
+.blog-feat-label::before{content:'FEATURED';background:var(--gold);color:var(--ink);padding:3px 8px;font-size:0.6rem;font-weight:700}
+.blog-feat-title{font-family:var(--ff-display);font-size:1.7rem;color:var(--white);line-height:1.3;margin-bottom:1rem}
+.blog-feat-excerpt{font-size:0.9rem;color:var(--ash2);line-height:1.78;font-weight:300;margin-bottom:1.5rem}
+.blog-feat-meta{display:flex;align-items:center;gap:1.2rem;font-size:0.78rem;color:var(--ash);flex-wrap:wrap}
+.blog-feat-meta .author-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block}
+
+/* Article grid */
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,168,75,0.06)}
+.article-card{background:var(--ink2);overflow:hidden;cursor:pointer;transition:background 0.4s}
+.article-card:hover{background:var(--ink3)}
+.ac-img{width:100%;height:200px;overflow:hidden;position:relative}
+.ac-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease);filter:saturate(0.8)}
+.article-card:hover .ac-img img{transform:scale(1.07);filter:saturate(1)}
+.ac-body{padding:1.6rem}
+.ac-cat{font-family:var(--ff-mono);font-size:0.62rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.7rem}
+.ac-title{font-family:var(--ff-display);font-size:1.05rem;color:var(--white);line-height:1.4;margin-bottom:0.6rem}
+.ac-excerpt{font-size:0.83rem;color:var(--ash2);line-height:1.7;font-weight:300}
+.ac-meta{margin-top:1rem;display:flex;align-items:center;justify-content:space-between;font-size:0.74rem;color:var(--ash)}
+.ac-read{font-family:var(--ff-mono);color:var(--gold);font-size:0.68rem}
+
+/* Newsletter strip */
+.newsletter-strip{background:var(--ink3);border:1px solid rgba(200,168,75,0.1);padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:1px}
+.nl-title{font-family:var(--ff-display);font-size:1.5rem;color:var(--white);margin-bottom:0.5rem}
+.nl-sub{font-size:0.88rem;color:var(--ash2);font-weight:300}
+.nl-form{display:flex;gap:0}
+.nl-input{flex:1;background:var(--ink);border:1px solid rgba(200,168,75,0.2);border-right:none;color:var(--white);padding:13px 16px;font-family:var(--ff-body);font-size:0.88rem;outline:none;transition:border-color 0.3s}
+.nl-input:focus{border-color:var(--gold)}
+.nl-btn{background:var(--gold);color:var(--ink);border:none;padding:13px 24px;font-family:var(--ff-body);font-weight:700;font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background 0.3s}
+.nl-btn:hover{background:var(--gold2)}
+
+/* Blog responsive */
+@media(max-width:1024px){
+  .blog-featured{grid-template-columns:1fr}
+  .blog-feat-img{min-height:300px}
+  .articles-grid{grid-template-columns:1fr 1fr}
+  .newsletter-strip{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .articles-grid{grid-template-columns:1fr}
+  .blog-feat-title{font-size:1.35rem}
+  .newsletter-strip{padding:2rem}
+  .nl-form{flex-direction:column}
+  .nl-input{border-right:1px solid rgba(200,168,75,0.2);border-bottom:none}
+  .nl-btn{padding:13px}
+}
+
+/* ============================================================
+   FORM SUCCESS STATE  (#15)
+   ============================================================ */
+.form-success{display:none;text-align:center;padding:3rem 2rem;border:1px solid rgba(200,168,75,0.2);background:rgba(200,168,75,0.04)}
+.form-success.show{display:block}
+.fs-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.fs-title{font-family:var(--ff-display);font-size:1.5rem;color:var(--gold);margin-bottom:0.6rem}
+.fs-sub{font-size:0.9rem;color:var(--ash2);font-weight:300}
+.form-error{border-color:rgba(255,80,80,0.5)!important;background:rgba(255,80,80,0.03)!important}
+.field-err{font-size:0.7rem;color:#ff6b6b;margin-top:4px;font-family:var(--ff-mono);display:none}
+.field-err.show{display:block}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:6px;z-index:1100;background:none;border:none}
+.hamburger span{display:block;width:26px;height:1.5px;background:var(--gold);transition:transform 0.35s var(--ease),opacity 0.3s,width 0.3s}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;width:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Mobile nav drawer */
+.mobile-nav{position:fixed;top:0;right:0;bottom:0;width:min(320px,85vw);background:var(--ink2);z-index:1050;transform:translateX(110%);transition:transform 0.5s var(--ease);display:flex;flex-direction:column;padding:100px 2rem 3rem;border-left:1px solid rgba(200,168,75,0.1)}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav-overlay{position:fixed;inset:0;background:rgba(8,14,26,0.7);z-index:1040;opacity:0;pointer-events:none;transition:opacity 0.4s}
+.mobile-nav-overlay.open{opacity:1;pointer-events:auto}
+.mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:0}
+.mobile-nav ul li a{display:block;font-family:var(--ff-display);font-size:1.5rem;color:var(--ash2);padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.04);transition:color 0.3s,padding-left 0.3s;cursor:pointer}
+.mobile-nav ul li a:hover,.mobile-nav ul li a.active{color:var(--gold);padding-left:0.5rem}
+.mobile-nav-cta{margin-top:2rem;background:var(--gold);color:var(--ink);border:none;padding:15px;font-family:var(--ff-body);font-weight:700;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;width:100%}
+
+/* ============================================================
+   TABLET — max 1024px
+   ============================================================ */
+@media(max-width:1024px){
+  /* Nav */
+  .nav-links,.nav-cta-btn{display:none}
+  .hamburger{display:flex}
+
+  /* Hero */
+  #home-hero{grid-template-columns:1fr}
+  .home-hero-right{display:none}
+  .hero-float-num{display:none}
+  .home-hero-left{padding:120px 5% 80px}
+
+  /* Services preview */
+  .home-svc-grid{grid-template-columns:1fr 1fr}
+
+  /* Why us */
+  #home-why{grid-template-columns:1fr;gap:3rem;padding-bottom:80px}
+  .why-img-stack{height:400px;max-width:600px;margin:0 auto}
+
+  /* Cases */
+  .hcase-grid{grid-template-columns:1fr}
+
+  /* Services page */
+  .svc-list{grid-template-columns:1fr}
+
+  /* About */
+  #about-story{grid-template-columns:1fr;gap:3rem}
+  .about-img-main{max-width:550px}
+  .about-gold-box{right:0;bottom:-1.5rem}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .numbers-band{grid-template-columns:1fr 1fr}
+  .nb{border-right:none;border-bottom:1px solid rgba(200,168,75,0.1)}
+  .nb:last-child{border-bottom:none}
+
+  /* Cases page */
+  .cases-masonry{grid-template-columns:1fr 1fr}
+  .case-card2.featured{grid-column:span 2}
+
+  /* Team */
+  .team-grid2{grid-template-columns:1fr 1fr}
+  #team-culture{grid-template-columns:1fr}
+  .culture-imgs{display:none}
+  .culture-text{padding:3.5rem 2.5rem}
+
+  /* Contact */
+  #contact-wrap{grid-template-columns:1fr}
+  .contact-left{padding:80px 5% 50px}
+  .contact-right{padding:50px 5% 80px}
+
+  /* Footer */
+  .foot-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+
+  /* Approach in services */
+  #svc-process > div[style*="grid-template-columns:1fr 1fr"]{display:block}
+  #svc-process > div[style*="grid-template-columns:1fr 1fr"] > div:last-child{margin-top:3rem}
+}
+
+/* ============================================================
+   MOBILE — max 640px
+   ============================================================ */
+@media(max-width:640px){
+  /* Typography */
+  h1.hero-h{font-size:2.4rem}
+  h2.title{font-size:1.9rem}
+  .hcta-title{font-size:2rem}
+
+  /* Nav */
+  #nav{padding:0 4%}
+
+  /* Hero */
+  .home-hero-left{padding:100px 4% 60px}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:1.2rem}
+  .hero-btns{flex-direction:column;gap:0.8rem}
+  .hero-btns .btn{width:100%;justify-content:center}
+
+  /* Ticker */
+  .ticker-inner{gap:2.5rem}
+
+  /* Services grid */
+  .home-svc-grid{grid-template-columns:1fr}
+
+  /* Why us */
+  .why-img-stack{height:300px}
+  .why-img-sec{display:none}
+  .why-img-main{width:100%;height:100%}
+  .why-badge{width:120px;padding:1.2rem}
+  .why-badge-num{font-size:2rem}
+
+  /* Cases home */
+  .hcase-grid{grid-template-columns:1fr}
+
+  /* Services intro 2-col text block */
+  #home-services > div[style*="grid-template-columns"]{display:block}
+  #home-services > div[style*="grid-template-columns"] > div:last-child{margin-top:1.2rem}
+
+  /* Section layout fixes */
+  #home-cases > div[style*="justify-content"]{flex-direction:column;align-items:flex-start;gap:1rem}
+
+  /* About page */
+  .values-grid{grid-template-columns:1fr}
+  .numbers-band{grid-template-columns:1fr}
+  .nb{border-right:none;border-bottom:1px solid rgba(200,168,75,0.1)}
+  .about-gold-box{position:static;margin-top:1.5rem;width:130px}
+  .about-img-main{max-width:100%}
+
+  /* Photo strip */
+  .photo-strip-3col{grid-template-columns:1fr!important}
+  .photo-strip-3col .img-wrap:not(:first-child){display:none}
+
+  /* Process */
+  .process-timeline{padding-left:2rem}
+  #svc-process > div[style]{display:block!important}
+  #svc-process .process-aside-block{margin-top:2.5rem}
+
+  /* Cases masonry */
+  .cases-masonry{grid-template-columns:1fr}
+  .case-card2.featured{grid-column:span 1}
+  .case-card2.featured .cc-img{height:220px}
+
+  /* Cases filter */
+  .cases-filter{gap:0.5rem}
+  .filter-btn{padding:7px 14px;font-size:0.65rem}
+
+  /* Team */
+  .team-grid2{grid-template-columns:1fr 1fr}
+  .culture-text{padding:2.5rem 1.5rem}
+
+  /* Contact */
+  .cform .form-row{grid-template-columns:1fr}
+  #contact-wrap{margin-top:0}
+  .contact-left,.contact-right{padding:50px 4%}
+
+  /* Footer */
+  .foot-grid{grid-template-columns:1fr;gap:2rem}
+  .foot-bottom{flex-direction:column;align-items:flex-start;gap:1rem}
+  .foot-legal{flex-wrap:wrap;gap:1rem}
+
+  /* Page hero */
+  .page-hero{padding:120px 4% 70px}
+  .ph-num{margin-bottom:1rem}
+
+  /* Testimonials */
+  .tcard{min-width:300px}
+
+  /* Buttons */
+  .btn{padding:13px 24px;font-size:0.8rem}
+}
+
+/* ============================================================
+   SMALL MOBILE — max 380px
+   ============================================================ */
+@media(max-width:380px){
+  h1.hero-h{font-size:2rem}
+  .hero-stats{grid-template-columns:1fr}
+  .team-grid2{grid-template-columns:1fr}
+  .numbers-band{grid-template-columns:1fr}
+  .tcard{min-width:270px}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- PAGE TRANSITION CURTAIN -->
+<div id="page-curtain"><span id="page-curtain-logo">Starks IT</span></div>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-box"><span>SI</span></div>
+    <span class="nav-brand">Starks <b>IT</b></span>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" data-page="home">Home</a></li>
+    <li><a onclick="showPage('services')" data-page="services">Services</a></li>
+    <li><a onclick="showPage('about')" data-page="about">About</a></li>
+    <li><a onclick="showPage('cases')" data-page="cases">Case Studies</a></li>
+    <li><a onclick="showPage('team')" data-page="team">Team</a></li>
+    <li><a onclick="showPage('blog')" data-page="blog">Insights</a></li>
+    <li><a onclick="showPage('contact')" data-page="contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta-btn" onclick="showPage('contact')"><span>Start a Project</span></button>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav-overlay" id="mob-overlay" onclick="closeMobileNav()"></div>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-nav" id="mob-drawer">
+  <ul>
+    <li><a onclick="showPage('home');closeMobileNav()" data-mob-page="home">Home</a></li>
+    <li><a onclick="showPage('services');closeMobileNav()" data-mob-page="services">Services</a></li>
+    <li><a onclick="showPage('about');closeMobileNav()" data-mob-page="about">About</a></li>
+    <li><a onclick="showPage('cases');closeMobileNav()" data-mob-page="cases">Case Studies</a></li>
+    <li><a onclick="showPage('team');closeMobileNav()" data-mob-page="team">Team</a></li>
+    <li><a onclick="showPage('blog');closeMobileNav()" data-mob-page="blog">Insights</a></li>
+    <li><a onclick="showPage('contact');closeMobileNav()" data-mob-page="contact">Contact</a></li>
+  </ul>
+  <button class="mobile-nav-cta" onclick="showPage('contact');closeMobileNav()">Start a Project</button>
+</div>
+
+<!-- ============================================================
+     HOME PAGE
+     ============================================================ -->
+<div id="page-home" class="page active">
+
+  <section id="home-hero">
+    <div class="hero-grid"></div>
+    <div class="hero-float-num">10</div>
+    <div class="home-hero-left">
+      <div class="hero-tag" data-reveal>
+        <div class="hero-dot"></div>
+        <span class="hero-tag-text">Est. 2014 · Lagos, Nigeria · ISO 27001</span>
+      </div>
+      <h1 class="hero-h" data-reveal data-delay="1">
+        Technology that <em>moves</em><br>your business<br>forward.
+      </h1>
+      <p class="hero-p" data-reveal data-delay="2">Starks IT Consulting partners with organisations across Africa and beyond to architect, deliver, and manage transformative digital solutions — from enterprise software to cloud infrastructure.</p>
+      <div class="hero-btns" data-reveal data-delay="3">
+        <button class="btn btn-gold" onclick="showPage('cases')"><span>View Our Work</span></button>
+        <button class="btn btn-ghost" onclick="showPage('contact')">Book a Consultation</button>
+      </div>
+      <div class="hero-stats" data-reveal data-delay="4">
+        <div><div class="hs-num">10+</div><div class="hs-label">Years in Business</div></div>
+        <div><div class="hs-num">280+</div><div class="hs-label">Projects Delivered</div></div>
+        <div><div class="hs-num">94%</div><div class="hs-label">Client Retention</div></div>
+      </div>
+    </div>
+    <div class="home-hero-right">
+      <div class="img-wrap" style="position:absolute;inset:0">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop" alt="Modern office technology workspace" loading="eager">
+        <div class="img-overlay"></div>
+      </div>
+      <div class="hero-overlay-text">LAGOS · NIGERIA · 2014</div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ti">Access Bank</span><span class="ti">MTN Nigeria</span><span class="ti">Dangote Group</span>
+      <span class="ti">Flutterwave</span><span class="ti">NLNG</span><span class="ti">Lagos State Govt</span>
+      <span class="ti">Zenith Bank</span><span class="ti">Andela</span><span class="ti">Interswitch</span>
+      <span class="ti">NNPC Limited</span><span class="ti">Nestlé Nigeria</span><span class="ti">PwC West Africa</span>
+      <span class="ti">Access Bank</span><span class="ti">MTN Nigeria</span><span class="ti">Dangote Group</span>
+      <span class="ti">Flutterwave</span><span class="ti">NLNG</span><span class="ti">Lagos State Govt</span>
+      <span class="ti">Zenith Bank</span><span class="ti">Andela</span><span class="ti">Interswitch</span>
+      <span class="ti">NNPC Limited</span><span class="ti">Nestlé Nigeria</span><span class="ti">PwC West Africa</span>
+    </div>
+  </div>
+
+  <!-- HOME SERVICES -->
+  <section id="home-services">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:0">
+      <div>
+        <div class="label" data-reveal><div class="label-line"></div><span class="label-text">What We Do</span></div>
+        <h2 class="title" data-reveal data-delay="1">End-to-end IT services built for <em>enterprise scale</em></h2>
+      </div>
+      <div data-reveal data-delay="2">
+        <p class="subtitle">From strategy through execution, our multidisciplinary teams deliver solutions that are technically rigorous, commercially grounded, and built to last.</p>
+        <a class="arrow-btn" onclick="showPage('services')" style="margin-top:1.5rem;display:inline-flex">Explore all services →</a>
+      </div>
+    </div>
+    <div class="home-svc-grid">
+      <div class="hsvc" data-reveal onclick="showPage('services')">
+        <div class="hsvc-bar"></div>
+        <div class="hsvc-num">01</div>
+        <span class="hsvc-icon">⚙</span>
+        <div class="hsvc-title">Custom Software Development</div>
+        <p class="hsvc-text">Bespoke CRM, ERP, SaaS platforms and mobile apps engineered to your exact operational requirements.</p>
+        <span class="hsvc-link">Explore → </span>
+      </div>
+      <div class="hsvc" data-reveal data-delay="1" onclick="showPage('services')">
+        <div class="hsvc-bar"></div>
+        <div class="hsvc-num">02</div>
+        <span class="hsvc-icon">☁</span>
+        <div class="hsvc-title">Cloud Infrastructure & DevOps</div>
+        <p class="hsvc-text">Robust, cost-optimised cloud environments across AWS, Azure, and GCP with ongoing management and CI/CD.</p>
+        <span class="hsvc-link">Explore → </span>
+      </div>
+      <div class="hsvc" data-reveal data-delay="2" onclick="showPage('services')">
+        <div class="hsvc-bar"></div>
+        <div class="hsvc-num">03</div>
+        <span class="hsvc-icon">🛡</span>
+        <div class="hsvc-title">Cybersecurity & Compliance</div>
+        <p class="hsvc-text">Penetration testing, zero-trust architectures, NDPR/GDPR compliance, and 24/7 threat monitoring.</p>
+        <span class="hsvc-link">Explore → </span>
+      </div>
+      <div class="hsvc" data-reveal data-delay="1" onclick="showPage('services')">
+        <div class="hsvc-bar"></div>
+        <div class="hsvc-num">04</div>
+        <span class="hsvc-icon">◈</span>
+        <div class="hsvc-title">Data Engineering & Analytics</div>
+        <p class="hsvc-text">Data warehouses, real-time pipelines, and intelligent dashboards that turn raw data into strategy.</p>
+        <span class="hsvc-link">Explore → </span>
+      </div>
+      <div class="hsvc" data-reveal data-delay="2" onclick="showPage('services')">
+        <div class="hsvc-bar"></div>
+        <div class="hsvc-num">05</div>
+        <span class="hsvc-icon">◉</span>
+        <div class="hsvc-title">IT Strategy & Transformation</div>
+        <p class="hsvc-text">Executive-level advisory: IT roadmaps, operating model redesign, vendor selection, and business case development.</p>
+        <span class="hsvc-link">Explore → </span>
+      </div>
+      <div class="hsvc" data-reveal data-delay="3" onclick="showPage('services')">
+        <div class="hsvc-bar"></div>
+        <div class="hsvc-num">06</div>
+        <span class="hsvc-icon">⬡</span>
+        <div class="hsvc-title">Managed IT Services</div>
+        <p class="hsvc-text">24/7 helpdesk, infrastructure monitoring, proactive maintenance, and SLA-backed support operations.</p>
+        <span class="hsvc-link">Explore → </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="home-why">
+    <div class="why-img-stack" data-reveal="left">
+      <div class="why-img-main img-wrap">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80&auto=format&fit=crop" alt="Team collaboration in office">
+        <div class="img-overlay"></div>
+      </div>
+      <div class="why-img-sec img-wrap">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80&auto=format&fit=crop" alt="Developer working on code">
+        <div class="img-overlay"></div>
+      </div>
+      <div class="why-badge">
+        <span class="why-badge-num">10+</span>
+        <span class="why-badge-text">Years of Trust</span>
+      </div>
+    </div>
+    <div data-reveal="right">
+      <div class="label"><div class="label-line"></div><span class="label-text">Why Starks IT</span></div>
+      <h2 class="title">A decade of delivering <em>what matters</em></h2>
+      <p class="subtitle">Founded in Lagos in 2014, we've grown from a boutique development shop into a full-spectrum IT consultancy serving clients across 18 countries — always with rigour and integrity.</p>
+      <div class="why-features">
+        <div class="why-feat">
+          <div class="wf-icon">🏆</div>
+          <div><div class="wf-title">ISO 27001:2022 Certified</div><p class="wf-text">Information security management to international standards, across every client engagement.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="wf-icon">⚡</div>
+          <div><div class="wf-title">Microsoft Gold & AWS Partner</div><p class="wf-text">Certified at the highest partner tier on both leading cloud platforms — giving you access to enterprise pricing and priority support.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="wf-icon">🌍</div>
+          <div><div class="wf-title">18 Countries, Deep Local Roots</div><p class="wf-text">Genuinely pan-African expertise with global standards. We understand the unique constraints and opportunities of operating on this continent.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="wf-icon">🔒</div>
+          <div><div class="wf-title">Zero Security Breaches in 10 Years</div><p class="wf-text">Our security-first approach has protected every managed client environment without a single confirmed breach in our operating history.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED CASES -->
+  <section id="home-cases">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem">
+      <div>
+        <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Case Studies</span></div>
+        <h2 class="title" data-reveal data-delay="1">Work that speaks <em>for itself</em></h2>
+      </div>
+      <a class="arrow-btn" onclick="showPage('cases')" data-reveal>View all projects →</a>
+    </div>
+    <div class="hcase-grid">
+      <div class="hcase" data-reveal onclick="showPage('cases')">
+        <div class="hcase-img">
+          <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80&auto=format&fit=crop" alt="Banking technology">
+        </div>
+        <div class="hcase-body">
+          <div class="hcase-ind">Financial Services</div>
+          <div class="hcase-title">Core Banking API Platform Modernisation for a Tier-1 Nigerian Bank</div>
+          <p class="hcase-text">Rebuilt legacy monolithic integration layer into an event-driven microservices architecture — enabling real-time processing across 4.2M accounts.</p>
+          <div class="hcase-stat"><div class="hcase-val">87%</div><div class="hcase-desc">Reduction in API latency</div></div>
+        </div>
+      </div>
+      <div class="hcase" data-reveal data-delay="1" onclick="showPage('cases')">
+        <div class="hcase-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Energy sector operations">
+        </div>
+        <div class="hcase-body">
+          <div class="hcase-ind">Energy & Resources</div>
+          <div class="hcase-title">Field Operations ERP for Major Oil & Gas Downstream Operator</div>
+          <p class="hcase-text">Custom ERP covering logistics, inventory, compliance reporting, and workforce management across 120 depots nationwide.</p>
+          <div class="hcase-stat"><div class="hcase-val">₦210M</div><div class="hcase-desc">Annual cost savings</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="home-testi" style="padding-top:80px">
+    <div style="padding:0 5%;margin-bottom:0">
+      <div class="label" style="justify-content:center" data-reveal><div class="label-line"></div><span class="label-text">Client Voices</span></div>
+      <h2 class="title" style="text-align:center" data-reveal data-delay="1">What our clients <em>say</em></h2>
+    </div>
+    <div class="testi-marquee-wrap">
+      <div class="testi-marquee">
+        <div class="tcard"><div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tcard-q">"Starks IT didn't just deliver a system — they changed how we think about technology. The ERP has transformed our field operations and saved us more in year one than the entire engagement cost."</p><div class="tcard-auth"><div class="tcard-av">OA</div><div><div class="tcard-name">Olumide Adeyemi</div><div class="tcard-co">COO, Downstream Energy Group</div></div></div></div>
+        <div class="tcard"><div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tcard-q">"We've worked with many technology firms. Starks stands apart in one key way: they actually understand the business context of what they're building. That makes all the difference."</p><div class="tcard-auth"><div class="tcard-av">CU</div><div><div class="tcard-name">Chioma Uzoka</div><div class="tcard-co">CTO, Tier-1 Commercial Bank</div></div></div></div>
+        <div class="tcard"><div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tcard-q">"Their integrity and technical depth gave us full confidence throughout a very complex migration. Every deadline was met, every escalation was handled professionally. Exceptional partners."</p><div class="tcard-auth"><div class="tcard-av">BI</div><div><div class="tcard-name">Babajide Irewole</div><div class="tcard-co">Director of ICT, Lagos State Govt</div></div></div></div>
+        <div class="tcard"><div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tcard-q">"The Starks team embedded themselves in our workflows from day one. They didn't just write code — they solved our operational problems with intelligence and speed."</p><div class="tcard-auth"><div class="tcard-av">RA</div><div><div class="tcard-name">Ruth Abara</div><div class="tcard-co">VP Technology, National Hospital Group</div></div></div></div>
+        <div class="tcard"><div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tcard-q">"Starks IT didn't just deliver a system — they changed how we think about technology. The ERP has transformed our field operations and saved us more in year one than the entire engagement cost."</p><div class="tcard-auth"><div class="tcard-av">OA</div><div><div class="tcard-name">Olumide Adeyemi</div><div class="tcard-co">COO, Downstream Energy Group</div></div></div></div>
+        <div class="tcard"><div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tcard-q">"We've worked with many technology firms. Starks stands apart in one key way: they actually understand the business context of what they're building. That makes all the difference."</p><div class="tcard-auth"><div class="tcard-av">CU</div><div><div class="tcard-name">Chioma Uzoka</div><div class="tcard-co">CTO, Tier-1 Commercial Bank</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME CTA -->
+  <section id="home-cta">
+    <div class="hcta-bg">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=70&auto=format&fit=crop" alt="Lagos city skyline">
+      <div class="hcta-grad"></div>
+    </div>
+    <div class="hcta-inner">
+      <div class="label" style="justify-content:center" data-reveal><div class="label-line"></div><span class="label-text">Let's Work Together</span></div>
+      <h2 class="hcta-title" data-reveal data-delay="1">Ready to build something<br>that <em>lasts?</em></h2>
+      <p class="hcta-sub" data-reveal data-delay="2">Whether you have a fully-formed brief or just a challenge worth solving, we'd like to hear from you. The first conversation is always free.</p>
+      <div style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap" data-reveal data-delay="3">
+        <button class="btn btn-gold" onclick="showPage('contact')"><span>Schedule a Discovery Call</span></button>
+        <button class="btn btn-ghost" onclick="showPage('about')">Learn About Us</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <div class="nav-logo-box" style="display:inline-grid"><span style="color:var(--gold);font-family:var(--ff-mono);font-size:13px">SI</span></div>
+        <div class="foot-brand-name">Starks <b style="color:var(--gold)">IT</b> Consulting</div>
+        <p class="foot-tagline">Enterprise technology consulting built for the African market and trusted globally. A decade of delivery, integrity, and innovation.</p>
+        <div class="foot-certs"><span class="fc">ISO 27001</span><span class="fc">NITDA Reg.</span><span class="fc">AWS Partner</span><span class="fc">MS Gold</span><span class="fc">CBN Accredited</span></div>
+      </div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a onclick="showPage('services')">Custom Software</a></li><li><a onclick="showPage('services')">Cloud & DevOps</a></li><li><a onclick="showPage('services')">Cybersecurity</a></li><li><a onclick="showPage('services')">Data & Analytics</a></li><li><a onclick="showPage('services')">IT Strategy</a></li><li><a onclick="showPage('services')">Managed IT</a></li></ul></div>
+      <div><div class="foot-col-h">Company</div><ul class="foot-links"><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('team')">Leadership</a></li><li><a onclick="showPage('cases')">Case Studies</a></li><li><a onclick="showPage('contact')">Careers</a></li><li><a onclick="showPage('blog')">Insights</a></li></ul></div>
+      <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a href="tel:+2341234567890">+234 (0)123 456 7890</a></li><li><a href="mailto:info@starks.com.ng">info@starks.com.ng</a></li><li><a href="https://maps.google.com/?q=Ikeja,Lagos,Nigeria" target="_blank">16 Shagamu Avenue, Ikeja</a></li><li><a href="https://maps.google.com/?q=Lagos,Nigeria" target="_blank">Lagos, Nigeria</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2014–2025 Starks IT Consulting Ltd. RC 1234567.</span>
+      <div class="foot-legal"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms</a><a href="#ndpr">NDPR Statement</a><a href="#cookies">Cookies</a></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============================================================
+     SERVICES PAGE
+     ============================================================ -->
+<div id="page-services" class="page">
+  <div class="page-hero" style="background:var(--ink2)">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=70&auto=format&fit=crop" alt="Technology circuit board">
+      <div class="page-hero-vignette"></div>
+    </div>
+    <div class="page-hero-inner">
+      <div class="ph-num">SERVICES / CAPABILITIES</div>
+      <div class="label" data-reveal><div class="label-line"></div><span class="label-text">What We Offer</span></div>
+      <h2 class="title" data-reveal data-delay="1">Full-spectrum IT solutions for <em>modern enterprises</em></h2>
+      <p class="subtitle" data-reveal data-delay="2">We don't just build systems — we build competitive advantage. Every service is delivered by certified specialists who understand both the technology and the business context behind it.</p>
+    </div>
+  </div>
+
+  <section id="svc-page" style="padding-top:60px">
+    <div class="svc-list">
+      <div class="svc-item" data-reveal>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80&auto=format&fit=crop" alt="Custom software development coding"></div>
+        <div class="svc-hover-bar"></div>
+        <div class="svc-body">
+          <div class="svc-num2">01 / CUSTOM SOFTWARE DEVELOPMENT</div>
+          <div class="svc-t">Custom Software Development</div>
+          <p class="svc-d">Bespoke applications engineered to your exact operational requirements. From CRM and ERP platforms to client portals and SaaS products — we architect and build software that scales with your business and integrates seamlessly into your existing ecosystem.</p>
+          <div class="svc-tags2"><span class="stag">Web Apps</span><span class="stag">Mobile</span><span class="stag">REST APIs</span><span class="stag">ERP/CRM</span><span class="stag">SaaS Platforms</span><span class="stag">Portals</span></div>
+        </div>
+      </div>
+      <div class="svc-item" data-reveal data-delay="1">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=80&auto=format&fit=crop" alt="Cloud computing data center"></div>
+        <div class="svc-hover-bar"></div>
+        <div class="svc-body">
+          <div class="svc-num2">02 / CLOUD INFRASTRUCTURE & DEVOPS</div>
+          <div class="svc-t">Cloud Infrastructure & DevOps</div>
+          <p class="svc-d">Architect robust, secure, and cost-optimised cloud environments. We manage migrations, implement CI/CD pipelines, containerise workloads, and provide ongoing infrastructure management across AWS, Azure, and GCP with guaranteed SLA uptime.</p>
+          <div class="svc-tags2"><span class="stag">AWS</span><span class="stag">Azure</span><span class="stag">GCP</span><span class="stag">Kubernetes</span><span class="stag">Terraform</span><span class="stag">Docker</span></div>
+        </div>
+      </div>
+      <div class="svc-item" data-reveal>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=700&q=80&auto=format&fit=crop" alt="Cybersecurity data protection"></div>
+        <div class="svc-hover-bar"></div>
+        <div class="svc-body">
+          <div class="svc-num2">03 / CYBERSECURITY & COMPLIANCE</div>
+          <div class="svc-t">Cybersecurity & Compliance</div>
+          <p class="svc-d">Comprehensive security posture management. We conduct penetration testing, implement zero-trust architectures, ensure regulatory compliance (NDPR, GDPR, PCI-DSS), and provide 24/7 SOC threat monitoring and incident response.</p>
+          <div class="svc-tags2"><span class="stag">Pen Testing</span><span class="stag">NDPR</span><span class="stag">SOC 24/7</span><span class="stag">Zero Trust</span><span class="stag">ISO 27001</span></div>
+        </div>
+      </div>
+      <div class="svc-item" data-reveal data-delay="1">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&auto=format&fit=crop" alt="Data analytics dashboard charts"></div>
+        <div class="svc-hover-bar"></div>
+        <div class="svc-body">
+          <div class="svc-num2">04 / DATA ENGINEERING & ANALYTICS</div>
+          <div class="svc-t">Data Engineering & Analytics</div>
+          <p class="svc-d">Transform raw data into strategic intelligence. We build data warehouses, real-time streaming pipelines, and interactive dashboards that empower leadership to make evidence-based decisions at speed and with confidence.</p>
+          <div class="svc-tags2"><span class="stag">Power BI</span><span class="stag">Tableau</span><span class="stag">Snowflake</span><span class="stag">dbt</span><span class="stag">Kafka</span><span class="stag">Spark</span></div>
+        </div>
+      </div>
+      <div class="svc-item" data-reveal>
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80&auto=format&fit=crop" alt="IT strategy consulting meeting"></div>
+        <div class="svc-hover-bar"></div>
+        <div class="svc-body">
+          <div class="svc-num2">05 / IT STRATEGY & DIGITAL TRANSFORMATION</div>
+          <div class="svc-t">IT Strategy & Digital Transformation</div>
+          <p class="svc-d">Executive-level advisory for organisations navigating technology change. We produce IT roadmaps, vendor selection frameworks, operating model redesign, and business cases that align technology investment to commercial outcomes.</p>
+          <div class="svc-tags2"><span class="stag">Roadmapping</span><span class="stag">Change Mgmt</span><span class="stag">Architecture</span><span class="stag">TOGAF</span></div>
+        </div>
+      </div>
+      <div class="svc-item" data-reveal data-delay="1">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80&auto=format&fit=crop" alt="Managed IT services network monitoring"></div>
+        <div class="svc-hover-bar"></div>
+        <div class="svc-body">
+          <div class="svc-num2">06 / MANAGED IT SERVICES</div>
+          <div class="svc-t">Managed IT Services & Support</div>
+          <p class="svc-d">24/7 managed support, infrastructure monitoring, helpdesk, and proactive maintenance. We operate as your extended IT department — available, reliable, and always ahead of the curve — backed by iron-clad SLAs.</p>
+          <div class="svc-tags2"><span class="stag">Helpdesk</span><span class="stag">SLA-backed</span><span class="stag">Monitoring</span><span class="stag">ITSM</span><span class="stag">ITIL</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="svc-process">
+    <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Our Process</span></div>
+    <h2 class="title" data-reveal data-delay="1" style="max-width:500px">How we <em>work</em> with every client</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
+      <div class="process-timeline" data-reveal>
+        <div class="pt-step"><div class="pt-dot"><div class="pt-dot-inner"></div></div><div class="pt-num">01</div><div class="pt-title">Discovery & Diagnosis</div><p class="pt-text">Structured workshops, stakeholder interviews, and technical audits. We develop a clear picture of your current state, constraints, and strategic objectives before any work begins.</p></div>
+        <div class="pt-step"><div class="pt-dot"><div class="pt-dot-inner"></div></div><div class="pt-num">02</div><div class="pt-title">Solution Architecture</div><p class="pt-text">Detailed blueprints, technology selection rationale, and risk assessments — giving you full visibility and sign-off before a single line of code is written.</p></div>
+        <div class="pt-step"><div class="pt-dot"><div class="pt-dot-inner"></div></div><div class="pt-num">03</div><div class="pt-title">Agile Delivery</div><p class="pt-text">Two-week sprints with structured demos. You always know exactly where your project stands. Scope changes are managed transparently, without surprises.</p></div>
+        <div class="pt-step"><div class="pt-dot"><div class="pt-dot-inner"></div></div><div class="pt-num">04</div><div class="pt-title">Deployment & Stabilisation</div><p class="pt-text">A dedicated stabilisation period post-launch ensures performance benchmarks are met and your team is fully trained and confident.</p></div>
+        <div class="pt-step"><div class="pt-dot"><div class="pt-dot-inner"></div></div><div class="pt-num">05</div><div class="pt-title">Continuous Improvement</div><p class="pt-text">Ongoing monitoring, quarterly business reviews, and roadmap planning keep your systems healthy, secure, and aligned with your organisation's direction.</p></div>
+      </div>
+      <div data-reveal data-delay="2">
+        <div class="img-wrap" style="height:400px;margin-bottom:2rem">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80&auto=format&fit=crop" alt="Team working on project planning">
+          <div class="img-overlay"></div>
+        </div>
+        <div style="background:var(--ink);padding:2rem;border-left:3px solid var(--gold)">
+          <p style="font-family:var(--ff-display);font-style:italic;font-size:1.15rem;color:var(--white);line-height:1.55;margin-bottom:1rem">"Technology is only as valuable as the business outcomes it enables. We measure our success entirely in those terms."</p>
+          <span style="font-family:var(--ff-mono);font-size:0.72rem;color:var(--gold);letter-spacing:1px">— Michael Omotayo, Founder & CEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div><div class="foot-brand-name">Starks <b style="color:var(--gold)">IT</b> Consulting</div><p class="foot-tagline">Enterprise technology consulting built for the African market and trusted globally.</p><div class="foot-certs"><span class="fc">ISO 27001</span><span class="fc">NITDA Reg.</span><span class="fc">AWS Partner</span><span class="fc">MS Gold</span></div></div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a onclick="showPage('services')">Custom Software</a></li><li><a onclick="showPage('services')">Cloud & DevOps</a></li><li><a onclick="showPage('services')">Cybersecurity</a></li><li><a onclick="showPage('services')">Data & Analytics</a></li></ul></div>
+      <div><div class="foot-col-h">Company</div><ul class="foot-links"><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('team')">Team</a></li><li><a onclick="showPage('cases')">Case Studies</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div><div class="foot-col-h">Get Started</div><ul class="foot-links"><li><a onclick="showPage('contact')">Book a Consultation</a></li><li><a href="tel:+2341234567890">+234 (0)123 456 7890</a></li><li><a href="mailto:info@starks.com.ng">info@starks.com.ng</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span class="foot-copy">© 2014–2025 Starks IT Consulting Ltd.</span><div class="foot-legal"><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#ndpr">NDPR</a></div></div>
+  </footer>
+</div>
+
+<!-- ============================================================
+     ABOUT PAGE
+     ============================================================ -->
+<div id="page-about" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=70&auto=format&fit=crop" alt="Lagos office building">
+      <div class="page-hero-vignette"></div>
+    </div>
+    <div class="page-hero-inner">
+      <div class="ph-num">ABOUT US / OUR STORY</div>
+      <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Who We Are</span></div>
+      <h2 class="title" data-reveal data-delay="1">Built in Lagos.<br><em>Trusted globally.</em></h2>
+      <p class="subtitle" data-reveal data-delay="2">Since 2014, we have been proving that African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world.</p>
+    </div>
+  </div>
+
+  <section id="about-story" style="padding-top:80px">
+    <div class="about-img-main" data-reveal="left">
+      <div class="img-wrap" style="height:100%">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80&auto=format&fit=crop" alt="Team working together in modern office">
+        <div class="img-overlay"></div>
+      </div>
+      <div class="about-gold-box">
+        <span class="agb-num">2014</span>
+        <span class="agb-text">Year Founded</span>
+      </div>
+    </div>
+    <div class="about-text" data-reveal="right">
+      <div class="label"><div class="label-line"></div><span class="label-text">Our Story</span></div>
+      <h2 class="title">A decade of <em>deliberate</em> growth</h2>
+      <p>Founded in Lagos in 2014 by Michael Omotayo, Starks IT Consulting began with a clear conviction: African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world. We started small — a team of five, one shared office in Ikeja, and an absolute commitment to quality over quantity.</p>
+      <p>Over the decade that followed, we grew into a full-spectrum IT consultancy with over 65 professionals, serving clients across banking, energy, telecoms, healthcare, and the public sector. Our work has helped organisations launch new revenue lines, dramatically reduce operational costs, and navigate complex regulatory landscapes — always with rigour and integrity.</p>
+      <p>We are proudly Nigerian, globally fluent, and deeply committed to building technology that lasts. Not the kind that impresses in a demo and disappoints in production. The kind that becomes core infrastructure.</p>
+      <div class="about-certs">
+        <div class="acert"><span class="acert-icon">✓</span>ISO 27001:2022 Information Security Management Certified</div>
+        <div class="acert"><span class="acert-icon">✓</span>Microsoft Gold Partner & AWS Select Consulting Partner</div>
+        <div class="acert"><span class="acert-icon">✓</span>NITDA registered and fully NDPR compliant across all engagements</div>
+        <div class="acert"><span class="acert-icon">✓</span>CBN-accredited fintech solution provider since 2017</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICE IMAGE STRIP -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;padding:0 5%;margin-bottom:80px" class="photo-strip-3col">
+    <div class="img-wrap" style="height:260px" data-reveal><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80&auto=format&fit=crop" alt="Office workspace Lagos"><div class="img-overlay"></div></div>
+    <div class="img-wrap" style="height:260px" data-reveal data-delay="1"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80&auto=format&fit=crop" alt="Team meeting collaboration"><div class="img-overlay"></div></div>
+    <div class="img-wrap" style="height:260px" data-reveal data-delay="2"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80&auto=format&fit=crop" alt="Modern office interior"><div class="img-overlay"></div></div>
+  </div>
+
+  <section id="about-values">
+    <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Our Values</span></div>
+    <h2 class="title" data-reveal data-delay="1">Principles that <em>guide</em> every decision</h2>
+    <div class="values-grid">
+      <div class="val-card" data-reveal><span class="val-icon">🎯</span><div class="val-title">Precision Over Speed</div><p class="val-text">We take the time to understand before we act. Rushing to solutions without understanding problems is how technology projects fail. Our discovery phase is non-negotiable.</p></div>
+      <div class="val-card" data-reveal data-delay="1"><span class="val-icon">🤝</span><div class="val-title">Radical Transparency</div><p class="val-text">No hidden costs, no scope surprises, no ego. We communicate honestly — including when things are difficult — because trust is the foundation of every partnership.</p></div>
+      <div class="val-card" data-reveal data-delay="2"><span class="val-icon">🌍</span><div class="val-title">African Excellence</div><p class="val-text">We believe the next generation of globally significant technology companies will come from Africa. We are proud to be part of building that future, from Lagos outward.</p></div>
+      <div class="val-card" data-reveal><span class="val-icon">♻</span><div class="val-title">Longevity by Design</div><p class="val-text">We build for the long term. Systems designed to be maintained, extended, and evolved — not rebuilt every two years. Our clients' investment compounds over time.</p></div>
+      <div class="val-card" data-reveal data-delay="1"><span class="val-icon">🔐</span><div class="val-title">Security First</div><p class="val-text">Security is never an afterthought. It is baked into our architecture from line one. In 10 years of operation, not one managed client environment has suffered a confirmed breach.</p></div>
+      <div class="val-card" data-reveal data-delay="2"><span class="val-icon">📈</span><div class="val-title">Outcome Obsessed</div><p class="val-text">We don't measure success in lines of code or features shipped. We measure it in business outcomes — cost savings, revenue generated, uptime improved, processes transformed.</p></div>
+    </div>
+  </section>
+
+  <div id="about-numbers" style="margin:0 5% 80px">
+    <div class="numbers-band">
+      <div class="nb" data-reveal><span class="nb-val">280+</span><span class="nb-label">Projects Completed</span><p class="nb-desc">Across 18 countries and every major sector of the Nigerian economy</p></div>
+      <div class="nb" data-reveal data-delay="1"><span class="nb-val">₦4.2B+</span><span class="nb-label">Client Value Generated</span><p class="nb-desc">Documented cost savings and new revenue attributable to our solutions</p></div>
+      <div class="nb" data-reveal data-delay="2"><span class="nb-val">65+</span><span class="nb-label">Expert Consultants</span><p class="nb-desc">Certified specialists in engineering, security, data, and strategy</p></div>
+      <div class="nb" data-reveal data-delay="3"><span class="nb-val">99.7%</span><span class="nb-label">Uptime Delivered</span><p class="nb-desc">For managed clients over the past three consecutive calendar years</p></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div><div class="foot-brand-name">Starks <b style="color:var(--gold)">IT</b> Consulting</div><p class="foot-tagline">Enterprise technology consulting built for the African market and trusted globally.</p><div class="foot-certs"><span class="fc">ISO 27001</span><span class="fc">NITDA Reg.</span><span class="fc">AWS Partner</span></div></div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a onclick="showPage('services')">All Services</a></li><li><a onclick="showPage('services')">Custom Software</a></li><li><a onclick="showPage('services')">Cloud & DevOps</a></li></ul></div>
+      <div><div class="foot-col-h">Company</div><ul class="foot-links"><li><a onclick="showPage('team')">Our Team</a></li><li><a onclick="showPage('cases')">Case Studies</a></li><li><a onclick="showPage('contact')">Careers</a></li></ul></div>
+      <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a onclick="showPage('contact')">Get in Touch</a></li><li><a href="mailto:info@starks.com.ng">info@starks.com.ng</a></li><li><a href="tel:+2341234567890">+234 (0)123 456 7890</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span class="foot-copy">© 2014–2025 Starks IT Consulting Ltd.</span><div class="foot-legal"><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#ndpr">NDPR</a></div></div>
+  </footer>
+</div>
+
+<!-- ============================================================
+     CASE STUDIES PAGE
+     ============================================================ -->
+<div id="page-cases" class="page">
+  <div class="page-hero" style="position:relative">
+    <div id="cases-hero-img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=70&auto=format&fit=crop" alt="Team at work"></div>
+    <div class="page-hero-vignette" style="position:absolute;inset:0"></div>
+    <div class="page-hero-inner" style="position:relative;z-index:2">
+      <div class="ph-num">WORK / CASE STUDIES</div>
+      <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Our Work</span></div>
+      <h2 class="title" data-reveal data-delay="1">Proof over <em>promise.</em></h2>
+      <p class="subtitle" data-reveal data-delay="2">Ten years of transformative engagements across Nigeria and beyond. Real outcomes, real numbers, real partnerships.</p>
+    </div>
+  </div>
+  <section style="padding:60px 5% 120px">
+    <div class="cases-filter" data-reveal>
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Financial Services</button>
+      <button class="filter-btn">Energy</button>
+      <button class="filter-btn">Public Sector</button>
+      <button class="filter-btn">Healthcare</button>
+      <button class="filter-btn">Telecoms</button>
+    </div>
+    <div class="cases-masonry">
+      <div class="case-card2 featured" data-reveal>
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=900&q=80&auto=format&fit=crop" alt="Banking technology platform"></div>
+        <div class="cc-body">
+          <div class="cc-ind">Financial Services · 2023</div>
+          <div class="cc-title">Core Banking API Platform Modernisation — Tier-1 Nigerian Bank</div>
+          <p class="cc-text">Rebuilt a legacy monolithic core banking integration layer into a modern, event-driven microservices architecture — enabling real-time transaction processing across 4.2 million accounts and dramatically reducing system downtime.</p>
+          <div class="cc-result"><div class="cc-val">87%</div><div class="cc-unit">Reduction in API latency · 4.2M accounts · 18-month delivery</div></div>
+        </div>
+      </div>
+      <div class="case-card2" data-reveal data-delay="1">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Oil and gas energy operations"></div>
+        <div class="cc-body">
+          <div class="cc-ind">Energy · 2022</div>
+          <div class="cc-title">Field Operations ERP — Major Oil & Gas Operator</div>
+          <p class="cc-text">Custom ERP system covering logistics, inventory, and field workforce management across 120 depots nationwide.</p>
+          <div class="cc-result"><div class="cc-val">₦210M</div><div class="cc-unit">Annual savings</div></div>
+        </div>
+      </div>
+      <div class="case-card2" data-reveal data-delay="2">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600&q=80&auto=format&fit=crop" alt="Government building Lagos"></div>
+        <div class="cc-body">
+          <div class="cc-ind">Public Sector · 2021</div>
+          <div class="cc-title">Revenue Management & Citizen Portal — Lagos State</div>
+          <p class="cc-text">End-to-end digital transformation of state revenue collection with integrated payment gateway and taxpayer self-service.</p>
+          <div class="cc-result"><div class="cc-val">3.1×</div><div class="cc-unit">Increase in monthly IGR</div></div>
+        </div>
+      </div>
+      <div class="case-card2" data-reveal>
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80&auto=format&fit=crop" alt="Hospital healthcare technology"></div>
+        <div class="cc-body">
+          <div class="cc-ind">Healthcare · 2022</div>
+          <div class="cc-title">Unified Patient Records — National Hospital Group (14 Sites)</div>
+          <p class="cc-text">HIPAA-aligned electronic medical records platform connecting 14 hospital sites with biometric patient identification.</p>
+          <div class="cc-result"><div class="cc-val">14</div><div class="cc-unit">Sites live in 8 months</div></div>
+        </div>
+      </div>
+      <div class="case-card2" data-reveal data-delay="1">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80&auto=format&fit=crop" alt="Telecom network infrastructure"></div>
+        <div class="cc-body">
+          <div class="cc-ind">Telecoms · 2023</div>
+          <div class="cc-title">Network Outage Prediction Engine — ML Pipeline</div>
+          <p class="cc-text">Real-time ML pipeline analysing 2.4TB daily telemetry to predict and pre-empt network degradation 40 minutes in advance.</p>
+          <div class="cc-result"><div class="cc-val">62%</div><div class="cc-unit">Less unplanned downtime</div></div>
+        </div>
+      </div>
+      <div class="case-card2" data-reveal data-delay="2">
+        <div class="cc-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop" alt="E-commerce retail platform"></div>
+        <div class="cc-body">
+          <div class="cc-ind">Retail · 2024</div>
+          <div class="cc-title">Omnichannel Commerce Platform — Leading West African Retailer</div>
+          <p class="cc-text">Unified digital commerce platform integrating POS, inventory, loyalty, and e-commerce across 80 retail locations in 6 countries.</p>
+          <div class="cc-result"><div class="cc-val">220%</div><div class="cc-unit">Increase in online revenue</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="foot-grid">
+      <div><div class="foot-brand-name">Starks <b style="color:var(--gold)">IT</b> Consulting</div><p class="foot-tagline">Enterprise technology consulting built for the African market.</p><div class="foot-certs"><span class="fc">ISO 27001</span><span class="fc">AWS Partner</span></div></div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a onclick="showPage('services')">All Services</a></li></ul></div>
+      <div><div class="foot-col-h">Company</div><ul class="foot-links"><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('team')">Team</a></li></ul></div>
+      <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a onclick="showPage('contact')">Get in Touch</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span class="foot-copy">© 2014–2025 Starks IT Consulting Ltd.</span><div class="foot-legal"><a href="#privacy">Privacy</a><a href="#terms">Terms</a></div></div>
+  </footer>
+</div>
+
+<!-- ============================================================
+     TEAM PAGE
+     ============================================================ -->
+<div id="page-team" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=70&auto=format&fit=crop" alt="Diverse professional team">
+      <div class="page-hero-vignette"></div>
+    </div>
+    <div class="page-hero-inner">
+      <div class="ph-num">TEAM / LEADERSHIP</div>
+      <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Our People</span></div>
+      <h2 class="title" data-reveal data-delay="1">The people behind <em>the work</em></h2>
+      <p class="subtitle" data-reveal data-delay="2">65+ professionals united by a single conviction: that excellent technology, applied with integrity, creates extraordinary outcomes.</p>
+    </div>
+  </div>
+
+  <section id="team-grid-section">
+    <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Leadership Team</span></div>
+    <h2 class="title" data-reveal data-delay="1">Senior <em>leadership</em></h2>
+    <div class="team-grid2">
+      <div class="team-member" data-reveal>
+        <div class="tm-photo">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop&crop=face" alt="Michael Omotayo CEO">
+          <div class="tm-photo-overlay"></div>
+          <div class="tm-social"><div class="tm-soc-btn">in</div><div class="tm-soc-btn">✉</div></div>
+        </div>
+        <div class="tm-line"></div>
+        <div class="tm-name">Michael Omotayo</div>
+        <div class="tm-role">Founder & Chief Executive Officer</div>
+        <p class="tm-bio">15+ years in enterprise software. Previously led technology at PwC West Africa. MSc Computer Science, University of Lagos.</p>
+        <div class="tm-certs"><span class="tc">PMP</span><span class="tc">AWS Arch</span><span class="tc">TOGAF</span></div>
+      </div>
+      <div class="team-member" data-reveal data-delay="1">
+        <div class="tm-photo">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80&auto=format&fit=crop&crop=face" alt="Adaeze Emeka CTO">
+          <div class="tm-photo-overlay"></div>
+          <div class="tm-social"><div class="tm-soc-btn">in</div><div class="tm-soc-btn">✉</div></div>
+        </div>
+        <div class="tm-line"></div>
+        <div class="tm-name">Adaeze Emeka</div>
+        <div class="tm-role">Chief Technology Officer</div>
+        <p class="tm-bio">Distributed systems specialist and former Principal Engineer at Interswitch. Leads our architecture guild. PhD candidate, Covenant University.</p>
+        <div class="tm-certs"><span class="tc">GCP Pro</span><span class="tc">CKA</span><span class="tc">CKAD</span></div>
+      </div>
+      <div class="team-member" data-reveal data-delay="2">
+        <div class="tm-photo">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&auto=format&fit=crop&crop=face" alt="Tunde Fashola Security Head">
+          <div class="tm-photo-overlay"></div>
+          <div class="tm-social"><div class="tm-soc-btn">in</div><div class="tm-soc-btn">✉</div></div>
+        </div>
+        <div class="tm-line"></div>
+        <div class="tm-name">Tunde Fashola</div>
+        <div class="tm-role">Head of Cybersecurity</div>
+        <p class="tm-bio">Certified ethical hacker and former CISO of a leading Nigerian financial institution. Leads our security practice and compliance advisory.</p>
+        <div class="tm-certs"><span class="tc">CISSP</span><span class="tc">CEH</span><span class="tc">CISM</span></div>
+      </div>
+      <div class="team-member" data-reveal data-delay="3">
+        <div class="tm-photo">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format&fit=crop&crop=face" alt="Ngozi Okafor Data Director">
+          <div class="tm-photo-overlay"></div>
+          <div class="tm-social"><div class="tm-soc-btn">in</div><div class="tm-soc-btn">✉</div></div>
+        </div>
+        <div class="tm-line"></div>
+        <div class="tm-name">Ngozi Okafor</div>
+        <div class="tm-role">Director of Data & AI</div>
+        <p class="tm-bio">ML engineer and data strategist, 12 years across fintech and telecoms. Built predictive models deployed across seven countries. MSc Data Science, UCL.</p>
+        <div class="tm-certs"><span class="tc">Azure AI</span><span class="tc">Databricks</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem">
+      <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Practice Leads</span></div>
+      <div class="team-grid2">
+        <div class="team-member" data-reveal>
+          <div class="tm-photo">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop&crop=face" alt="Software engineering lead">
+            <div class="tm-photo-overlay"></div>
+          </div>
+          <div class="tm-line"></div>
+          <div class="tm-name">Emeka Okonkwo</div>
+          <div class="tm-role">Head of Software Engineering</div>
+          <p class="tm-bio">Full-stack architect with 10 years in high-scale web and mobile delivery.</p>
+        </div>
+        <div class="team-member" data-reveal data-delay="1">
+          <div class="tm-photo">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80&auto=format&fit=crop&crop=face" alt="Cloud DevOps lead">
+            <div class="tm-photo-overlay"></div>
+          </div>
+          <div class="tm-line"></div>
+          <div class="tm-name">Amaka Osei</div>
+          <div class="tm-role">Lead Cloud Architect</div>
+          <p class="tm-bio">AWS and Terraform specialist. Led 40+ cloud migration projects across West Africa.</p>
+        </div>
+        <div class="team-member" data-reveal data-delay="2">
+          <div class="tm-photo">
+            <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80&auto=format&fit=crop&crop=face" alt="Strategy consultant">
+            <div class="tm-photo-overlay"></div>
+          </div>
+          <div class="tm-line"></div>
+          <div class="tm-name">Kola Balogun</div>
+          <div class="tm-role">Head of Strategy & Advisory</div>
+          <p class="tm-bio">Former McKinsey consultant. Specialises in digital transformation for financial institutions.</p>
+        </div>
+        <div class="team-member" data-reveal data-delay="3">
+          <div class="tm-photo">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80&auto=format&fit=crop&crop=face" alt="Project management director">
+            <div class="tm-photo-overlay"></div>
+          </div>
+          <div class="tm-line"></div>
+          <div class="tm-name">Funke Adeyemi</div>
+          <div class="tm-role">Director of Project Delivery</div>
+          <p class="tm-bio">PMP-certified delivery director. Oversees all client engagements end-to-end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team-culture">
+    <div class="culture-imgs">
+      <div class="img-wrap"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&q=80&auto=format&fit=crop" alt="Office collaboration session"><div class="img-overlay"></div></div>
+      <div class="img-wrap"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&q=80&auto=format&fit=crop" alt="Team brainstorming"><div class="img-overlay"></div></div>
+      <div class="img-wrap"><img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&q=80&auto=format&fit=crop" alt="Developer at work"><div class="img-overlay"></div></div>
+    </div>
+    <div class="culture-text" data-reveal>
+      <div class="label"><div class="label-line"></div><span class="label-text">Life at Starks</span></div>
+      <h2 class="title" style="font-size:2rem">Built to <em>thrive</em></h2>
+      <p style="font-size:0.9rem;color:var(--ash2);font-weight:300;line-height:1.75;margin-bottom:1.5rem">We invest heavily in our people because exceptional talent is the only sustainable competitive advantage. We offer an environment where brilliant minds can do their best work — and grow.</p>
+      <div class="culture-perks">
+        <div class="cperk">Continuous learning budget & certification sponsorship</div>
+        <div class="cperk">Hybrid & remote working arrangements</div>
+        <div class="cperk">Competitive compensation benchmarked globally</div>
+        <div class="cperk">Health insurance for you and your family</div>
+        <div class="cperk">Annual tech conference attendance</div>
+        <div class="cperk">Clear, merit-based career progression paths</div>
+      </div>
+      <button class="btn btn-gold" onclick="showPage('contact')" style="margin-top:2rem"><span>View Open Roles</span></button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div><div class="foot-brand-name">Starks <b style="color:var(--gold)">IT</b> Consulting</div><p class="foot-tagline">Enterprise technology consulting built for the African market.</p></div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a onclick="showPage('services')">All Services</a></li></ul></div>
+      <div><div class="foot-col-h">Company</div><ul class="foot-links"><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('cases')">Case Studies</a></li></ul></div>
+      <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a onclick="showPage('contact')">Get in Touch</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span class="foot-copy">© 2014–2025 Starks IT Consulting Ltd.</span><div class="foot-legal"><a href="#privacy">Privacy</a><a href="#terms">Terms</a></div></div>
+  </footer>
+</div>
+
+<!-- ============================================================
+     CONTACT PAGE
+     ============================================================ -->
+<div id="page-contact" class="page">
+  <div id="contact-wrap">
+    <div class="contact-left">
+      <div class="contact-left-bg">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=70&auto=format&fit=crop" alt="Lagos city skyline">
+      </div>
+      <div class="contact-left-inner">
+        <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Get in Touch</span></div>
+        <h2 class="title" data-reveal data-delay="1" style="font-size:2.4rem">Let's start a <em>conversation.</em></h2>
+        <p style="font-size:0.9rem;color:var(--ash2);font-weight:300;line-height:1.75;margin-bottom:2.5rem" data-reveal data-delay="2">Whether you have a fully-formed brief or just a challenge worth solving, we'd like to hear from you. The first conversation is always free and carries no obligation.</p>
+        <div class="cd" data-reveal>
+          <div class="cd-ico">📍</div>
+          <div><div class="cd-lbl">Head Office</div><div class="cd-val">16 Shagamu Avenue, Ikeja<br>Lagos, Nigeria 101233</div></div>
+        </div>
+        <div class="cd" data-reveal data-delay="1">
+          <div class="cd-ico">📞</div>
+          <div><div class="cd-lbl">Telephone</div><div class="cd-val">+234 (0)123 456 7890</div></div>
+        </div>
+        <div class="cd" data-reveal data-delay="2">
+          <div class="cd-ico">✉</div>
+          <div><div class="cd-lbl">Email</div><div class="cd-val">info@starks.com.ng</div></div>
+        </div>
+        <div class="cd" data-reveal data-delay="3">
+          <div class="cd-ico">🕐</div>
+          <div><div class="cd-lbl">Business Hours</div><div class="cd-val">Mon – Fri, 8:00am – 6:00pm WAT<br>Emergency support: 24/7</div></div>
+        </div>
+        <div class="contact-map-placeholder" data-reveal>
+          <div class="map-grid-bg"></div>
+          <div class="map-dot"></div>
+          <span style="position:absolute;bottom:1rem;left:1rem;font-family:var(--ff-mono);font-size:0.65rem;color:var(--ash);letter-spacing:1px">IKEJA · LAGOS</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="label" data-reveal><div class="label-line"></div><span class="label-text">Project Enquiry</span></div>
+      <h3 style="font-family:var(--ff-display);font-size:1.6rem;color:var(--white);margin-bottom:2rem" data-reveal data-delay="1">Tell us about<br>your <em>project</em></h3>
+      <div class="cform" data-reveal data-delay="2">
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="form-success">
+          <span class="fs-icon">✓</span>
+          <div class="fs-title">Message Received</div>
+          <p class="fs-sub">Thank you for reaching out. A member of our team will be in touch within 4–8 business hours.<br><br>In the meantime, feel free to explore our <a onclick="showPage('cases')" style="color:var(--gold);cursor:pointer">case studies</a> or <a onclick="showPage('blog')" style="color:var(--gold);cursor:pointer">latest insights</a>.</p>
+        </div>
+        <!-- FORM -->
+        <form id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="fg">
+            <label>First Name</label>
+            <input type="text" id="f-fname" placeholder="John">
+            <span class="field-err" id="err-fname">Please enter your first name.</span>
+          </div>
+          <div class="fg">
+            <label>Last Name</label>
+            <input type="text" id="f-lname" placeholder="Doe">
+            <span class="field-err" id="err-lname">Please enter your last name.</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label>Email</label>
+            <input type="email" id="f-email" placeholder="john@company.com">
+            <span class="field-err" id="err-email">Please enter a valid email address.</span>
+          </div>
+          <div class="fg">
+            <label>Phone</label>
+            <input type="tel" id="f-phone" placeholder="+234 ...">
+          </div>
+        </div>
+        <div class="fg">
+          <label>Company</label>
+          <input type="text" id="f-company" placeholder="Your company name">
+          <span class="field-err" id="err-company">Please enter your company name.</span>
+        </div>
+        <div class="fg">
+          <label>Service Required</label>
+          <select id="f-service">
+            <option value="">Select a service...</option>
+            <option>Custom Software Development</option>
+            <option>Cloud Infrastructure & DevOps</option>
+            <option>Cybersecurity & Compliance</option>
+            <option>Data Engineering & Analytics</option>
+            <option>IT Strategy & Digital Transformation</option>
+            <option>Managed IT Services</option>
+            <option>Not sure — I need a consultation</option>
+          </select>
+          <span class="field-err" id="err-service">Please select a service.</span>
+        </div>
+        <div class="fg">
+          <label>Estimated Budget</label>
+          <select>
+            <option value="">Select a range...</option>
+            <option>Under $10,000</option>
+            <option>$10,000 – $50,000</option>
+            <option>$50,000 – $250,000</option>
+            <option>$250,000+</option>
+            <option>Prefer to discuss</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Project Brief</label>
+          <textarea id="f-brief" placeholder="Describe your challenge, goals, and any key timelines or constraints..."></textarea>
+          <span class="field-err" id="err-brief">Please tell us a little about your project.</span>
+        </div>
+        <button type="submit" class="submit-btn"><span>Send Enquiry →</span></button>
+        <p style="font-size:0.75rem;color:var(--ash);margin-top:1rem;text-align:center">All submissions are treated with strict confidentiality. We typically respond within 4–8 business hours.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     BLOG / INSIGHTS PAGE  (#10)
+     ============================================================ -->
+<div id="page-blog" class="page">
+  <div class="page-hero">
+    <div class="page-hero-bg">
+      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1400&q=70&auto=format&fit=crop" alt="Technology thinking and writing">
+      <div class="page-hero-vignette"></div>
+    </div>
+    <div class="page-hero-inner">
+      <div class="ph-num">INSIGHTS / THINKING</div>
+      <div class="label" data-reveal><div class="label-line"></div><span class="label-text">From Our Consultants</span></div>
+      <h2 class="title" data-reveal data-delay="1">Ideas that <em>move</em><br>the industry forward.</h2>
+      <p class="subtitle" data-reveal data-delay="2">Expert perspectives on enterprise technology, cloud strategy, cybersecurity, data, and digital transformation — written by the practitioners doing the work.</p>
+      <div class="blog-hero-cats" data-reveal data-delay="3">
+        <button class="blog-cat-pill active">All Topics</button>
+        <button class="blog-cat-pill">Cloud Strategy</button>
+        <button class="blog-cat-pill">Cybersecurity</button>
+        <button class="blog-cat-pill">Data & AI</button>
+        <button class="blog-cat-pill">Digital Transformation</button>
+        <button class="blog-cat-pill">Compliance</button>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding:60px 5% 0">
+    <!-- FEATURED ARTICLE -->
+    <div class="blog-featured" data-reveal>
+      <div class="blog-feat-img">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&q=80&auto=format&fit=crop" alt="Cloud migration strategy">
+        <div class="img-overlay"></div>
+      </div>
+      <div class="blog-feat-body">
+        <div class="blog-feat-label">Cloud Strategy</div>
+        <div class="blog-feat-title">Why Nigerian Enterprises Are Getting Cloud Migration Wrong — and How to Fix It</div>
+        <p class="blog-feat-excerpt">Too many organisations migrate to the cloud chasing cost savings, only to discover their bills have tripled within a year. We examine the five most common architectural mistakes and the engineering principles that prevent them — drawn from 40+ real migrations across West Africa.</p>
+        <div class="blog-feat-meta">
+          <span class="author-dot"></span>
+          <span>Adaeze Emeka · CTO</span>
+          <span>·</span>
+          <span>12 April 2025</span>
+          <span>·</span>
+          <span style="font-family:var(--ff-mono)">8 min read</span>
+        </div>
+        <a class="arrow-btn" style="margin-top:1.5rem;display:inline-flex">Read Article →</a>
+      </div>
+    </div>
+
+    <!-- ARTICLES GRID -->
+    <div class="articles-grid">
+      <div class="article-card" data-reveal>
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80&auto=format&fit=crop" alt="Banking fintech AI data"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Data & AI</div>
+          <div class="ac-title">Building AI-Ready Data Pipelines for African Financial Institutions</div>
+          <p class="ac-excerpt">The unique data quality, latency, and compliance challenges facing Nigerian fintechs — and the architecture patterns that address them at scale.</p>
+          <div class="ac-meta">
+            <span>Ngozi Okafor · 28 Mar 2025</span>
+            <span class="ac-read">6 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal data-delay="1">
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80&auto=format&fit=crop" alt="Cybersecurity NDPR compliance"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Compliance</div>
+          <div class="ac-title">NDPR 2.0: What the New Regulations Mean for Your Technology Stack</div>
+          <p class="ac-excerpt">A practical breakdown of the updated Nigeria Data Protection Regulation — and a prioritised remediation checklist for CIOs and CTOs to act on immediately.</p>
+          <div class="ac-meta">
+            <span>Tunde Fashola · 15 Mar 2025</span>
+            <span class="ac-read">5 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal data-delay="2">
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop" alt="Digital transformation strategy meeting"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Digital Transformation</div>
+          <div class="ac-title">The CIO's Playbook for Leading Digital Transformation Without Losing the Organisation</div>
+          <p class="ac-excerpt">Change management is where most transformation programmes fail. Here's the framework we use to bring people along — not just processes.</p>
+          <div class="ac-meta">
+            <span>Kola Balogun · 1 Mar 2025</span>
+            <span class="ac-read">9 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal>
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="ERP enterprise software implementation"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Enterprise Software</div>
+          <div class="ac-title">ERP Implementation in Africa: 7 Mistakes That Cost Organisations Millions</div>
+          <p class="ac-excerpt">Custom ERP projects fail at an alarming rate. These are the seven root causes we've identified across 20+ implementations — and how to avoid each one.</p>
+          <div class="ac-meta">
+            <span>Emeka Okonkwo · 14 Feb 2025</span>
+            <span class="ac-read">7 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal data-delay="1">
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=600&q=80&auto=format&fit=crop" alt="Zero trust cybersecurity network"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Cybersecurity</div>
+          <div class="ac-title">Zero Trust Is Not a Product — It's an Architecture. Here's How to Build It.</div>
+          <p class="ac-excerpt">Most vendors will sell you "zero trust" in a box. Real zero trust is an organisational posture built layer by layer. This is the practical guide.</p>
+          <div class="ac-meta">
+            <span>Tunde Fashola · 28 Jan 2025</span>
+            <span class="ac-read">11 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal data-delay="2">
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&auto=format&fit=crop" alt="Cloud infrastructure DevOps pipeline"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Cloud Strategy</div>
+          <div class="ac-title">FinOps in Practice: How We Cut a Client's AWS Bill by 58% Without Touching the Architecture</div>
+          <p class="ac-excerpt">Cloud cost optimisation doesn't always require re-architecture. Sometimes it's about visibility, tagging hygiene, and reserved instance strategy. A real case study.</p>
+          <div class="ac-meta">
+            <span>Amaka Osei · 10 Jan 2025</span>
+            <span class="ac-read">6 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal>
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop" alt="Data warehouse analytics dashboard"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Data & AI</div>
+          <div class="ac-title">From Spreadsheets to Snowflake: A Practical Data Modernisation Roadmap</div>
+          <p class="ac-excerpt">Most mid-market African companies are still running their analytics on Excel. Here's a realistic, phased path to a modern data stack — without the Silicon Valley price tag.</p>
+          <div class="ac-meta">
+            <span>Ngozi Okafor · 18 Dec 2024</span>
+            <span class="ac-read">8 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal data-delay="1">
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600&q=80&auto=format&fit=crop" alt="Public sector government digital services"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Public Sector</div>
+          <div class="ac-title">Digitising Government: Lessons from Nigeria's Most Successful e-Government Projects</div>
+          <p class="ac-excerpt">After delivering three major government platforms, we've identified what separates successful public sector technology programmes from the ones that stall.</p>
+          <div class="ac-meta">
+            <span>Michael Omotayo · 2 Dec 2024</span>
+            <span class="ac-read">10 min →</span>
+          </div>
+        </div>
+      </div>
+      <div class="article-card" data-reveal data-delay="2">
+        <div class="ac-img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&auto=format&fit=crop" alt="Team culture diversity technology Africa"></div>
+        <div class="ac-body">
+          <div class="ac-cat">Culture & Careers</div>
+          <div class="ac-title">Building a World-Class Engineering Team in Lagos: What We've Learned in 10 Years</div>
+          <p class="ac-excerpt">Talent density, compensation benchmarking, technical interviews, and retention — the honest version of what it takes to build and keep great engineers in Nigeria.</p>
+          <div class="ac-meta">
+            <span>Funke Adeyemi · 15 Nov 2024</span>
+            <span class="ac-read">7 min →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter-strip" data-reveal>
+      <div>
+        <div class="label"><div class="label-line"></div><span class="label-text">Stay Informed</span></div>
+        <div class="nl-title">Get insights delivered to your inbox</div>
+        <p class="nl-sub">New articles every two weeks. No spam, no fluff — just actionable technology intelligence for enterprise decision-makers.</p>
+      </div>
+      <div>
+        <div class="nl-form">
+          <input class="nl-input" type="email" placeholder="your@company.com">
+          <button class="nl-btn">Subscribe</button>
+        </div>
+        <p style="font-size:0.72rem;color:var(--ash);margin-top:0.8rem;font-family:var(--ff-mono)">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="margin-top:80px">
+    <div class="foot-grid">
+      <div><div class="foot-brand-name">Starks <b style="color:var(--gold)">IT</b> Consulting</div><p class="foot-tagline">Enterprise technology consulting built for the African market and trusted globally.</p><div class="foot-certs"><span class="fc">ISO 27001</span><span class="fc">NITDA Reg.</span><span class="fc">AWS Partner</span></div></div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a onclick="showPage('services')">All Services</a></li><li><a onclick="showPage('services')">Custom Software</a></li><li><a onclick="showPage('services')">Cloud & DevOps</a></li></ul></div>
+      <div><div class="foot-col-h">Company</div><ul class="foot-links"><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('team')">Team</a></li><li><a onclick="showPage('cases')">Case Studies</a></li></ul></div>
+      <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a onclick="showPage('contact')">Get in Touch</a></li><li><a href="mailto:info@starks.com.ng">info@starks.com.ng</a></li><li><a href="tel:+2341234567890">+234 (0)123 456 7890</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span class="foot-copy">© 2014–2025 Starks IT Consulting Ltd.</span><div class="foot-legal"><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#ndpr">NDPR</a></div></div>
+  </footer>
+</div>
+
+<script>
+// ── TOUCH DEVICE: hide custom cursor ──────────────────────
+if('ontouchstart' in window){
+  document.getElementById('cursor').style.display='none';
+  document.getElementById('cursor-ring').style.display='none';
+} else {
+  document.body.style.cursor='none';
+  const cursor=document.getElementById('cursor');
+  const ring=document.getElementById('cursor-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{
+    mx=e.clientX;my=e.clientY;
+    cursor.style.left=mx+'px';cursor.style.top=my+'px';
+  });
+  // Cursor grow on interactive elements
+  document.addEventListener('mouseover',e=>{
+    if(e.target.closest('a,button,.hsvc,.case-card2,.article-card,.team-member,.hcase')){
+      document.body.classList.add('cursor-hover');
+    }
+  });
+  document.addEventListener('mouseout',e=>{
+    if(e.target.closest('a,button,.hsvc,.case-card2,.article-card,.team-member,.hcase')){
+      document.body.classList.remove('cursor-hover');
+    }
+  });
+  (function animateRing(){
+    rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+    ring.style.left=Math.round(rx)+'px';ring.style.top=Math.round(ry)+'px';
+    requestAnimationFrame(animateRing);
+  })();
+}
+
+// ── SCROLL PROGRESS BAR (#13) ──────────────────────────────
+const progressBar=document.getElementById('progress-bar');
+function updateProgress(){
+  const el=document.querySelector('.page.active');
+  if(!el)return;
+  const h=el.scrollHeight-window.innerHeight;
+  progressBar.style.width=(h>0?(window.scrollY/h*100):0)+'%';
+}
+window.addEventListener('scroll',updateProgress,{passive:true});
+
+// ── BACK TO TOP (#14) ─────────────────────────────────────
+const backTop=document.getElementById('back-top');
+window.addEventListener('scroll',()=>{
+  backTop.classList.toggle('visible',window.scrollY>400);
+  updateProgress();
+},{passive:true});
+
+// ── NAVBAR SCROLL SOLID ────────────────────────────────────
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40),{passive:true});
+if(window.scrollY>40)nav.classList.add('solid');
+
+// ── HAMBURGER ─────────────────────────────────────────────
+const hamburger=document.getElementById('hamburger');
+const mobDrawer=document.getElementById('mob-drawer');
+const mobOverlay=document.getElementById('mob-overlay');
+hamburger.addEventListener('click',()=>{
+  const open=mobDrawer.classList.toggle('open');
+  mobOverlay.classList.toggle('open',open);
+  hamburger.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+});
+function closeMobileNav(){
+  mobDrawer.classList.remove('open');
+  mobOverlay.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// ── PAGE TRANSITION CURTAIN (#12) ─────────────────────────
+const curtain=document.getElementById('page-curtain');
+let transitioning=false;
+function runTransition(cb){
+  if(transitioning)return;
+  transitioning=true;
+  curtain.classList.add('animating');
+  // Swap page at midpoint (curtain fully covers screen)
+  setTimeout(cb,330);
+  curtain.addEventListener('animationend',()=>{
+    curtain.classList.remove('animating');
+    transitioning=false;
+  },{once:true});
+}
+
+// ── PAGE ROUTER (#16 hash routing) ────────────────────────
+const pages=['home','services','about','cases','team','blog','contact'];
+function showPage(id,skipTransition=false){
+  if(!document.getElementById('page-'+id))return;
+  function doSwitch(){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    const target=document.getElementById('page-'+id);
+    target.classList.add('active');
+    window.scrollTo({top:0,behavior:'instant'});
+    updateProgress();
+    // nav highlights
+    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===id));
+    document.querySelectorAll('[data-mob-page]').forEach(a=>a.classList.toggle('active',a.dataset.mobPage===id));
+    // hash
+    history.pushState({page:id},'','#'+id);
+    // re-reveal
+    setTimeout(()=>{
+      target.querySelectorAll('[data-reveal]').forEach(el=>el.classList.remove('revealed'));
+      observeReveals();
+    },60);
+  }
+  if(skipTransition){doSwitch();}
+  else{runTransition(doSwitch);}
+}
+
+// Hash routing on load (#16)
+window.addEventListener('popstate',e=>{
+  const id=(e.state&&e.state.page)||(location.hash.slice(1))||'home';
+  if(pages.includes(id))showPage(id,true);
+});
+(function initFromHash(){
+  const hash=location.hash.slice(1);
+  const id=pages.includes(hash)?hash:'home';
+  showPage(id,true);
+})();
+
+// ── SCROLL REVEAL ─────────────────────────────────────────
+function observeReveals(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);}
+    });
+  },{threshold:0.07,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.page.active [data-reveal]').forEach(el=>{
+    if(!el.classList.contains('revealed'))obs.observe(el);
+  });
+}
+observeReveals();
+
+// ── BLOG CATEGORY PILLS ───────────────────────────────────
+document.querySelectorAll('.blog-cat-pill').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.blog-cat-pill').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// ── CASE STUDIES FILTER BUTTONS ───────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// ── FORM VALIDATION (#15) ─────────────────────────────────
+const contactForm=document.getElementById('contact-form');
+if(contactForm){
+  contactForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    let valid=true;
+    function validate(fieldId,errId,checkFn){
+      const el=document.getElementById(fieldId);
+      const err=document.getElementById(errId);
+      if(!el||!err)return;
+      const ok=checkFn(el.value.trim());
+      el.classList.toggle('form-error',!ok);
+      err.classList.toggle('show',!ok);
+      if(!ok)valid=false;
+    }
+    validate('f-fname','err-fname',v=>v.length>0);
+    validate('f-lname','err-lname',v=>v.length>0);
+    validate('f-email','err-email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    validate('f-company','err-company',v=>v.length>0);
+    validate('f-service','err-service',v=>v!=='');
+    validate('f-brief','err-brief',v=>v.length>10);
+    if(valid){
+      contactForm.style.display='none';
+      document.getElementById('form-success').classList.add('show');
+    }
+  });
+  // clear errors on input
+  contactForm.querySelectorAll('input,select,textarea').forEach(el=>{
+    el.addEventListener('input',()=>{
+      el.classList.remove('form-error');
+      const errId='err-'+el.id.replace('f-','');
+      const err=document.getElementById(errId);
+      if(err)err.classList.remove('show');
+    });
+  });
+}
+</script>
+</body>
+</html>
