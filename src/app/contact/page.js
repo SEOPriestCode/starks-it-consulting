@@ -67,7 +67,7 @@ export default function Contact() {
             </div>
             <div className="cd" data-reveal data-delay="1">
               <div className="cd-ico">📞</div>
-              <div><div className="cd-lbl">Telephone</div><div className="cd-val">+234 (0)123 456 7890</div></div>
+              <div><div className="cd-lbl">Telephone</div><div className="cd-val">+234 (0)816 561 8476</div></div>
             </div>
             <div className="cd" data-reveal data-delay="2">
               <div className="cd-ico">✉</div>
@@ -102,19 +102,19 @@ export default function Contact() {
                 <div className="form-row">
                   <div className="fg">
                     <label>First Name</label>
-                    <input type="text" name="fname" placeholder="John" value={formData.fname} onChange={handleChange} className={errors.fname ? 'form-error' : ''} />
+                    <input type="text" name="fname" placeholder="Michael" value={formData.fname} onChange={handleChange} className={errors.fname ? 'form-error' : ''} />
                     {errors.fname && <span className="field-err show">Please enter your first name.</span>}
                   </div>
                   <div className="fg">
                     <label>Last Name</label>
-                    <input type="text" name="lname" placeholder="Doe" value={formData.lname} onChange={handleChange} className={errors.lname ? 'form-error' : ''} />
+                    <input type="text" name="lname" placeholder="Omotayo" value={formData.lname} onChange={handleChange} className={errors.lname ? 'form-error' : ''} />
                     {errors.lname && <span className="field-err show">Please enter your last name.</span>}
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="fg">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="john@company.com" value={formData.email} onChange={handleChange} className={errors.email ? 'form-error' : ''} />
+                    <input type="email" name="email" placeholder="mike@company.com" value={formData.email} onChange={handleChange} className={errors.email ? 'form-error' : ''} />
                     {errors.email && <span className="field-err show">Please enter a valid email address.</span>}
                   </div>
                   <div className="fg">

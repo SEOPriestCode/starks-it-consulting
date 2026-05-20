@@ -14,7 +14,7 @@ export default function About() {
           <div className="ph-num">ABOUT US / OUR STORY</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Who We Are</span></div>
           <h2 className="title" data-reveal data-delay="1">Built in Lagos.<br /><em>Trusted globally.</em></h2>
-          <p className="subtitle" data-reveal data-delay="2">Since 2014, we have been proving that African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world.</p>
+          <p className="subtitle" data-reveal data-delay="2">Since 2017, we have been proving that African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world.</p>
         </div>
       </div>
 
@@ -25,19 +25,19 @@ export default function About() {
             <div className="img-overlay"></div>
           </div>
           <div className="about-gold-box">
-            <span className="agb-num">2014</span>
+            <span className="agb-num">2017</span>
             <span className="agb-text">Year Founded</span>
           </div>
         </div>
         <div className="about-text" data-reveal="right">
           <div className="label"><div className="label-line"></div><span className="label-text">Our Story</span></div>
           <h2 className="title">A decade of <em>deliberate</em> growth</h2>
-          <p>Founded in Lagos in 2014 by Michael Omotayo, Starks IT Consulting began with a clear conviction: African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world. We started small — a team of five, one shared office in Ikeja, and an absolute commitment to quality over quantity.</p>
+          <p>Founded in Lagos in 2017 by Michael Omotayo, Starks IT Consulting began with a clear conviction: African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world. We started small — a team of three, one shared office in Ikeja, and an absolute commitment to quality over quantity.</p>
           <p>Over the decade that followed, we grew into a full-spectrum IT consultancy with over 65 professionals, serving clients across banking, energy, telecoms, healthcare, and the public sector. Our work has helped organisations launch new revenue lines, dramatically reduce operational costs, and navigate complex regulatory landscapes — always with rigour and integrity.</p>
           <p>We are proudly Nigerian, globally fluent, and deeply committed to building technology that lasts. Not the kind that impresses in a demo and disappoints in production. The kind that becomes core infrastructure.</p>
           <div className="about-certs">
             <div className="acert"><span className="acert-icon">✓</span>ISO 27001:2022 Information Security Management Certified</div>
-            <div className="acert"><span className="acert-icon">✓</span>Microsoft Gold Partner & AWS Select Consulting Partner</div>
+            {/*<div className="acert"><span className="acert-icon">✓</span>Microsoft Gold Partner & AWS Select Consulting Partner</div>*/}
             <div className="acert"><span className="acert-icon">✓</span>NITDA registered and fully NDPR compliant across all engagements</div>
             <div className="acert"><span className="acert-icon">✓</span>CBN-accredited fintech solution provider since 2017</div>
           </div>
@@ -66,9 +66,9 @@ export default function About() {
 
       <div id="about-numbers" style={{ margin: '0 5% 80px' }}>
         <div className="numbers-band">
-          <div className="nb" data-reveal><span className="nb-val">280+</span><span className="nb-label">Projects Completed</span><p className="nb-desc">Across 18 countries and every major sector of the Nigerian economy</p></div>
+          <div className="nb" data-reveal><span className="nb-val">150+</span><span className="nb-label">Projects Completed</span><p className="nb-desc">Across 18 countries and every major sector of the Nigerian economy</p></div>
           <div className="nb" data-reveal data-delay="1"><span className="nb-val">₦4.2B+</span><span className="nb-label">Client Value Generated</span><p className="nb-desc">Documented cost savings and new revenue attributable to our solutions</p></div>
-          <div className="nb" data-reveal data-delay="2"><span className="nb-val">65+</span><span className="nb-label">Expert Consultants</span><p className="nb-desc">Certified specialists in engineering, security, data, and strategy</p></div>
+          <div className="nb" data-reveal data-delay="2"><span className="nb-val">30+</span><span className="nb-label">Expert Consultants</span><p className="nb-desc">Certified specialists in engineering, security, data, and strategy</p></div>
           <div className="nb" data-reveal data-delay="3"><span className="nb-val">99.7%</span><span className="nb-label">Uptime Delivered</span><p className="nb-desc">For managed clients over the past three consecutive calendar years</p></div>
         </div>
       </div>

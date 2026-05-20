@@ -2,18 +2,20 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {
   const pathname = usePathname();
+  const { theme } = useTheme();
 
   if (pathname === '/contact') {
     return null; // The original Contact page did not have a footer
   }
 
   // Define default/home values
-  let certs = ['ISO 27001', 'NITDA Reg.', 'AWS Partner', 'MS Gold', 'CBN Accredited'];
+  let certs = ['ISO 27001', 'NITDA Reg.'];
   let col3Title = 'Contact';
-  let tagline = 'Enterprise technology consulting built for the African market and trusted globally. A decade of delivery, integrity, and innovation.';
+  let tagline = 'Enterprise technology consulting built for the African market and trusted globally. About a decade of delivery, integrity, and innovation.';
 
   let col1Links = [
     { name: 'Custom Software', path: '/services' },
@@ -33,13 +35,13 @@ export default function Footer() {
   ];
 
   let col3Links = [
-    { name: '+234 (0)123 456 7890', href: 'tel:+2341234567890' },
+    { name: '+234 (0)816 561 8476', href: 'tel:+2348165618476' },
     { name: 'info@starks.com.ng', href: 'mailto:info@starks.com.ng' },
     { name: '16 Shagamu Avenue, Ikeja', href: 'https://maps.google.com/?q=Ikeja,Lagos,Nigeria' },
     { name: 'Lagos, Nigeria', href: 'https://maps.google.com/?q=Lagos,Nigeria' },
   ];
 
-  let copyText = '© 2014–2025 Starks IT Consulting Ltd. RC 1234567.';
+  let copyText = '© 2017–2025 Starks IT Consulting Ltd. RC 8349226.';
   let legalLinks = [
     { name: 'Privacy Policy', path: '#privacy' },
     { name: 'Terms', path: '#terms' },
@@ -49,7 +51,7 @@ export default function Footer() {
 
   // Adjust values based on the page
   if (pathname === '/services') {
-    certs = ['ISO 27001', 'NITDA Reg.', 'AWS Partner', 'MS Gold'];
+    certs = ['ISO 27001', 'NITDA Reg.'];
     tagline = 'Enterprise technology consulting built for the African market and trusted globally.';
     col1Links = [
       { name: 'Custom Software', path: '/services' },
@@ -66,17 +68,17 @@ export default function Footer() {
     col3Title = 'Get Started';
     col3Links = [
       { name: 'Book a Consultation', path: '/contact' },
-      { name: '+234 (0)123 456 7890', href: 'tel:+2341234567890' },
+      { name: '+234 (0)816 561 8476', href: 'tel:+2348165618476' },
       { name: 'info@starks.com.ng', href: 'mailto:info@starks.com.ng' }
     ];
-    copyText = '© 2014–2025 Starks IT Consulting Ltd.';
+    copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
       { name: 'Privacy', path: '#privacy' },
       { name: 'Terms', path: '#terms' },
       { name: 'NDPR', path: '#ndpr' }
     ];
   } else if (pathname === '/about') {
-    certs = ['ISO 27001', 'NITDA Reg.', 'AWS Partner'];
+    certs = ['ISO 27001', 'NITDA Reg.'];
     tagline = 'Enterprise technology consulting built for the African market and trusted globally.';
     col1Links = [
       { name: 'All Services', path: '/services' },
@@ -91,9 +93,9 @@ export default function Footer() {
     col3Links = [
       { name: 'Get in Touch', path: '/contact' },
       { name: 'info@starks.com.ng', href: 'mailto:info@starks.com.ng' },
-      { name: '+234 (0)123 456 7890', href: 'tel:+2341234567890' }
+      { name: '+234 (0)816 561 8476', href: 'tel:+2348165618476' }
     ];
-    copyText = '© 2014–2025 Starks IT Consulting Ltd.';
+    copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
       { name: 'Privacy', path: '#privacy' },
       { name: 'Terms', path: '#terms' },
@@ -112,7 +114,7 @@ export default function Footer() {
     col3Links = [
       { name: 'Get in Touch', path: '/contact' }
     ];
-    copyText = '© 2014–2025 Starks IT Consulting Ltd.';
+    copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
       { name: 'Privacy', path: '#privacy' },
       { name: 'Terms', path: '#terms' }
@@ -130,13 +132,13 @@ export default function Footer() {
     col3Links = [
       { name: 'Get in Touch', path: '/contact' }
     ];
-    copyText = '© 2014–2025 Starks IT Consulting Ltd.';
+    copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
       { name: 'Privacy', path: '#privacy' },
       { name: 'Terms', path: '#terms' }
     ];
   } else if (pathname === '/blog') {
-    certs = ['ISO 27001', 'NITDA Reg.', 'AWS Partner'];
+    certs = ['ISO 27001', 'NITDA Reg.'];
     tagline = 'Enterprise technology consulting built for the African market and trusted globally.';
     col1Links = [
       { name: 'All Services', path: '/services' },
@@ -151,9 +153,9 @@ export default function Footer() {
     col3Links = [
       { name: 'Get in Touch', path: '/contact' },
       { name: 'info@starks.com.ng', href: 'mailto:info@starks.com.ng' },
-      { name: '+234 (0)123 456 7890', href: 'tel:+2341234567890' }
+      { name: '+234 (0)816 561 8476', href: 'tel:+2348165618476' }
     ];
-    copyText = '© 2014–2025 Starks IT Consulting Ltd.';
+    copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
       { name: 'Privacy', path: '#privacy' },
       { name: 'Terms', path: '#terms' },
@@ -166,7 +168,16 @@ export default function Footer() {
       <div className="foot-grid">
         <div>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1rem', textDecoration: 'none' }}>
-            <img src="/logo.png" alt="Starks IT Consulting Logo" style={{ height: '42px', width: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+            <img 
+              src="/logo.png" 
+              alt="Starks IT Consulting Logo" 
+              style={{ 
+                height: '42px', 
+                width: 'auto', 
+                objectFit: 'contain', 
+                filter: theme === 'dark' ? 'brightness(0) invert(1)' : 'none' 
+              }} 
+            />
             <div className="foot-brand-name" style={{ margin: 0 }}>Starks <b style={{ color: 'var(--gold)' }}>IT</b> Consulting</div>
           </Link>
           <p className="foot-tagline">{tagline}</p>

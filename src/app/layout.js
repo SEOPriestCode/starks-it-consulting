@@ -1,6 +1,7 @@
 import { Playfair_Display, Syne, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import ClientLayout from './ClientLayout';
+import { ThemeProvider } from '../context/ThemeContext';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -32,10 +33,30 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${syne.variable} ${jetbrains.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('starks_theme');
+                  if (saved === 'light') {
+                    document.documentElement.classList.add('light');
+                  } else {
+                    document.documentElement.classList.remove('light');
+                  }
+                } catch (e) {}
+              })();
+            `
+          }}
+        />
+      </head>
       <body className="antialiased">
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+        <ThemeProvider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

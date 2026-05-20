@@ -9,7 +9,7 @@ export default function Home() {
         <div className="home-hero-left">
           <div className="hero-tag" data-reveal>
             <div className="hero-dot"></div>
-            <span className="hero-tag-text">Est. 2014 · Lagos, Nigeria · ISO 27001</span>
+            <span className="hero-tag-text">Est. 2017 · Lagos, Nigeria · {/* ISO 27001*/}</span>
           </div>
           <h1 className="hero-h" data-reveal data-delay="1">
             Technology that <em>moves</em><br />your business<br />forward.
@@ -20,9 +20,9 @@ export default function Home() {
             <Link href="/contact" className="btn btn-ghost" style={{ textDecoration: 'none' }}>Book a Consultation</Link>
           </div>
           <div className="hero-stats" data-reveal data-delay="4">
-            <div><div className="hs-num">10+</div><div className="hs-label">Years in Business</div></div>
-            <div><div className="hs-num">280+</div><div className="hs-label">Projects Delivered</div></div>
-            <div><div className="hs-num">94%</div><div className="hs-label">Client Retention</div></div>
+            <div><div className="hs-num">9+</div><div className="hs-label">Years in Business</div></div>
+            <div><div className="hs-num">150+</div><div className="hs-label">Projects Delivered</div></div>
+            <div><div className="hs-num">84%</div><div className="hs-label">Client Retention</div></div>
           </div>
         </div>
         <div className="home-hero-right">
@@ -30,21 +30,21 @@ export default function Home() {
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop" alt="Modern office technology workspace" loading="eager" />
             <div className="img-overlay"></div>
           </div>
-          <div className="hero-overlay-text">LAGOS · NIGERIA · 2014</div>
+          <div className="hero-overlay-text">LAGOS · NIGERIA · 2017</div>
         </div>
       </section>
 
       {/* TICKER */}
       <div className="ticker-wrap">
         <div className="ticker-inner">
-          <span className="ti">Access Bank</span><span className="ti">MTN Nigeria</span><span className="ti">Dangote Group</span>
-          <span className="ti">Flutterwave</span><span className="ti">NLNG</span><span className="ti">Lagos State Govt</span>
-          <span className="ti">Zenith Bank</span><span className="ti">Andela</span><span className="ti">Interswitch</span>
-          <span className="ti">NNPC Limited</span><span className="ti">Nestlé Nigeria</span><span className="ti">PwC West Africa</span>
-          <span className="ti">Access Bank</span><span className="ti">MTN Nigeria</span><span className="ti">Dangote Group</span>
-          <span className="ti">Flutterwave</span><span className="ti">NLNG</span><span className="ti">Lagos State Govt</span>
-          <span className="ti">Zenith Bank</span><span className="ti">Andela</span><span className="ti">Interswitch</span>
-          <span className="ti">NNPC Limited</span><span className="ti">Nestlé Nigeria</span><span className="ti">PwC West Africa</span>
+          <span className="ti">AP-LBC UK</span><span className="ti">BIC Nigeria</span><span className="ti">Lucky Stationery</span>
+          <span className="ti">36 Media</span><span className="ti">DECIMALS</span><span className="ti">LAMATA</span>
+          <span className="ti">Lucky Stationery</span><span className="ti">AP-LBC UK</span><span className="ti">36 Media</span>
+          <span className="ti">DECIMALS</span><span className="ti">BIC Nigeria</span><span className="ti">Lucky Stationery</span>
+          <span className="ti">LAMATA</span><span className="ti">DECIMALS</span><span className="ti">LAMATA</span>
+          <span className="ti">BIC Nigeria</span><span className="ti">AP-LBC UK</span><span className="ti">36 Media</span>
+          {/*<span className="ti">Zenith Bank</span><span className="ti">Andela</span><span className="ti">Interswitch</span>
+          <span className="ti">NNPC Limited</span><span className="ti">Nestlé Nigeria</span><span className="ti">PwC West Africa</span>*/}
         </div>
       </div>
 
@@ -124,26 +124,26 @@ export default function Home() {
             <div className="img-overlay"></div>
           </div>
           <div className="why-badge">
-            <span className="why-badge-num">10+</span>
+            <span className="why-badge-num">9+</span>
             <span className="why-badge-text">Years of Trust</span>
           </div>
         </div>
         <div data-reveal="right">
           <div className="label"><div className="label-line"></div><span className="label-text">Why Starks IT</span></div>
-          <h2 className="title">A decade of delivering <em>what matters</em></h2>
-          <p className="subtitle">Founded in Lagos in 2014, we&apos;ve grown from a boutique development shop into a full-spectrum IT consultancy serving clients across 18 countries — always with rigour and integrity.</p>
+          <h2 className="title">About a decade of delivering <em>what matters</em></h2>
+          <p className="subtitle">Founded in Lagos in 2017, we&apos;ve grown from a boutique development shop into a full-spectrum IT consultancy serving clients across different countries — always with rigour and integrity.</p>
           <div className="why-features">
             <div className="why-feat">
               <div className="wf-icon">🏆</div>
               <div><div className="wf-title">ISO 27001:2022 Certified</div><p className="wf-text">Information security management to international standards, across every client engagement.</p></div>
             </div>
-            <div className="why-feat">
+            {/*<div className="why-feat">
               <div className="wf-icon">⚡</div>
               <div><div className="wf-title">Microsoft Gold & AWS Partner</div><p className="wf-text">Certified at the highest partner tier on both leading cloud platforms — giving you access to enterprise pricing and priority support.</p></div>
-            </div>
+            </div>*/}
             <div className="why-feat">
               <div className="wf-icon">🌍</div>
-              <div><div className="wf-title">18 Countries, Deep Local Roots</div><p className="wf-text">Genuinely pan-African expertise with global standards. We understand the unique constraints and opportunities of operating on this continent.</p></div>
+              <div><div className="wf-title">{/*18 Countries,*/}Deep Local Roots</div><p className="wf-text">Genuinely pan-African expertise with global standards. We understand the unique constraints and opportunities of operating on this continent.</p></div>
             </div>
             <div className="why-feat">
               <div className="wf-icon">🔒</div>

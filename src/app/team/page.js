@@ -32,7 +32,7 @@ export default function Team() {
             </div>
             <div className="tm-line"></div>
             <div className="tm-name">Michael Omotayo</div>
-            <div className="tm-role">Founder & Chief Executive Officer</div>
+            <div className="tm-role">Founder & Team Lead</div>
             <p className="tm-bio">8+ years in enterprise software. Previously led technology at BIC Nigeria. MSc Economics, University of Lagos.</p>
             <div className="tm-certs"><span className="tc">PMP</span><span className="tc">AWS Arch</span><span className="tc">TOGAF</span></div>
           </div>
@@ -50,31 +50,29 @@ export default function Team() {
           </div>
           <div className="team-member" data-reveal data-delay="2">
             <div className="tm-photo">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&auto=format&fit=crop&crop=face" alt="Tunde Fashola Security Head" />
+              <img src="/clive.png" alt="Clive Akporube Head of Cybersecurity" />
               <div className="tm-photo-overlay"></div>
               <div className="tm-social"><div className="tm-soc-btn">in</div><div className="tm-soc-btn">✉</div></div>
             </div>
             <div className="tm-line"></div>
-            <div className="tm-name">Tunde Fashola</div>
+            <div className="tm-name">Clive Akporube</div>
             <div className="tm-role">Head of Cybersecurity</div>
-            <p className="tm-bio">Certified ethical hacker and former CISO of a leading Nigerian financial institution. Leads our security practice and compliance advisory.</p>
+            <p className="tm-bio">Certified ethical hacker and former CISO of a leading Nigerian IT institution. Leads our security practice and compliance advisory.</p>
             <div className="tm-certs"><span className="tc">CISSP</span><span className="tc">CEH</span><span className="tc">CISM</span></div>
           </div>
-          <div className="team-member" data-reveal data-delay="3">
-            <div className="tm-photo">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format&fit=crop&crop=face" alt="Ngozi Okafor Data Director" />
-              <div className="tm-photo-overlay"></div>
-              <div className="tm-social"><div className="tm-soc-btn">in</div><div className="tm-soc-btn">✉</div></div>
+          <div className="team-member" data-reveal data-delay="2">
+              <div className="tm-photo">
+                <img src="/Fidelis.png" alt="Fidelis Chidi Strategy consultant" />
+                <div className="tm-photo-overlay"></div>
+              </div>
+              <div className="tm-line"></div>
+              <div className="tm-name">Fidelis Chidi</div>
+              <div className="tm-role">Head of Strategy & Advisory</div>
+              <p className="tm-bio">SyteMap consultant. Specialises in digital transformation for Technology driven institutions.</p>
             </div>
-            <div className="tm-line"></div>
-            <div className="tm-name">Ngozi Okafor</div>
-            <div className="tm-role">Director of Data & AI</div>
-            <p className="tm-bio">ML engineer and data strategist, 12 years across fintech and telecoms. Built predictive models deployed across seven countries. MSc Data Science, UCL.</p>
-            <div className="tm-certs"><span className="tc">Azure AI</span><span className="tc">Databricks</span></div>
-          </div>
         </div>
 
-        <div style={{ marginTop: '4rem' }}>
+        {/* <div style={{ marginTop: '4rem' }}>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Practice Leads</span></div>
           <div className="team-grid2">
             <div className="team-member" data-reveal>
@@ -97,16 +95,18 @@ export default function Team() {
               <div className="tm-role">Lead Cloud Architect</div>
               <p className="tm-bio">AWS and Terraform specialist. Led 40+ cloud migration projects across West Africa.</p>
             </div>
-            <div className="team-member" data-reveal data-delay="2">
-              <div className="tm-photo">
-                <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80&auto=format&fit=crop&crop=face" alt="Strategy consultant" />
-                <div className="tm-photo-overlay"></div>
-              </div>
-              <div className="tm-line"></div>
-              <div className="tm-name">Kola Balogun</div>
-              <div className="tm-role">Head of Strategy & Advisory</div>
-              <p className="tm-bio">Former McKinsey consultant. Specialises in digital transformation for financial institutions.</p>
+            <div className="team-member" data-reveal data-delay="3">
+            <div className="tm-photo">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format&fit=crop&crop=face" alt="Ngozi Okafor Data Director" />
+              <div className="tm-photo-overlay"></div>
+              <div className="tm-social"><div className="tm-soc-btn">in</div><div className="tm-soc-btn">✉</div></div>
             </div>
+            <div className="tm-line"></div>
+            <div className="tm-name">Ngozi Okafor</div>
+            <div className="tm-role">Director of Data & AI</div>
+            <p className="tm-bio">ML engineer and data strategist, 12 years across fintech and telecoms. Built predictive models deployed across seven countries. MSc Data Science, UCL.</p>
+            <div className="tm-certs"><span className="tc">Azure AI</span><span className="tc">Databricks</span></div>
+          </div>
             <div className="team-member" data-reveal data-delay="3">
               <div className="tm-photo">
                 <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80&auto=format&fit=crop&crop=face" alt="Project management director" />
@@ -118,7 +118,7 @@ export default function Team() {
               <p className="tm-bio">PMP-certified delivery director. Oversees all client engagements end-to-end.</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section id="team-culture">
