@@ -62,7 +62,7 @@ export default function Team() {
           </div>
           <div className="team-member" data-reveal data-delay="2">
               <div className="tm-photo">
-                <img src="/Fidelis.png" alt="Fidelis Chidi Strategy consultant" />
+                <img src="/fidelis.png" alt="Fidelis Chidi Strategy consultant" />
                 <div className="tm-photo-overlay"></div>
               </div>
               <div className="tm-line"></div>

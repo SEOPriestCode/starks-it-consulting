@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BannerSlider from '../components/BannerSlider';
 
 export default function Home() {
   return (
@@ -26,10 +27,8 @@ export default function Home() {
           </div>
         </div>
         <div className="home-hero-right">
-          <div className="img-wrap" style={{ position: 'absolute', inset: 0 }}>
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop" alt="Modern office technology workspace" loading="eager" />
-            <div className="img-overlay"></div>
-          </div>
+          <BannerSlider />
+          <div className="img-overlay" style={{ pointerEvents: 'none' }}></div>
           <div className="hero-overlay-text">LAGOS · NIGERIA · 2017</div>
         </div>
       </section>
