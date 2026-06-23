@@ -40,8 +40,8 @@ body.cursor-hover #cursor-ring{width:64px;height:64px;opacity:0.5}
 @keyframes pageOut{from{opacity:1}to{opacity:0;transform:translateY(-16px)}}
 
 /* NAVBAR */
-#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background 0.5s,box-shadow 0.5s}
-#nav.solid{background:rgba(8,14,26,0.96);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(200,168,75,0.12)}
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:background 0.5s,box-shadow 0.5s;backdrop-filter:blur(8px)}
+#nav.solid{background:rgba(8,14,26,0.85);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(200,168,75,0.12)}
 .nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none}
 .nav-logo-box{width:42px;height:42px;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:var(--ff-mono);font-size:13px;color:var(--gold);letter-spacing:-1px;position:relative;overflow:hidden}
 .nav-logo-box::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform 0.4s var(--ease)}
@@ -762,8 +762,12 @@ html.light body {
   background: var(--ink);
   color: var(--white);
 }
+html.light #nav {
+  backdrop-filter: blur(8px);
+}
 html.light #nav.solid {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(184, 134, 11, 0.1);
 }
 html.light .img-overlay {

@@ -26,8 +26,17 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'Starks IT Consulting',
-  description: 'Enterprise technology consulting built for the African market and trusted globally.',
+  title: 'IT Consulting Nigeria | Enterprise IT Services | Starks IT Consulting',
+  description: 'Leading IT consulting company in Nigeria providing enterprise IT services, cloud solutions, cybersecurity, software development, and managed IT services for businesses in Lagos, Abuja, and across Africa.',
+  keywords: 'IT consulting Nigeria, IT services Lagos, enterprise IT solutions, cloud consulting Nigeria, cybersecurity services, software development Nigeria, managed IT services Abuja, IT infrastructure, digital transformation',
+  icons: {
+    icon: [
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {

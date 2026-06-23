@@ -1,5 +1,7 @@
 export const metadata = {
-  title: 'About | Starks IT Consulting',
+  title: 'About Our IT Consulting Company | Starks IT Consulting Nigeria',
+  description: 'Learn about Starks IT Consulting, a leading IT consulting company in Nigeria providing enterprise IT services, cloud solutions, cybersecurity, and digital transformation since 2017.',
+  keywords: 'IT consulting company Nigeria, about Starks IT, IT services provider Lagos, enterprise IT solutions Nigeria, cloud consulting, cybersecurity services, digital transformation Africa',
 };
 
 export default function About() {

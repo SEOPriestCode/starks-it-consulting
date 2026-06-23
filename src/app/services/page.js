@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'IT Services Nigeria | Managed IT, Cloud, Cybersecurity & Software Development',
-  description: 'Comprehensive IT services in Nigeria. Managed IT services, cloud solutions, cybersecurity, software development, and IT consulting for businesses in Lagos, Abuja, and across Nigeria.',
-  keywords: 'IT services Nigeria, managed IT services Lagos, cloud computing Nigeria, cybersecurity Nigeria, software development Nigeria, IT consulting Nigeria, IT solutions Abuja, technology services Nigeria',
+  title: 'IT Consulting Services Nigeria | Enterprise IT Solutions | Starks IT Consulting',
+  description: 'Professional IT consulting services in Nigeria. Enterprise IT solutions including managed IT services, cloud consulting, cybersecurity, software development, and digital transformation for businesses in Lagos, Abuja, and across Africa.',
+  keywords: 'IT consulting services Nigeria, enterprise IT solutions, IT consulting Lagos, IT consulting Abuja, managed IT services Nigeria, cloud consulting, cybersecurity consulting, software development Nigeria, digital transformation Africa, IT strategy consulting',
 };
 
 export default function Services() {

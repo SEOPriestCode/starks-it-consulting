@@ -107,7 +107,9 @@ export default function Blog() {
   return (
     <div className="page active">
       <Head>
-        <title>Insights | Starks IT Consulting</title>
+        <title>IT Consulting Insights | Technology Blog | Starks IT Consulting Nigeria</title>
+        <meta name="description" content="Expert insights on IT consulting, cloud strategy, cybersecurity, data analytics, and digital transformation from Starks IT Consulting professionals in Nigeria." />
+        <meta name="keywords" content="IT consulting blog, technology insights Nigeria, cloud strategy, cybersecurity consulting, data analytics, digital transformation Africa, enterprise IT solutions, IT best practices" />
       </Head>
       <div className="page-hero">
         <div className="page-hero-bg">

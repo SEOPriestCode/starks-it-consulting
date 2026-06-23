@@ -13,9 +13,9 @@ export default function Home() {
             <span className="hero-tag-text">Est. 2017 · Lagos, Nigeria · {/* ISO 27001*/}</span>
           </div>
           <h1 className="hero-h" data-reveal data-delay="1">
-            Technology that <em>moves</em><br />your business<br />forward.
+            IT Consulting that <em>moves</em><br />your business<br />forward.
           </h1>
-          <p className="hero-p" data-reveal data-delay="2">Starks IT Consulting partners with organisations across Africa and beyond to architect, deliver, and manage transformative digital solutions — from enterprise software to cloud infrastructure.</p>
+          <p className="hero-p" data-reveal data-delay="2">Starks IT Consulting partners with organisations across Africa and beyond to architect, deliver, and manage transformative IT solutions — from enterprise software to cloud infrastructure.</p>
           <div className="hero-btns" data-reveal data-delay="3">
             <Link href="/cases" className="btn btn-gold" style={{ textDecoration: 'none' }}><span>View Our Work</span></Link>
             <Link href="/contact" className="btn btn-ghost" style={{ textDecoration: 'none' }}>Book a Consultation</Link>
