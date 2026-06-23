@@ -397,7 +397,7 @@ footer{background:var(--ink);border-top:1px solid rgba(200,168,75,0.06);padding:
 /* ============================================================
    BACK TO TOP  (#14)
    ============================================================ */
-#back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--gold);color:var(--ink);border:none;display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(16px);transition:opacity 0.4s var(--ease),transform 0.4s var(--ease);font-size:1.1rem;font-weight:700}
+#back-top{position:fixed;bottom:2rem;right:2rem;width:32px;height:32px;background:var(--gold);color:var(--ink);border:none;display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;transform:translateY(16px);transition:opacity 0.4s var(--ease),transform 0.4s var(--ease);font-size:0.8rem;font-weight:700}
 #back-top.visible{opacity:1;transform:none}
 #back-top:hover{background:var(--gold2)}
 

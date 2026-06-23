@@ -63,7 +63,7 @@ export default function Contact() {
             <p style={{ fontSize: '0.9rem', color: 'var(--ash2)', fontWeight: 300, lineHeight: 1.75, marginBottom: '2.5rem' }} data-reveal data-delay="2">Whether you have a fully-formed brief or just a challenge worth solving, we&apos;d like to hear from you. The first conversation is always free and carries no obligation.</p>
             <div className="cd" data-reveal>
               <div className="cd-ico">📍</div>
-              <div><div className="cd-lbl">Head Office</div><div className="cd-val">16 Shagamu Avenue, Ikeja<br />Lagos, Nigeria 101233</div></div>
+              <div><div className="cd-lbl">Head Office</div><div className="cd-val">16 Shagamu Avenue, Ilupeju,<br />Lagos, Nigeria 100252</div></div>
             </div>
             <div className="cd" data-reveal data-delay="1">
               <div className="cd-ico">📞</div>

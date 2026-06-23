@@ -159,7 +159,7 @@ export default function Blog() {
         )}
 
         {/* ARTICLES GRID */}
-        <div className="articles-grid" style={{ marginTop: (activeCat === 'All Topics' || activeCat === 'Cloud Strategy') ? '0' : '2rem' }}>
+        <div className="articles-grid" style={{ marginTop: (activeCat === 'All Topics' || activeCat === 'Cloud Strategy') ? '4rem' : '2rem' }}>
           {filteredArticles.map((a, i) => (
             <div key={i} className="article-card" data-reveal data-delay={a.delay}>
               <div className="ac-img"><img src={a.img} alt={a.title} /></div>

@@ -8,6 +8,7 @@ import { useTheme } from '../context/ThemeContext';
 export default function Nav() {
   const [isSolid, setIsSolid] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
@@ -33,7 +34,24 @@ export default function Nav() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
+    { 
+      name: 'Services', 
+      path: '/services',
+      submenu: [
+        { name: 'Managed IT Services', path: '/services/managed-it-services' },
+        { name: 'IT Support Services', path: '/services/it-support-services' },
+        { name: 'Cloud Solutions', path: '/services/cloud-solutions' },
+        { name: 'Cybersecurity Services', path: '/services/cybersecurity-services' },
+        { name: 'Website Development', path: '/services/website-development' },
+        { name: 'Software Development', path: '/services/software-development' },
+        { name: 'Network Infrastructure', path: '/services/network-infrastructure' },
+        { name: 'Microsoft 365 Solutions', path: '/services/microsoft-365-solutions' },
+        { name: 'Server Deployment', path: '/services/server-deployment' },
+        { name: 'CCTV & Access Control', path: '/services/cctv-access-control' },
+        { name: 'Data Analytics', path: '/services/data-analytics' },
+        { name: 'IT Strategy', path: '/services/it-strategy' },
+      ]
+    },
     { name: 'About', path: '/about' },
     { name: 'Case Studies', path: '/cases' },
     { name: 'Team', path: '/team' },
@@ -44,28 +62,99 @@ export default function Nav() {
   return (
     <>
       <nav id="nav" className={isSolid ? 'solid' : ''}>
-        <Link href="/" className="nav-logo" onClick={closeMobileNav}>
-          <img 
-            src="/logo.png" 
-            alt="Starks IT Consulting Logo" 
-            style={{ 
-              height: '38px', 
-              width: 'auto', 
-              objectFit: 'contain', 
-              filter: theme === 'dark' ? 'brightness(0) invert(1)' : 'none' 
-            }} 
-          />
-          <span className="nav-brand">Starks <b>IT</b></span>
+        <Link href="/" className="nav-logo" onClick={closeMobileNav} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+          <div style={{
+            width: '48px',
+            height: '48px',
+            borderRadius: '50%',
+            background: theme === 'dark' ? 'var(--ink2)' : 'var(--white)',
+            display: 'grid',
+            placeItems: 'center',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+          }}>
+            <img 
+              src="/logo.png" 
+              alt="Starks IT Consulting Logo" 
+              style={{ 
+                height: '32px', 
+                width: 'auto', 
+                objectFit: 'contain', 
+                filter: theme === 'dark' ? 'brightness(0) invert(1)' : 'none' 
+              }} 
+            />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+            <span className="nav-brand" style={{ fontSize: '0.95rem', fontWeight: '600', letterSpacing: '-0.01em' }}>Starks IT</span>
+            <span className="nav-brand" style={{ fontSize: '0.75rem', fontWeight: '400', letterSpacing: '0.05em', opacity: 0.9 }}><b>Consulting</b></span>
+          </div>
         </Link>
         <ul className="nav-links">
           {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link 
-                href={link.path} 
-                className={pathname === link.path ? 'active' : ''}
-              >
-                {link.name}
-              </Link>
+            <li key={link.path} style={{ position: 'relative' }}>
+              {link.submenu ? (
+                <div
+                  onMouseEnter={() => setServicesDropdownOpen(true)}
+                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                  style={{ display: 'inline-block' }}
+                >
+                  <button
+                    className={pathname.startsWith('/services') ? 'active' : ''}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      color: 'inherit',
+                      cursor: 'pointer',
+                      fontSize: 'inherit',
+                      fontFamily: 'inherit',
+                      padding: 0
+                    }}
+                  >
+                    {link.name}
+                  </button>
+                  {servicesDropdownOpen && (
+                    <ul style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: 0,
+                      background: 'var(--ink)',
+                      border: '1px solid var(--gold)',
+                      borderRadius: '8px',
+                      padding: '1rem',
+                      minWidth: '250px',
+                      zIndex: 1000,
+                      listStyle: 'none',
+                      margin: 0
+                    }}>
+                      {link.submenu.map((sublink) => (
+                        <li key={sublink.path} style={{ marginBottom: '0.5rem' }}>
+                          <Link
+                            href={sublink.path}
+                            style={{
+                              color: 'var(--text)',
+                              textDecoration: 'none',
+                              display: 'block',
+                              padding: '0.5rem',
+                              borderRadius: '4px',
+                              transition: 'all 0.3s'
+                            }}
+                            onMouseEnter={(e) => e.target.style.background = 'var(--ink2)'}
+                            onMouseLeave={(e) => e.target.style.background = 'transparent'}
+                          >
+                            {sublink.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ) : (
+                <Link 
+                  href={link.path} 
+                  className={pathname === link.path ? 'active' : ''}
+                >
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -118,16 +207,90 @@ export default function Nav() {
 
       {/* MOBILE DRAWER */}
       <div className={`mobile-nav ${mobileNavOpen ? 'open' : ''}`}>
+        <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--ink3)', marginBottom: '1rem' }}>
+          <Link href="/" onClick={closeMobileNav} style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none' }}>
+            <div style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '50%',
+              background: 'var(--ink2)',
+              display: 'grid',
+              placeItems: 'center',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+            }}>
+              <img 
+                src="/logo.png" 
+                alt="Starks IT Consulting Logo" 
+                style={{ 
+                  height: '38px', 
+                  width: 'auto', 
+                  objectFit: 'contain', 
+                  filter: theme === 'dark' ? 'brightness(0) invert(1)' : 'none' 
+                }} 
+              />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+              <span className="nav-brand" style={{ fontSize: '1.1rem', fontWeight: '600', letterSpacing: '-0.01em', color: 'var(--white)' }}>Starks IT</span>
+              <span className="nav-brand" style={{ fontSize: '0.85rem', fontWeight: '400', letterSpacing: '0.05em', opacity: 0.9, color: 'var(--gold)' }}><b>Consulting</b></span>
+            </div>
+          </Link>
+        </div>
         <ul>
           {navLinks.map((link) => (
             <li key={link.path}>
-              <Link 
-                href={link.path}
-                className={pathname === link.path ? 'active' : ''}
-                onClick={closeMobileNav}
-              >
-                {link.name}
-              </Link>
+              {link.submenu ? (
+                <>
+                  <button
+                    onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      color: 'var(--white)',
+                      cursor: 'pointer',
+                      fontSize: '1.1rem',
+                      fontFamily: 'inherit',
+                      padding: '0.5rem 0',
+                      width: '100%',
+                      textAlign: 'left'
+                    }}
+                  >
+                    {link.name} {servicesDropdownOpen ? '▼' : '▶'}
+                  </button>
+                  {servicesDropdownOpen && (
+                    <ul style={{
+                      listStyle: 'none',
+                      padding: '0 0 0 1rem',
+                      margin: '0.5rem 0'
+                    }}>
+                      {link.submenu.map((sublink) => (
+                        <li key={sublink.path} style={{ marginBottom: '0.5rem' }}>
+                          <Link
+                            href={sublink.path}
+                            onClick={() => { setServicesDropdownOpen(false); closeMobileNav(); }}
+                            style={{
+                              color: 'var(--text)',
+                              textDecoration: 'none',
+                              display: 'block',
+                              padding: '0.5rem',
+                              fontSize: '1rem'
+                            }}
+                          >
+                            {sublink.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <Link 
+                  href={link.path}
+                  className={pathname === link.path ? 'active' : ''}
+                  onClick={closeMobileNav}
+                >
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

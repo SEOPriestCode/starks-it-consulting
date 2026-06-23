@@ -43,8 +43,8 @@ export default function Footer() {
 
   let copyText = '© 2017–2025 Starks IT Consulting Ltd. RC 8349226.';
   let legalLinks = [
-    { name: 'Privacy Policy', path: '#privacy' },
-    { name: 'Terms', path: '#terms' },
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms & Conditions', path: '/terms' },
     { name: 'NDPR Statement', path: '#ndpr' },
     { name: 'Cookies', path: '#cookies' },
   ];
@@ -73,8 +73,8 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '#privacy' },
-      { name: 'Terms', path: '#terms' },
+      { name: 'Privacy', path: '/privacy' },
+      { name: 'Terms', path: '/terms' },
       { name: 'NDPR', path: '#ndpr' }
     ];
   } else if (pathname === '/about') {
@@ -97,8 +97,8 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '#privacy' },
-      { name: 'Terms', path: '#terms' },
+      { name: 'Privacy', path: '/privacy' },
+      { name: 'Terms', path: '/terms' },
       { name: 'NDPR', path: '#ndpr' }
     ];
   } else if (pathname === '/cases') {
@@ -116,7 +116,7 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '#privacy' },
+      { name: 'Privacy', path: '/privacy' },
       { name: 'Terms', path: '#terms' }
     ];
   } else if (pathname === '/team') {
@@ -134,7 +134,7 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '#privacy' },
+      { name: 'Privacy', path: '/privacy' },
       { name: 'Terms', path: '#terms' }
     ];
   } else if (pathname === '/blog') {
@@ -157,8 +157,8 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '#privacy' },
-      { name: 'Terms', path: '#terms' },
+      { name: 'Privacy', path: '/privacy' },
+      { name: 'Terms', path: '/terms' },
       { name: 'NDPR', path: '#ndpr' }
     ];
   }
@@ -167,18 +167,31 @@ export default function Footer() {
     <footer style={{ marginTop: pathname === '/blog' ? '80px' : undefined }}>
       <div className="foot-grid">
         <div>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1rem', textDecoration: 'none' }}>
-            <img 
-              src="/logo.png" 
-              alt="Starks IT Consulting Logo" 
-              style={{ 
-                height: '42px', 
-                width: 'auto', 
-                objectFit: 'contain', 
-                filter: theme === 'dark' ? 'brightness(0) invert(1)' : 'none' 
-              }} 
-            />
-            <div className="foot-brand-name" style={{ margin: 0 }}>Starks <b style={{ color: 'var(--gold)' }}>IT</b> Consulting</div>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem', textDecoration: 'none' }}>
+            <div style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '50%',
+              background: theme === 'dark' ? 'var(--ink2)' : 'var(--white)',
+              display: 'grid',
+              placeItems: 'center',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+            }}>
+              <img 
+                src="/logo.png" 
+                alt="Starks IT Consulting Logo" 
+                style={{ 
+                  height: '38px', 
+                  width: 'auto', 
+                  objectFit: 'contain', 
+                  filter: theme === 'dark' ? 'brightness(0) invert(1)' : 'none' 
+                }} 
+              />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+              <div className="foot-brand-name" style={{ margin: 0, fontSize: '1rem', fontWeight: '600', letterSpacing: '-0.01em' }}>Starks IT</div>
+              <div className="foot-brand-name" style={{ margin: 0, fontSize: '0.8rem', fontWeight: '400', letterSpacing: '0.05em', opacity: 0.9 }}><b style={{ color: 'var(--gold)' }}>Consulting</b></div>
+            </div>
           </Link>
           <p className="foot-tagline">{tagline}</p>
           {certs.length > 0 && (

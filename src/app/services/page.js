@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Services | Starks IT Consulting',
+  title: 'IT Services Nigeria | Managed IT, Cloud, Cybersecurity & Software Development',
+  description: 'Comprehensive IT services in Nigeria. Managed IT services, cloud solutions, cybersecurity, software development, and IT consulting for businesses in Lagos, Abuja, and across Nigeria.',
+  keywords: 'IT services Nigeria, managed IT services Lagos, cloud computing Nigeria, cybersecurity Nigeria, software development Nigeria, IT consulting Nigeria, IT solutions Abuja, technology services Nigeria',
 };
 
 export default function Services() {
@@ -9,7 +11,7 @@ export default function Services() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=70&auto=format&fit=crop" alt="Technology circuit board" />
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop" alt="Black IT professionals working on technology solutions" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">
@@ -20,68 +22,217 @@ export default function Services() {
         </div>
       </div>
 
-      <section id="svc-page" style={{ paddingTop: '60px' }}>
-        <div className="svc-list">
-          <div className="svc-item" data-reveal>
-            <div className="svc-img"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80&auto=format&fit=crop" alt="Custom software development coding" /></div>
-            <div className="svc-hover-bar"></div>
-            <div className="svc-body">
-              <div className="svc-num2">01 / CUSTOM SOFTWARE DEVELOPMENT</div>
-              <div className="svc-t">Custom Software Development</div>
-              <p className="svc-d">Bespoke applications engineered to your exact operational requirements. From CRM and ERP platforms to client portals and SaaS products — we architect and build software that scales with your business and integrates seamlessly into your existing ecosystem.</p>
-              <div className="svc-tags2"><span className="stag">Web Apps</span><span className="stag">Mobile</span><span className="stag">REST APIs</span><span className="stag">ERP/CRM</span><span className="stag">SaaS Platforms</span><span className="stag">Portals</span></div>
+      <section id="svc-page" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+        <div style={{ marginBottom: '3rem' }}>
+          <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Service Categories</span></div>
+          <h2 className="title" data-reveal data-delay="1" style={{ maxWidth: '700px' }}>Our <em>Core Services</em></h2>
+          <p data-reveal data-delay="2" style={{ color: 'var(--gray)', maxWidth: '600px', lineHeight: 1.6 }}>Comprehensive IT solutions tailored for Nigerian businesses. From infrastructure to strategy, we deliver end-to-end technology services.</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+          <Link href="/services/managed-it-services" className="svc-card" data-reveal style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black IT professional" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-          </div>
-          <div className="svc-item" data-reveal data-delay="1">
-            <div className="svc-img"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=80&auto=format&fit=crop" alt="Cloud computing data center" /></div>
-            <div className="svc-hover-bar"></div>
-            <div className="svc-body">
-              <div className="svc-num2">02 / CLOUD INFRASTRUCTURE & DEVOPS</div>
-              <div className="svc-t">Cloud Infrastructure & DevOps</div>
-              <p className="svc-d">Architect robust, secure, and cost-optimised cloud environments. We manage migrations, implement CI/CD pipelines, containerise workloads, and provide ongoing infrastructure management across AWS, Azure, and GCP with guaranteed SLA uptime.</p>
-              <div className="svc-tags2"><span className="stag">AWS</span><span className="stag">Azure</span><span className="stag">GCP</span><span className="stag">Kubernetes</span><span className="stag">Terraform</span><span className="stag">Docker</span></div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>CORE SERVICE</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Managed IT Services</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>24/7 IT support, monitoring, and proactive maintenance for your entire infrastructure.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Helpdesk</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Monitoring</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>SLA-backed</span>
+              </div>
             </div>
-          </div>
-          <div className="svc-item" data-reveal>
-            <div className="svc-img"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=700&q=80&auto=format&fit=crop" alt="Cybersecurity data protection" /></div>
-            <div className="svc-hover-bar"></div>
-            <div className="svc-body">
-              <div className="svc-num2">03 / CYBERSECURITY & COMPLIANCE</div>
-              <div className="svc-t">Cybersecurity & Compliance</div>
-              <p className="svc-d">Comprehensive security posture management. We conduct penetration testing, implement zero-trust architectures, ensure regulatory compliance (NDPR, GDPR, PCI-DSS), and provide 24/7 SOC threat monitoring and incident response.</p>
-              <div className="svc-tags2"><span className="stag">Pen Testing</span><span className="stag">NDPR</span><span className="stag">SOC 24/7</span><span className="stag">Zero Trust</span><span className="stag">ISO 27001</span></div>
+          </Link>
+
+          <Link href="/services/it-support-services" className="svc-card" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=80&auto=format&fit=crop" alt="Black IT support professional" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-          </div>
-          <div className="svc-item" data-reveal data-delay="1">
-            <div className="svc-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&auto=format&fit=crop" alt="Data analytics dashboard charts" /></div>
-            <div className="svc-hover-bar"></div>
-            <div className="svc-body">
-              <div className="svc-num2">04 / DATA ENGINEERING & ANALYTICS</div>
-              <div className="svc-t">Data Engineering & Analytics</div>
-              <p className="svc-d">Transform raw data into strategic intelligence. We build data warehouses, real-time streaming pipelines, and interactive dashboards that empower leadership to make evidence-based decisions at speed and with confidence.</p>
-              <div className="svc-tags2"><span className="stag">Power BI</span><span className="stag">Tableau</span><span className="stag">Snowflake</span><span className="stag">dbt</span><span className="stag">Kafka</span><span className="stag">Spark</span></div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>CORE SERVICE</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>IT Support Services</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>On-site and remote technical support with guaranteed response times.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Remote</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>On-Site</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Hardware</span>
+              </div>
             </div>
-          </div>
-          <div className="svc-item" data-reveal>
-            <div className="svc-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80&auto=format&fit=crop" alt="IT strategy consulting meeting" /></div>
-            <div className="svc-hover-bar"></div>
-            <div className="svc-body">
-              <div className="svc-num2">05 / IT STRATEGY & DIGITAL TRANSFORMATION</div>
-              <div className="svc-t">IT Strategy & Digital Transformation</div>
-              <p className="svc-d">Executive-level advisory for organisations navigating technology change. We produce IT roadmaps, vendor selection frameworks, operating model redesign, and business cases that align technology investment to commercial outcomes.</p>
-              <div className="svc-tags2"><span className="stag">Roadmapping</span><span className="stag">Change Mgmt</span><span className="stag">Architecture</span><span className="stag">TOGAF</span></div>
+          </Link>
+
+          <Link href="/services/cloud-solutions" className="svc-card" data-reveal style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=700&q=80&auto=format&fit=crop" alt="Black cloud architect" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-          </div>
-          <div className="svc-item" data-reveal data-delay="1">
-            <div className="svc-img"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80&auto=format&fit=crop" alt="Managed IT services network monitoring" /></div>
-            <div className="svc-hover-bar"></div>
-            <div className="svc-body">
-              <div className="svc-num2">06 / MANAGED IT SERVICES</div>
-              <div className="svc-t">Managed IT Services & Support</div>
-              <p className="svc-d">24/7 managed support, infrastructure monitoring, helpdesk, and proactive maintenance. We operate as your extended IT department — available, reliable, and always ahead of the curve — backed by iron-clad SLAs.</p>
-              <div className="svc-tags2"><span className="stag">Helpdesk</span><span className="stag">SLA-backed</span><span className="stag">Monitoring</span><span className="stag">ITSM</span><span className="stag">ITIL</span></div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>CLOUD & INFRASTRUCTURE</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Cloud Solutions</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>AWS, Azure, and GCP cloud infrastructure with DevOps automation.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>AWS</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Azure</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>DevOps</span>
+              </div>
             </div>
-          </div>
+          </Link>
+
+          <Link href="/services/cybersecurity-services" className="svc-card" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=80&auto=format&fit=crop" alt="Black cybersecurity professional" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>SECURITY</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Cybersecurity</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Penetration testing, compliance, and 24/7 SOC monitoring.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Pen Testing</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>SOC 24/7</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>NDPR</span>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/services/network-infrastructure" className="svc-card" data-reveal style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black network engineer" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>INFRASTRUCTURE</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Network Infrastructure</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Structured cabling, wireless networks, and network security.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Cabling</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Wireless</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Security</span>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/services/server-deployment" className="svc-card" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black server administrator" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>INFRASTRUCTURE</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Server Deployment</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Expert server setup, virtualization, and ongoing management.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>VMware</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Backup</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Monitoring</span>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div style={{ marginBottom: '3rem' }}>
+          <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Development & Strategy</span></div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+          <Link href="/services/software-development" className="svc-card" data-reveal style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black software developer" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>DEVELOPMENT</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Software Development</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Custom applications, web apps, mobile apps, and SaaS platforms.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Web Apps</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Mobile</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>APIs</span>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/services/website-development" className="svc-card" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black web developer" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>DEVELOPMENT</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Website Development</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Modern, responsive websites and e-commerce platforms.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>React</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Next.js</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>E-commerce</span>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/services/data-analytics" className="svc-card" data-reveal style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black data analyst" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>ANALYTICS</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Data Analytics</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Data warehouses, dashboards, and business intelligence.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Power BI</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Tableau</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>BI</span>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/services/it-strategy" className="svc-card" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black IT consultant" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>STRATEGY</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>IT Strategy</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Technology roadmaps, digital transformation, and advisory.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Roadmapping</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Transformation</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Advisory</span>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div style={{ marginBottom: '3rem' }}>
+          <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Productivity & Security</span></div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+          <Link href="/services/microsoft-365-solutions" className="svc-card" data-reveal style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black IT consultant" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>PRODUCTIVITY</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>Microsoft 365</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Office 365 deployment, Teams, SharePoint, and collaboration.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Office 365</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Teams</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>SharePoint</span>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/services/cctv-access-control" className="svc-card" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block', background: 'var(--ink2)', borderRadius: '8px', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <div style={{ height: '200px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black security professional" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{ padding: '1.5rem' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', letterSpacing: '1px' }}>PHYSICAL SECURITY</div>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--white)', marginBottom: '0.75rem', fontFamily: 'var(--ff-display)' }}>CCTV & Access Control</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--gray)', lineHeight: 1.5, marginBottom: '1rem' }}>Surveillance cameras, biometric access, and security systems.</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>CCTV</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Biometrics</span>
+                <span style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', background: 'var(--ink)', color: 'var(--gray)', borderRadius: '4px' }}>Surveillance</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -98,7 +249,7 @@ export default function Services() {
           </div>
           <div data-reveal data-delay="2">
             <div className="img-wrap" style={{ height: '400px', marginBottom: '2rem' }}>
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80&auto=format&fit=crop" alt="Team working on project planning" />
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80&auto=format&fit=crop" alt="Black team working on project planning" />
               <div className="img-overlay"></div>
             </div>
             <div style={{ background: 'var(--ink)', padding: '2rem', borderLeft: '3px solid var(--gold)' }}>
