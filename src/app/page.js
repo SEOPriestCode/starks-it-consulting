@@ -63,7 +63,7 @@ export default function Home() {
           <Link href="/services" className="hsvc" data-reveal style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">01</div>
-            <span className="hsvc-icon">⚙</span>
+            <span className="hsvc-icon">💻</span>
             <div className="hsvc-title">Custom Software Development</div>
             <p className="hsvc-text">Bespoke CRM, ERP, SaaS platforms and mobile apps engineered to your exact operational requirements.</p>
             <span className="hsvc-link">Explore → </span>
@@ -71,7 +71,7 @@ export default function Home() {
           <Link href="/services" className="hsvc" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">02</div>
-            <span className="hsvc-icon">☁</span>
+            <span className="hsvc-icon">🌐</span>
             <div className="hsvc-title">Cloud Infrastructure & DevOps</div>
             <p className="hsvc-text">Robust, cost-optimised cloud environments across AWS, Azure, and GCP with ongoing management and CI/CD.</p>
             <span className="hsvc-link">Explore → </span>
@@ -79,7 +79,7 @@ export default function Home() {
           <Link href="/services" className="hsvc" data-reveal data-delay="2" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">03</div>
-            <span className="hsvc-icon">🛡</span>
+            <span className="hsvc-icon">🛡️</span>
             <div className="hsvc-title">Cybersecurity & Compliance</div>
             <p className="hsvc-text">Penetration testing, zero-trust architectures, NDPR/GDPR compliance, and 24/7 threat monitoring.</p>
             <span className="hsvc-link">Explore → </span>
@@ -87,7 +87,7 @@ export default function Home() {
           <Link href="/services" className="hsvc" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">04</div>
-            <span className="hsvc-icon">◈</span>
+            <span className="hsvc-icon">📈</span>
             <div className="hsvc-title">Data Engineering & Analytics</div>
             <p className="hsvc-text">Data warehouses, real-time pipelines, and intelligent dashboards that turn raw data into strategy.</p>
             <span className="hsvc-link">Explore → </span>
@@ -95,7 +95,7 @@ export default function Home() {
           <Link href="/services" className="hsvc" data-reveal data-delay="2" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">05</div>
-            <span className="hsvc-icon">◉</span>
+            <span className="hsvc-icon">🎯</span>
             <div className="hsvc-title">IT Strategy & Transformation</div>
             <p className="hsvc-text">Executive-level advisory: IT roadmaps, operating model redesign, vendor selection, and business case development.</p>
             <span className="hsvc-link">Explore → </span>
@@ -103,9 +103,25 @@ export default function Home() {
           <Link href="/services" className="hsvc" data-reveal data-delay="3" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">06</div>
-            <span className="hsvc-icon">⬡</span>
+            <span className="hsvc-icon">🖥️</span>
             <div className="hsvc-title">Managed IT Services</div>
             <p className="hsvc-text">24/7 helpdesk, infrastructure monitoring, proactive maintenance, and SLA-backed support operations.</p>
+            <span className="hsvc-link">Explore → </span>
+          </Link>
+          <Link href="/services/microsoft-365-solutions" className="hsvc" data-reveal data-delay="2" style={{ textDecoration: 'none' }}>
+            <div className="hsvc-bar"></div>
+            <div className="hsvc-num">07</div>
+            <span className="hsvc-icon">📊</span>
+            <div className="hsvc-title">Microsoft 365 Solutions</div>
+            <p className="hsvc-text">Office 365 deployment, Teams collaboration, SharePoint document management, and productivity workflow automation.</p>
+            <span className="hsvc-link">Explore → </span>
+          </Link>
+          <Link href="/services/it-support-services" className="hsvc" data-reveal data-delay="3" style={{ textDecoration: 'none' }}>
+            <div className="hsvc-bar"></div>
+            <div className="hsvc-num">08</div>
+            <span className="hsvc-icon">🔧</span>
+            <div className="hsvc-title">IT Support Services</div>
+            <p className="hsvc-text">On-site and remote technical support with guaranteed response times, hardware troubleshooting, and end-user training.</p>
             <span className="hsvc-link">Explore → </span>
           </Link>
         </div>
@@ -115,11 +131,11 @@ export default function Home() {
       <section id="home-why">
         <div className="why-img-stack" data-reveal="left">
           <div className="why-img-main img-wrap">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80&auto=format&fit=crop" alt="Team collaboration in office" />
+            <img src="/about-main.jpg" alt="Team collaboration in office" />
             <div className="img-overlay"></div>
           </div>
           <div className="why-img-sec img-wrap">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80&auto=format&fit=crop" alt="Developer working on code" />
+            <img src="/home-dev.jpg" alt="Developer working on code" />
             <div className="img-overlay"></div>
           </div>
           <div className="why-badge">
@@ -164,7 +180,7 @@ export default function Home() {
         <div className="hcase-grid">
           <Link href="/cases" className="hcase" data-reveal style={{ textDecoration: 'none' }}>
             <div className="hcase-img">
-              <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80&auto=format&fit=crop" alt="Banking technology" />
+              <img src="/home-banking.jpg" alt="Banking technology" />
             </div>
             <div className="hcase-body">
               <div className="hcase-ind">Financial Services</div>
@@ -175,7 +191,7 @@ export default function Home() {
           </Link>
           <Link href="/cases" className="hcase" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
             <div className="hcase-img">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Energy sector operations" />
+              <img src="/blog-erp.jpg" alt="Energy sector operations" />
             </div>
             <div className="hcase-body">
               <div className="hcase-ind">Energy & Resources</div>
@@ -208,7 +224,7 @@ export default function Home() {
       {/* HOME CTA */}
       <section id="home-cta">
         <div className="hcta-bg">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=70&auto=format&fit=crop" alt="Lagos city skyline" />
+          <img src="/home-cta.jpg" alt="Lagos city skyline" />
           <div className="hcta-grad"></div>
         </div>
         <div className="hcta-inner">

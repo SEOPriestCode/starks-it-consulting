@@ -7,7 +7,7 @@ const servicesData = {
     keywords: 'managed IT services Nigeria, IT support company Lagos, business IT support Lagos, IT outsourcing Nigeria, IT services Abuja, managed services provider Nigeria',
     heading: 'Managed IT Services',
     subheading: '24/7 proactive IT support and infrastructure monitoring',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our Managed IT Services provide comprehensive 24/7 support for your entire IT infrastructure. We operate as your extended IT department, ensuring your systems are always available, secure, and performing at optimal levels.</p>
       
@@ -32,7 +32,7 @@ const servicesData = {
     keywords: 'IT support company Lagos, IT support services Nigeria, technical support Nigeria, business IT support Lagos, IT support Abuja, computer support Nigeria',
     heading: 'IT Support Services',
     subheading: 'On-site and remote technical support when you need it',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-tech.jpg',
     content: `
       <p>Our IT Support Services deliver fast, reliable technical assistance to keep your business running smoothly. Whether you need on-site support or remote troubleshooting, our expert team is ready to help.</p>
       
@@ -57,7 +57,7 @@ const servicesData = {
     keywords: 'cloud migration services Nigeria, cloud solutions Nigeria, cloud computing Nigeria, AWS Nigeria, Azure Nigeria, cloud services Abuja, cloud hosting Nigeria',
     heading: 'Cloud Solutions',
     subheading: 'Scalable, secure cloud infrastructure and migration',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-cloud.jpg',
     content: `
       <p>Our Cloud Solutions help Nigerian businesses leverage the power of cloud computing. From initial migration to ongoing management, we ensure your cloud environment is optimized for performance, security, and cost-efficiency.</p>
       
@@ -82,7 +82,7 @@ const servicesData = {
     keywords: 'cybersecurity services Nigeria, IT security Nigeria, penetration testing Nigeria, network security Nigeria, data protection Nigeria, cyber security Abuja, information security Nigeria',
     heading: 'Cybersecurity Services',
     subheading: 'Comprehensive security and compliance solutions',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-tech.jpg',
     content: `
       <p>Our Cybersecurity Services protect your business from evolving threats. As a leading IT security company in Nigeria, we provide comprehensive security solutions tailored to your specific risk profile and compliance requirements.</p>
       
@@ -107,7 +107,7 @@ const servicesData = {
     keywords: 'website development Nigeria, web design Nigeria, web development company Lagos, website design Nigeria, web design Abuja, website developer Nigeria, web design services Nigeria',
     heading: 'Website Development',
     subheading: 'Modern, responsive websites that convert',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our Website Development services create stunning, high-performance websites that drive results. From corporate sites to e-commerce platforms, we build web experiences that engage visitors and convert them into customers.</p>
       
@@ -132,7 +132,7 @@ const servicesData = {
     keywords: 'software development Nigeria, custom software Nigeria, app development Nigeria, software company Lagos, software development Abuja, mobile app development Nigeria, custom software development Nigeria',
     heading: 'Software Development',
     subheading: 'Bespoke software solutions for your business',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our Software Development services deliver custom applications engineered to your exact requirements. From internal tools to customer-facing platforms, we build software that scales with your business.</p>
       
@@ -157,7 +157,7 @@ const servicesData = {
     keywords: 'network infrastructure company Nigeria, network setup Nigeria, cabling Nigeria, network design Nigeria, IT infrastructure Nigeria, network installation Abuja, structured cabling Nigeria',
     heading: 'Network Infrastructure',
     subheading: 'Robust, scalable network design and implementation',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our Network Infrastructure services design and implement robust network solutions that form the backbone of your IT operations. From structured cabling to wireless networks, we ensure reliable connectivity throughout your organization.</p>
       
@@ -182,7 +182,7 @@ const servicesData = {
     keywords: 'Microsoft 365 consultants Nigeria, Office 365 Nigeria, Microsoft 365 deployment Nigeria, cloud productivity Nigeria, Office 365 Abuja, Microsoft 365 services Nigeria, O365 Nigeria',
     heading: 'Microsoft 365 Solutions',
     subheading: 'Maximize productivity with Microsoft 365',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our Microsoft 365 Solutions help Nigerian businesses leverage the full power of Microsoft's productivity suite. From deployment to ongoing management, we ensure your team gets the most out of these powerful tools.</p>
       
@@ -207,7 +207,7 @@ const servicesData = {
     keywords: 'server setup company Nigeria, server deployment Nigeria, server management Nigeria, IT infrastructure Nigeria, server installation Abuja, data center services Nigeria, server maintenance Nigeria',
     heading: 'Server Deployment & Management',
     subheading: 'Expert server setup and ongoing management',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our Server Deployment & Management services ensure your critical infrastructure is properly configured, optimized, and maintained. From physical servers to virtual machines, we handle all aspects of server management.</p>
       
@@ -232,7 +232,7 @@ const servicesData = {
     keywords: 'CCTV Nigeria, access control Nigeria, security systems Nigeria, surveillance Nigeria, security cameras Nigeria, CCTV installation Abuja, security solutions Nigeria, biometric access control Nigeria',
     heading: 'CCTV & Access Control Systems',
     subheading: 'Comprehensive physical security solutions',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our CCTV & Access Control Systems provide comprehensive physical security for your premises. From surveillance cameras to biometric access control, we protect your people, assets, and information.</p>
       
@@ -257,7 +257,7 @@ const servicesData = {
     keywords: 'data analytics Nigeria, business intelligence Nigeria, data engineering Nigeria, Power BI Nigeria, data visualization Nigeria, data analytics Abuja, BI solutions Nigeria, data science Nigeria',
     heading: 'Data Engineering & Analytics',
     subheading: 'Transform data into strategic intelligence',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our Data Engineering & Analytics services transform raw data into strategic intelligence. We build data warehouses, real-time streaming pipelines, and interactive dashboards that empower leadership to make evidence-based decisions at speed and with confidence.</p>
       
@@ -282,7 +282,7 @@ const servicesData = {
     keywords: 'IT consulting company Nigeria, digital transformation Nigeria, IT strategy Nigeria, technology consulting Nigeria, CIO services Nigeria, IT consulting Abuja, digital transformation services Nigeria, IT advisory Nigeria',
     heading: 'IT Strategy & Digital Transformation',
     subheading: 'Executive-level technology advisory',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=70&auto=format&fit=crop',
+    image: '/service-generic.jpg',
     content: `
       <p>Our IT Strategy & Digital Transformation services provide executive-level advisory for organisations navigating technology change. We produce IT roadmaps, vendor selection frameworks, operating model redesign, and business cases that align technology investment to commercial outcomes.</p>
       

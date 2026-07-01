@@ -11,7 +11,7 @@ export default function CloudSolutions() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1400&q=70&auto=format&fit=crop" alt="Black cloud architect working on cloud infrastructure" />
+          <img src="/service-cloud.jpg" alt="Black cloud architect working on cloud infrastructure" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

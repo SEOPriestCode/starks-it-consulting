@@ -9,7 +9,7 @@ export default function About() {
     <div className="page active">
       <div className="page-hero">
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=70&auto=format&fit=crop" alt="Lagos office building" />
+          <img src="/about-hero.jpg" alt="Lagos office building" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">
@@ -23,7 +23,7 @@ export default function About() {
       <section id="about-story" style={{ paddingTop: '80px' }}>
         <div className="about-img-main" data-reveal="left">
           <div className="img-wrap" style={{ height: '100%' }}>
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80&auto=format&fit=crop" alt="Team working together in modern office" />
+            <img src="/about-main.jpg" alt="Team working together in modern office" />
             <div className="img-overlay"></div>
           </div>
           <div className="about-gold-box">
@@ -48,9 +48,9 @@ export default function About() {
 
       {/* OFFICE IMAGE STRIP */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '4px', padding: '0 5%', marginBottom: '80px' }} className="photo-strip-3col">
-        <div className="img-wrap" style={{ height: '260px' }} data-reveal><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80&auto=format&fit=crop" alt="Office workspace Lagos" /><div className="img-overlay"></div></div>
-        <div className="img-wrap" style={{ height: '260px' }} data-reveal data-delay="1"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80&auto=format&fit=crop" alt="Team meeting collaboration" /><div className="img-overlay"></div></div>
-        <div className="img-wrap" style={{ height: '260px' }} data-reveal data-delay="2"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80&auto=format&fit=crop" alt="Modern office interior" /><div className="img-overlay"></div></div>
+        <div className="img-wrap" style={{ height: '260px' }} data-reveal><img src="/about-strip1.jpg" alt="Office workspace Lagos" /><div className="img-overlay"></div></div>
+        <div className="img-wrap" style={{ height: '260px' }} data-reveal data-delay="1"><img src="/about-strip2.jpg" alt="Team meeting collaboration" /><div className="img-overlay"></div></div>
+        <div className="img-wrap" style={{ height: '260px' }} data-reveal data-delay="2"><img src="/team-brainstorming.jpg" alt="Modern office interior" /><div className="img-overlay"></div></div>
       </div>
 
       <section id="about-values">

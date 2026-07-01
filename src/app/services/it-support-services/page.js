@@ -11,7 +11,7 @@ export default function ITSupportServices() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1400&q=70&auto=format&fit=crop" alt="Black IT professional providing technical support" />
+          <img src="/service-tech.jpg" alt="Black IT professional providing technical support" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

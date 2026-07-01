@@ -9,7 +9,7 @@ export default function Team() {
     <div className="page active">
       <div className="page-hero">
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=70&auto=format&fit=crop" alt="Diverse professional team" />
+          <img src="/team-hero.jpg" alt="Diverse professional team" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">
@@ -77,7 +77,7 @@ export default function Team() {
           <div className="team-grid2">
             <div className="team-member" data-reveal>
               <div className="tm-photo">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop&crop=face" alt="Software engineering lead" />
+                <img src="/team-lead1.jpg" alt="Software engineering lead" />
                 <div className="tm-photo-overlay"></div>
               </div>
               <div className="tm-line"></div>
@@ -87,7 +87,7 @@ export default function Team() {
             </div>
             <div className="team-member" data-reveal data-delay="1">
               <div className="tm-photo">
-                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80&auto=format&fit=crop&crop=face" alt="Cloud DevOps lead" />
+                <img src="/team-lead2.jpg" alt="Cloud DevOps lead" />
                 <div className="tm-photo-overlay"></div>
               </div>
               <div className="tm-line"></div>
@@ -97,7 +97,7 @@ export default function Team() {
             </div>
             <div className="team-member" data-reveal data-delay="3">
             <div className="tm-photo">
-              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format&fit=crop&crop=face" alt="Ngozi Okafor Data Director" />
+              <img src="/team-ngozi.jpg" alt="Ngozi Okafor Data Director" />
               <div className="tm-photo-overlay"></div>
               <div className="tm-social"><div className="tm-soc-btn">in</div><div className="tm-soc-btn">✉</div></div>
             </div>
@@ -109,7 +109,7 @@ export default function Team() {
           </div>
             <div className="team-member" data-reveal data-delay="3">
               <div className="tm-photo">
-                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80&auto=format&fit=crop&crop=face" alt="Project management director" />
+                <img src="/team-director.jpg" alt="Project management director" />
                 <div className="tm-photo-overlay"></div>
               </div>
               <div className="tm-line"></div>
@@ -123,9 +123,9 @@ export default function Team() {
 
       <section id="team-culture">
         <div className="culture-imgs">
-          <div className="img-wrap"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&q=80&auto=format&fit=crop" alt="Office collaboration session" /><div className="img-overlay"></div></div>
-          <div className="img-wrap"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&q=80&auto=format&fit=crop" alt="Team brainstorming" /><div className="img-overlay"></div></div>
-          <div className="img-wrap"><img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&q=80&auto=format&fit=crop" alt="Developer at work" /><div className="img-overlay"></div></div>
+          <div className="img-wrap"><img src="/team-collaboration.jpg" alt="Office collaboration session" /><div className="img-overlay"></div></div>
+          <div className="img-wrap"><img src="/team-brainstorming.jpg" alt="Team brainstorming" /><div className="img-overlay"></div></div>
+          <div className="img-wrap"><img src="/team-developer.jpg" alt="Developer at work" /><div className="img-overlay"></div></div>
         </div>
         <div className="culture-text" data-reveal>
           <div className="label"><div className="label-line"></div><span className="label-text">Life at Starks</span></div>

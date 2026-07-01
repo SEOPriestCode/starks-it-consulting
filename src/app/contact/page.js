@@ -57,7 +57,7 @@ export default function Contact() {
       <div id="contact-wrap">
         <div className="contact-left">
           <div className="contact-left-bg">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=70&auto=format&fit=crop" alt="Lagos city skyline" />
+            <img src="/home-cta.jpg" alt="Lagos city skyline" />
           </div>
           <div className="contact-left-inner">
             <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Get in Touch</span></div>

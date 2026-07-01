@@ -97,18 +97,7 @@ export default function Nav() {
                   onMouseLeave={() => setServicesDropdownOpen(false)}
                   style={{ display: 'inline-block' }}
                 >
-                  <button
-                    className={pathname.startsWith('/services') ? 'active' : ''}
-                    style={{
-                      background: 'transparent',
-                      border: 'none',
-                      color: 'inherit',
-                      cursor: 'pointer',
-                      fontSize: 'inherit',
-                      fontFamily: 'inherit',
-                      padding: 0
-                    }}
-                  >
+                  <button>
                     {link.name}
                   </button>
                   {servicesDropdownOpen && (

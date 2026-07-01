@@ -17,7 +17,7 @@ export default function Blog() {
       author: 'Ngozi Okafor',
       date: '28 Mar 2025',
       readTime: '6 min',
-      img: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-data-ai.jpg',
       delay: ''
     },
     {
@@ -27,7 +27,7 @@ export default function Blog() {
       author: 'Tunde Fashola',
       date: '15 Mar 2025',
       readTime: '5 min',
-      img: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-compliance.jpg',
       delay: '1'
     },
     {
@@ -37,7 +37,7 @@ export default function Blog() {
       author: 'Kola Balogun',
       date: '1 Mar 2025',
       readTime: '9 min',
-      img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-digital-transformation.jpg',
       delay: '2'
     },
     {
@@ -47,7 +47,7 @@ export default function Blog() {
       author: 'Emeka Okonkwo',
       date: '14 Feb 2025',
       readTime: '7 min',
-      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-erp.jpg',
       delay: ''
     },
     {
@@ -57,7 +57,7 @@ export default function Blog() {
       author: 'Tunde Fashola',
       date: '28 Jan 2025',
       readTime: '11 min',
-      img: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-zero-trust.jpg',
       delay: '1'
     },
     {
@@ -67,7 +67,7 @@ export default function Blog() {
       author: 'Amaka Osei',
       date: '10 Jan 2025',
       readTime: '6 min',
-      img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-finops.jpg',
       delay: '2'
     },
     {
@@ -77,7 +77,7 @@ export default function Blog() {
       author: 'Ngozi Okafor',
       date: '18 Dec 2024',
       readTime: '8 min',
-      img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-snowflake.jpg',
       delay: ''
     },
     {
@@ -87,7 +87,7 @@ export default function Blog() {
       author: 'Michael Omotayo',
       date: '2 Dec 2024',
       readTime: '10 min',
-      img: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-government.jpg',
       delay: '1'
     },
     {
@@ -97,7 +97,7 @@ export default function Blog() {
       author: 'Funke Adeyemi',
       date: '15 Nov 2024',
       readTime: '7 min',
-      img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&auto=format&fit=crop',
+      img: '/blog-culture.jpg',
       delay: '2'
     }
   ];
@@ -113,7 +113,7 @@ export default function Blog() {
       </Head>
       <div className="page-hero">
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1400&q=70&auto=format&fit=crop" alt="Technology thinking and writing" />
+          <img src="/blog-hero.jpg" alt="Technology thinking and writing" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">
@@ -140,7 +140,7 @@ export default function Blog() {
         {(activeCat === 'All Topics' || activeCat === 'Cloud Strategy') && (
           <div className="blog-featured" data-reveal>
             <div className="blog-feat-img">
-              <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&q=80&auto=format&fit=crop" alt="Cloud migration strategy" />
+              <img src="/blog-featured.jpg" alt="Cloud migration strategy" />
               <div className="img-overlay"></div>
             </div>
             <div className="blog-feat-body">
