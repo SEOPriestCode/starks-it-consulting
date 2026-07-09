@@ -46,6 +46,9 @@ export default function ClientLayout({ children }) {
   // Handle Swipe Navigation (Touch & Mouse Drag)
   const router = useRouter();
   useEffect(() => {
+    // Disable swipe navigation on cases and blog pages to prevent filter interference
+    if (pathname === '/cases' || pathname === '/blog') return;
+    
     let startX = 0;
     let startY = 0;
     let isDown = false;
@@ -53,6 +56,12 @@ export default function ClientLayout({ children }) {
     const handlePointerDown = (e) => {
       // Only listen to single touches or primary mouse clicks
       if (e.pointerType === 'mouse' && e.button !== 0) return;
+      
+      // Ignore pointer down on filter buttons and their container
+      if (e.target && e.target.closest && e.target.closest('.cases-filter, .filter-btn')) {
+        return;
+      }
+      
       isDown = true;
       startX = e.clientX;
       startY = e.clientY;
@@ -61,6 +70,11 @@ export default function ClientLayout({ children }) {
     const handlePointerUp = (e) => {
       if (!isDown) return;
       isDown = false;
+      
+      // Ignore pointer up on filter buttons and their container
+      if (e.target && e.target.closest && e.target.closest('.cases-filter, .filter-btn')) {
+        return;
+      }
       
       const endX = e.clientX;
       const endY = e.clientY;

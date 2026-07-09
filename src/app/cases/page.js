@@ -107,11 +107,11 @@ export default function Cases() {
             </button>
           ))}
         </div>
-        <div className="cases-masonry">
+        <div className={`cases-masonry ${activeFilter !== 'All' ? 'has-horizontal' : ''}`}>
           {filteredCases.map((c, i) => (
             <div 
               key={i} 
-              className={`case-card2 ${c.featured ? 'featured' : ''}`}
+              className={`case-card2 ${c.featured ? 'featured' : ''} ${activeFilter !== 'All' ? 'horizontal' : ''}`}
             >
               <div className="cc-img"><img src={c.img} alt={c.title} /></div>
               <div className="cc-body">

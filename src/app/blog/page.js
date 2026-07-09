@@ -7,10 +7,11 @@ import Link from 'next/link';
 export default function Blog() {
   const [activeCat, setActiveCat] = useState('All Topics');
   
-  const categories = ['All Topics', 'Cloud Strategy', 'Cybersecurity', 'Data & AI', 'Digital Transformation', 'Compliance'];
+  const categories = ['All Topics', 'Cloud Strategy', 'Cybersecurity', 'Data & AI', 'Digital Transformation', 'Compliance', 'Enterprise Software', 'Public Sector', 'Culture & Careers'];
   
   const articles = [
     {
+      id: 'ai-ready-data-pipelines',
       category: 'Data & AI',
       title: 'Building AI-Ready Data Pipelines for African Financial Institutions',
       excerpt: 'The unique data quality, latency, and compliance challenges facing Nigerian fintechs — and the architecture patterns that address them at scale.',
@@ -21,6 +22,7 @@ export default function Blog() {
       delay: ''
     },
     {
+      id: 'ndpr-2.0-regulations',
       category: 'Compliance',
       title: 'NDPR 2.0: What the New Regulations Mean for Your Technology Stack',
       excerpt: 'A practical breakdown of the updated Nigeria Data Protection Regulation — and a prioritised remediation checklist for CIOs and CTOs to act on immediately.',
@@ -31,6 +33,7 @@ export default function Blog() {
       delay: '1'
     },
     {
+      id: 'cio-digital-transformation',
       category: 'Digital Transformation',
       title: 'The CIO\'s Playbook for Leading Digital Transformation Without Losing the Organisation',
       excerpt: 'Change management is where most transformation programmes fail. Here\'s the framework we use to bring people along — not just processes.',
@@ -41,6 +44,7 @@ export default function Blog() {
       delay: '2'
     },
     {
+      id: 'erp-implementation-mistakes',
       category: 'Enterprise Software',
       title: 'ERP Implementation in Africa: 7 Mistakes That Cost Organisations Millions',
       excerpt: 'Custom ERP projects fail at an alarming rate. These are the seven root causes we\'ve identified across 20+ implementations — and how to avoid each one.',
@@ -51,6 +55,7 @@ export default function Blog() {
       delay: ''
     },
     {
+      id: 'zero-trust-architecture',
       category: 'Cybersecurity',
       title: 'Zero Trust Is Not a Product — It\'s an Architecture. Here\'s How to Build It.',
       excerpt: 'Most vendors will sell you "zero trust" in a box. Real zero trust is an organisational posture built layer by layer. This is the practical guide.',
@@ -61,6 +66,7 @@ export default function Blog() {
       delay: '1'
     },
     {
+      id: 'finops-aws-cost-optimization',
       category: 'Cloud Strategy',
       title: 'FinOps in Practice: How We Cut a Client\'s AWS Bill by 58% Without Touching the Architecture',
       excerpt: 'Cloud cost optimisation doesn\'t always require re-architecture. Sometimes it\'s about visibility, tagging hygiene, and reserved instance strategy. A real case study.',
@@ -71,6 +77,29 @@ export default function Blog() {
       delay: '2'
     },
     {
+      id: 'multi-cloud-strategy',
+      category: 'Cloud Strategy',
+      title: 'Multi-Cloud vs Single-Cloud: When to Choose Which for African Enterprises',
+      excerpt: 'The debate between multi-cloud and single-cloud strategies is often ideological rather than practical. Here\'s a framework for making the right decision based on your organisation\'s specific needs.',
+      author: 'Adaeze Emeka',
+      date: '20 Dec 2024',
+      readTime: '8 min',
+      img: '/service-cloud.jpg',
+      delay: ''
+    },
+    {
+      id: 'cloud-migration-checklist',
+      category: 'Cloud Strategy',
+      title: 'The Pre-Migration Checklist: 15 Things to Do Before Moving to the Cloud',
+      excerpt: 'Most cloud migration failures happen before the migration even begins. This comprehensive checklist covers security, compliance, cost estimation, and technical readiness.',
+      author: 'Chinedu Nwosu',
+      date: '5 Nov 2024',
+      readTime: '7 min',
+      img: '/blog-finops.jpg',
+      delay: '1'
+    },
+    {
+      id: 'spreadsheets-to-snowflake',
       category: 'Data & AI',
       title: 'From Spreadsheets to Snowflake: A Practical Data Modernisation Roadmap',
       excerpt: 'Most mid-market African companies are still running their analytics on Excel. Here\'s a realistic, phased path to a modern data stack — without the Silicon Valley price tag.',
@@ -81,6 +110,7 @@ export default function Blog() {
       delay: ''
     },
     {
+      id: 'digitising-government',
       category: 'Public Sector',
       title: 'Digitising Government: Lessons from Nigeria\'s Most Successful e-Government Projects',
       excerpt: 'After delivering three major government platforms, we\'ve identified what separates successful public sector technology programmes from the ones that stall.',
@@ -91,6 +121,7 @@ export default function Blog() {
       delay: '1'
     },
     {
+      id: 'building-engineering-team',
       category: 'Culture & Careers',
       title: 'Building a World-Class Engineering Team in Lagos: What We\'ve Learned in 10 Years',
       excerpt: 'Talent density, compensation benchmarking, technical interviews, and retention — the honest version of what it takes to build and keep great engineers in Nigeria.',
@@ -135,10 +166,10 @@ export default function Blog() {
         </div>
       </div>
 
-      <section style={{ padding: '60px 5% 0' }}>
+      <section style={{ padding: '40px 5% 0' }}>
         {/* FEATURED ARTICLE */}
-        {(activeCat === 'All Topics' || activeCat === 'Cloud Strategy') && (
-          <div className="blog-featured" data-reveal>
+        {activeCat === 'All Topics' && (
+          <div className="blog-featured">
             <div className="blog-feat-img">
               <img src="/blog-featured.jpg" alt="Cloud migration strategy" />
               <div className="img-overlay"></div>
@@ -161,9 +192,9 @@ export default function Blog() {
         )}
 
         {/* ARTICLES GRID */}
-        <div className="articles-grid" style={{ marginTop: (activeCat === 'All Topics' || activeCat === 'Cloud Strategy') ? '4rem' : '2rem' }}>
+        <div className={`articles-grid ${activeCat !== 'All Topics' ? 'has-horizontal' : ''}`} style={{ marginTop: activeCat === 'All Topics' ? '4rem' : '2rem' }}>
           {filteredArticles.map((a, i) => (
-            <div key={i} className="article-card" data-reveal data-delay={a.delay}>
+            <Link key={i} href={`/blog/${a.id}`} className={`article-card ${activeCat !== 'All Topics' ? 'horizontal' : ''}`} style={{ textDecoration: 'none' }}>
               <div className="ac-img"><img src={a.img} alt={a.title} /></div>
               <div className="ac-body">
                 <div className="ac-cat">{a.category}</div>
@@ -174,12 +205,12 @@ export default function Blog() {
                   <span className="ac-read">{a.readTime} →</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* NEWSLETTER */}
-        <div className="newsletter-strip" data-reveal>
+        <div className="newsletter-strip">
           <div>
             <div className="label"><div className="label-line"></div><span className="label-text">Stay Informed</span></div>
             <div className="nl-title">Get insights delivered to your inbox</div>
