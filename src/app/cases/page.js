@@ -6,7 +6,7 @@ import Head from 'next/head';
 export default function Cases() {
   const [activeFilter, setActiveFilter] = useState('All');
   
-  const filters = ['All', 'Financial Services', 'Energy', 'Public Sector', 'Healthcare', 'Telecoms'];
+  const filters = ['All', 'Financial Services', 'Energy', 'Public Sector', 'Healthcare', 'Telecoms', 'Retail'];
   
   const cases = [
     {
@@ -27,7 +27,7 @@ export default function Cases() {
       description: 'Custom ERP system covering logistics, inventory, and field workforce management across 120 depots nationwide.',
       resultVal: '₦210M',
       resultUnit: 'Annual savings',
-      img: '/blog-erp.jpg',
+      img: '/blog-erp.png',
       featured: false,
       delay: '1'
     },
@@ -71,13 +71,13 @@ export default function Cases() {
       description: 'Unified digital commerce platform integrating POS, inventory, loyalty, and e-commerce across 80 retail locations in 6 countries.',
       resultVal: '220%',
       resultUnit: 'Increase in online revenue',
-      img: '/cases-retail.jpg',
+      img: '/cases-retail.png',
       featured: false,
       delay: '2'
     }
   ];
 
-  const filteredCases = cases.filter(c => activeFilter === 'All' || c.category === activeFilter || (activeFilter === 'Retail' && c.category === 'Retail')); // Note: Retail isn't in filter buttons but is in cases
+  const filteredCases = cases.filter(c => activeFilter === 'All' || c.category === activeFilter);
 
   return (
     <div className="page active">
@@ -95,12 +95,13 @@ export default function Cases() {
         </div>
       </div>
       <section style={{ padding: '60px 5% 120px' }}>
-        <div className="cases-filter" data-reveal>
-          {filters.map(filter => (
+        <div className="cases-filter">
+          {filters.map((filter) => (
             <button 
-              key={filter} 
+              key={filter}
               className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
               onClick={() => setActiveFilter(filter)}
+              type="button"
             >
               {filter}
             </button>
@@ -110,9 +111,7 @@ export default function Cases() {
           {filteredCases.map((c, i) => (
             <div 
               key={i} 
-              className={`case-card2 ${c.featured ? 'featured' : ''}`} 
-              data-reveal 
-              data-delay={c.delay}
+              className={`case-card2 ${c.featured ? 'featured' : ''}`}
             >
               <div className="cc-img"><img src={c.img} alt={c.title} /></div>
               <div className="cc-body">

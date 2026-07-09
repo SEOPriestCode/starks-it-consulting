@@ -191,7 +191,7 @@ export default function Home() {
           </Link>
           <Link href="/cases" className="hcase" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
             <div className="hcase-img">
-              <img src="/blog-erp.jpg" alt="Energy sector operations" />
+              <img src="/blog-erp.png" alt="Energy sector operations" />
             </div>
             <div className="hcase-body">
               <div className="hcase-ind">Energy & Resources</div>

@@ -37,7 +37,7 @@ export default function Blog() {
       author: 'Kola Balogun',
       date: '1 Mar 2025',
       readTime: '9 min',
-      img: '/blog-digital-transformation.jpg',
+      img: '/blog-digital-transformation.png',
       delay: '2'
     },
     {
@@ -47,7 +47,7 @@ export default function Blog() {
       author: 'Emeka Okonkwo',
       date: '14 Feb 2025',
       readTime: '7 min',
-      img: '/blog-erp.jpg',
+      img: '/blog-erp.png',
       delay: ''
     },
     {
@@ -97,7 +97,7 @@ export default function Blog() {
       author: 'Funke Adeyemi',
       date: '15 Nov 2024',
       readTime: '7 min',
-      img: '/blog-culture.jpg',
+      img: '/blog-culture.png',
       delay: '2'
     }
   ];

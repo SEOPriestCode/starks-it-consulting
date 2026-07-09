@@ -274,13 +274,17 @@ h1.hero-h em{font-style:italic;color:var(--gold)}
 .about-img-main{width:100%;aspect-ratio:4/5;position:relative}
 .about-img-main .img-wrap{height:100%}
 .about-img-main .img-wrap img{height:100%}
-.about-gold-box{position:absolute;bottom:-2rem;right:-2rem;background:var(--gold);color:var(--ink);padding:clamp(1.5rem,2vw,2rem);text-align:center;width:150px;z-index:5}
+.about-gold-box{position:absolute;bottom:2rem;right:-1rem;background:var(--gold);color:var(--ink);padding:clamp(1.2rem,1.8vw,1.8rem);text-align:center;width:clamp(130px,18vw,160px);z-index:5;box-shadow:0 8px 24px rgba(0,0,0,0.3)}
 .agb-num{font-family:var(--ff-display);font-size:clamp(2.4rem,4vw,3rem);font-weight:700;line-height:1;display:block}
 .agb-text{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;display:block;margin-top:5px}
 .about-text p{font-size:clamp(0.85rem,1.1vw,0.95rem);color:var(--ash2);line-height:1.85;font-weight:300;margin-bottom:1.2rem}
 .about-certs{margin-top:2rem;display:flex;flex-direction:column;gap:0.8rem}
 .acert{display:flex;align-items:center;gap:1rem;padding:0.8rem 1.2rem;background:var(--ink2);border-left:2px solid var(--gold);font-size:clamp(0.8rem,1.1vw,0.88rem);color:var(--ash2)}
 .acert-icon{color:var(--gold);font-size:0.9rem}
+
+/* PHOTO STRIP */
+.photo-strip-3col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;padding:0 clamp(4%,5%,5%);margin-bottom:clamp(60px,8vw,80px)}
+.photo-strip-3col .img-wrap{height:260px}
 
 /* VALUES */
 #about-values{padding:0 clamp(4%,5%,5%) clamp(60px,10vw,100px)}
@@ -305,9 +309,10 @@ h1.hero-h em{font-style:italic;color:var(--gold)}
    ============================================================ */
 #cases-hero-img{position:absolute;right:0;top:0;width:45%;height:100%;z-index:0;opacity:0.15}
 #cases-hero-img img{width:100%;height:100%;object-fit:cover}
-.cases-filter{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:clamp(2rem,3vw,3rem)}
-.filter-btn{background:transparent;border:1px solid rgba(200,168,75,0.15);color:var(--ash);padding:8px 20px;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;min-height:40px}
-.filter-btn:hover,.filter-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(200,168,75,0.05)}
+.cases-filter{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:clamp(2rem,3vw,3rem);position:relative;z-index:10}
+.filter-btn{background:transparent;border:1px solid rgba(200,168,75,0.15);color:var(--ash);padding:8px 20px;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;min-height:40px;position:relative;z-index:1;pointer-events:auto}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,168,75,0.05)}
+.filter-btn.active{border-color:var(--gold) !important;color:var(--gold) !important;background:rgba(200,168,75,0.05) !important}
 .cases-masonry{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(1rem,2vw,1.5rem)}
 .case-card2{background:var(--ink2);overflow:hidden;cursor:pointer;transition:transform 0.4s var(--ease)}
 .case-card2:hover{transform:translateY(-6px)}
@@ -544,9 +549,9 @@ footer{background:var(--ink);border-top:1px solid rgba(200,168,75,0.06);padding:
   .svc-list{grid-template-columns:1fr}
 
   /* About */
-  #about-story{grid-template-columns:1fr;gap:3rem}
-  .about-img-main{max-width:550px}
-  .about-gold-box{right:0;bottom:-1.5rem}
+  #about-story{grid-template-columns:1fr;gap:3rem;padding:0 5% 80px}
+  .about-img-main{max-width:550px;margin:0 auto}
+  .about-gold-box{right:0;bottom:2rem;padding:1rem 1.5rem;width:130px}
   .values-grid{grid-template-columns:1fr 1fr}
   .numbers-band{grid-template-columns:1fr 1fr}
   .nb{border-right:none;border-bottom:1px solid rgba(200,168,75,0.1)}
@@ -721,9 +726,9 @@ footer{background:var(--ink);border-top:1px solid rgba(200,168,75,0.06);padding:
 
   /* ── About page ──────────────────────────────────────── */
   #about-story{grid-template-columns:1fr;gap:2.5rem;padding:40px 4% 70px}
-  .about-img-main{max-width:100%;aspect-ratio:3/2}
+  .about-img-main{max-width:100%;aspect-ratio:3/2;position:relative}
   .about-img-main .img-wrap img{width:100%;height:100%;object-fit:cover}
-  .about-gold-box{position:static;margin-top:1.5rem;width:130px;right:auto;bottom:auto}
+  .about-gold-box{position:absolute;bottom:1rem;right:1rem;padding:1rem 1.3rem;width:120px;box-shadow:0 6px 20px rgba(0,0,0,0.4)}
   .about-text p{font-size:0.9rem}
   .acert{font-size:0.82rem;padding:0.7rem 1rem}
   .photo-strip-3col{grid-template-columns:1fr!important;padding:0 4%!important;margin-bottom:50px!important}
@@ -748,6 +753,7 @@ footer{background:var(--ink);border-top:1px solid rgba(200,168,75,0.06);padding:
   .cases-filter{gap:0.4rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;scrollbar-width:none}
   .cases-filter::-webkit-scrollbar{display:none}
   .filter-btn{flex-shrink:0;padding:7px 13px;font-size:0.62rem;white-space:nowrap}
+  .filter-btn.active{border-color:var(--gold) !important;color:var(--gold) !important;background:rgba(200,168,75,0.05) !important}
   .cases-masonry{grid-template-columns:1fr;gap:1rem}
   .case-card2.featured{grid-column:span 1}
   .cc-img{aspect-ratio:16/10;height:auto}
@@ -865,8 +871,16 @@ footer{background:var(--ink);border-top:1px solid rgba(200,168,75,0.06);padding:
 /* ============================================================
    UPDATED BUTTON STYLES (ROUNDED)
    ============================================================ */
-.btn, .nav-cta-btn, .submit-btn, .nl-btn, .filter-btn, .blog-cat-pill, .mobile-nav-cta {
+.btn, .nav-cta-btn, .submit-btn, .nl-btn, .blog-cat-pill, .mobile-nav-cta {
   border-radius: 8px !important;
+}
+.filter-btn {
+  border-radius: 8px !important;
+}
+.filter-btn.active {
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+  background: rgba(200, 168, 75, 0.05) !important;
 }
 
 /* ============================================================
@@ -974,7 +988,12 @@ html.light .numbers-band {
 html.light .filter-btn {
   border: 1px solid rgba(184, 134, 11, 0.15);
 }
-html.light .filter-btn:hover, html.light .filter-btn.active {
+html.light .filter-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(184, 134, 11, 0.05);
+}
+html.light .filter-btn.active {
   border-color: var(--gold);
   color: var(--gold);
   background: rgba(184, 134, 11, 0.05);
