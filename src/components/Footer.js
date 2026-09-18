@@ -18,6 +18,7 @@ export default function Footer() {
   let tagline = 'Enterprise technology consulting built for the African market and trusted globally. About a decade of delivery, integrity, and innovation.';
 
   let col1Links = [
+    { name: 'TransIT (Fleet System)', path: '/transit' },
     { name: 'Custom Software', path: '/services' },
     { name: 'Cloud & DevOps', path: '/services' },
     { name: 'Cybersecurity', path: '/services' },

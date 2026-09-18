@@ -127,6 +127,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRANSIT PRODUCT SPOTLIGHT */}
+      <section style={{ padding: '80px 5%', background: 'var(--ink2)', borderTop: '1px solid rgba(200,168,75,0.15)', borderBottom: '1px solid rgba(200,168,75,0.15)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+          <div>
+            <div className="label"><div className="label-line"></div><span className="label-text">PROPRIETARY SAAS PRODUCT</span></div>
+            <h2 className="title" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}>
+              Trans<span style={{ color: '#2c97cf' }}>IT</span> — Intelligent Fleet <em>& Transport System</em>
+            </h2>
+            <p className="subtitle" style={{ marginBottom: '1.5rem', color: 'var(--ash2)' }}>
+              Monitor and regulate vehicle routes, live GPS pings, geofencing compliance, mileage-triggered maintenance, and distance-based billing—all from one live control console built specifically for Nigerian roads.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '2rem' }}>
+              <Link href="/transit" className="btn btn-gold" style={{ textDecoration: 'none' }}>
+                <span>Explore TransIT Platform</span>
+              </Link>
+              <a href="https://www.trans-it.app/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ textDecoration: 'none' }}>
+                Visit trans-it.app ↗
+              </a>
+            </div>
+          </div>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(200,168,75,0.3)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <img src="/transit_hero_dashboard.png" alt="TransIT Fleet Management System UI Console" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+        </div>
+      </section>
+
       {/* WHY US */}
       <section id="home-why">
         <div className="why-img-stack" data-reveal="left">

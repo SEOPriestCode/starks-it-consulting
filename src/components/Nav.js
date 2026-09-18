@@ -52,6 +52,7 @@ export default function Nav() {
         { name: 'IT Strategy', path: '/services/it-strategy' },
       ]
     },
+    { name: 'TransIT (Fleet)', path: '/transit' },
     { name: 'About', path: '/about' },
     { name: 'Case Studies', path: '/cases' },
     { name: 'Team', path: '/team' },
