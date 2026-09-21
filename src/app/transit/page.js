@@ -131,7 +131,7 @@ export default function TransITPage() {
       </Head>
 
       {/* HERO SECTION */}
-      <div className="page-hero" style={{ background: 'linear-gradient(180deg, rgba(8, 14, 26, 0.95) 0%, rgba(13, 24, 41, 0.98) 100%)', minHeight: '85vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+      <div className="page-hero" style={{ background: 'linear-gradient(180deg, var(--ink) 0%, var(--ink2) 100%)', minHeight: '85vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
         
         {/* Subtle Decorative Background Glow */}
         <div style={{
@@ -140,22 +140,22 @@ export default function TransITPage() {
           right: '-10%',
           width: '600px',
           height: '600px',
-          background: 'radial-gradient(circle, rgba(44, 151, 207, 0.15) 0%, rgba(200, 168, 75, 0.08) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--starks-blue-light) 0%, rgba(200, 168, 75, 0.08) 50%, transparent 70%)',
           pointerEvents: 'none',
           zIndex: 0
         }} />
 
         <div className="page-hero-inner" style={{ position: 'relative', zIndex: 1, paddingTop: '100px', paddingBottom: '60px', width: '100%' }}>
           
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '30px', background: 'rgba(44, 151, 207, 0.12)', border: '1px solid rgba(44, 151, 207, 0.3)', marginBottom: '1.5rem' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2c97cf', boxShadow: '0 0 8px #2c97cf' }}></span>
-            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: '#2c97cf', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: '600' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '30px', background: 'var(--starks-blue-light)', border: '1px solid var(--starks-blue-border)', marginBottom: '1.5rem' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--starks-blue)', boxShadow: '0 0 8px var(--starks-blue)' }}></span>
+            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: '600' }}>
               FLAGSHIP PRODUCT BY STARKS IT CONSULTING
             </span>
           </div>
 
           <h1 className="title" style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)', lineHeight: 1.08, maxWidth: '900px', marginBottom: '1.2rem' }}>
-            Trans<span style={{ color: '#2c97cf' }}>IT</span> — Every vehicle, <em>tracked live.</em>
+            Trans<span style={{ color: 'var(--starks-blue)' }}>IT</span> — Every vehicle, <em>tracked live.</em>
           </h1>
 
           <p className="subtitle" style={{ fontSize: 'clamp(1.05rem, 1.3vw, 1.25rem)', maxWidth: '760px', lineHeight: 1.7, color: 'var(--ash2)', marginBottom: '2.5rem' }}>
@@ -165,7 +165,7 @@ export default function TransITPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center', marginBottom: '3rem' }}>
             <button 
               onClick={() => setIsDemoModalOpen(true)}
-              className="btn btn-gold" 
+              className="btn btn-blue" 
               style={{ padding: '16px 32px', fontSize: '0.9rem', borderRadius: '4px', cursor: 'pointer' }}
             >
               <span>Book a Live Demo</span>
@@ -185,7 +185,7 @@ export default function TransITPage() {
               target="_blank" 
               rel="noopener noreferrer" 
               className="arrow-btn"
-              style={{ color: '#2c97cf', fontSize: '0.9rem', padding: '12px 16px', textDecoration: 'none' }}
+              style={{ color: 'var(--starks-blue)', fontSize: '0.9rem', padding: '12px 16px', textDecoration: 'none' }}
             >
               Launch TransIT Console (trans-it.app) ↗
             </a>
@@ -196,12 +196,13 @@ export default function TransITPage() {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1.2rem',
-            background: 'rgba(13, 24, 41, 0.7)',
+            background: 'var(--card-bg)',
             backdropFilter: 'blur(12px)',
-            border: '1px solid rgba(200, 168, 75, 0.2)',
+            border: '1px solid var(--card-border)',
             borderRadius: '12px',
             padding: '1.5rem 2rem',
-            maxWidth: '1000px'
+            maxWidth: '1000px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
           }}>
             <div>
               <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>TELEMETRY STREAM</div>
@@ -210,7 +211,7 @@ export default function TransITPage() {
             </div>
 
             <div>
-              <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: '#2c97cf', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>FRESHNESS SCORING</div>
+              <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>FRESHNESS SCORING</div>
               <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--white)' }}>Live · Stale · Offline</div>
               <div style={{ fontSize: '0.8rem', color: 'var(--ash)', marginTop: '2px' }}>Clear signal status scoring</div>
             </div>
@@ -222,7 +223,7 @@ export default function TransITPage() {
             </div>
 
             <div>
-              <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: '#2c97cf', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>OPERATIONAL ROI</div>
+              <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>OPERATIONAL ROI</div>
               <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--white)' }}>-30% Idleness Waste</div>
               <div style={{ fontSize: '0.8rem', color: 'var(--ash)', marginTop: '2px' }}>Prevent unneeded fuel burn</div>
             </div>
@@ -232,7 +233,7 @@ export default function TransITPage() {
       </div>
 
       {/* LIVE INTERACTIVE CONSOLE DEMO WIDGET SECTION */}
-      <section style={{ padding: '80px 5%', background: 'var(--ink2)', borderTop: '1px solid rgba(200, 168, 75, 0.15)', borderBottom: '1px solid rgba(200, 168, 75, 0.15)' }}>
+      <section style={{ padding: '80px 5%', background: 'var(--ink2)', borderTop: '1px solid var(--card-border)', borderBottom: '1px solid var(--card-border)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           
           <div className="label"><div className="label-line"></div><span className="label-text">INTERACTIVE PLATFORM CONSOLE</span></div>
@@ -242,7 +243,7 @@ export default function TransITPage() {
           </p>
 
           {/* Feature Selector Tabs */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem', borderBottom: '1px solid var(--card-border)', paddingBottom: '1rem' }}>
             {[
               { id: 'tracking', label: '📡 Live GPS & Freshness', desc: 'Real-time telemetry' },
               { id: 'alerts', label: '🚨 Safety & Idle Alerts', desc: 'Automated triggers' },
@@ -257,9 +258,9 @@ export default function TransITPage() {
                 style={{
                   padding: '12px 20px',
                   borderRadius: '6px',
-                  background: activeTab === tab.id ? 'var(--gold)' : 'rgba(255,255,255,0.04)',
-                  color: activeTab === tab.id ? 'var(--ink)' : 'var(--ash2)',
-                  border: activeTab === tab.id ? '1px solid var(--gold)' : '1px solid rgba(255,255,255,0.08)',
+                  background: activeTab === tab.id ? 'var(--starks-blue)' : 'var(--card-bg)',
+                  color: activeTab === tab.id ? '#ffffff' : 'var(--ash2)',
+                  border: activeTab === tab.id ? '1px solid var(--starks-blue)' : '1px solid var(--card-border)',
                   fontFamily: 'var(--ff-body)',
                   fontWeight: activeTab === tab.id ? '700' : '500',
                   fontSize: '0.85rem',
@@ -269,7 +270,7 @@ export default function TransITPage() {
                 }}
               >
                 <div>{tab.label}</div>
-                <div style={{ fontSize: '0.72rem', opacity: 0.8, marginTop: '2px' }}>{tab.desc}</div>
+                <div style={{ fontSize: '0.72rem', opacity: 0.85, marginTop: '2px' }}>{tab.desc}</div>
               </button>
             ))}
           </div>
@@ -278,18 +279,18 @@ export default function TransITPage() {
           <div style={{
             background: 'var(--ink)',
             borderRadius: '12px',
-            border: '1px solid rgba(200, 168, 75, 0.3)',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+            border: '1px solid var(--card-border)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
             overflow: 'hidden'
           }}>
             {/* Top Bar of Simulated Console */}
             <div style={{
-              background: '#0a1220',
+              background: 'var(--ink3)',
               padding: '12px 20px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderBottom: '1px solid rgba(255,255,255,0.08)'
+              borderBottom: '1px solid var(--card-border)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56', display: 'inline-block' }}></span>
@@ -315,14 +316,14 @@ export default function TransITPage() {
                       <h3 style={{ fontSize: '1.4rem', color: 'var(--white)', fontFamily: 'var(--ff-display)' }}>Real-Time Fleet Tracking & Signal Freshness</h3>
                       <p style={{ color: 'var(--ash2)', fontSize: '0.9rem' }}>Every tracker streams position, speed, and ignition state directly to map view with clear freshness scoring.</p>
                     </div>
-                    <a href="https://www.trans-it.app/live-tracking" target="_blank" rel="noopener noreferrer" className="arrow-btn">View Live Tracking Page ↗</a>
+                    <a href="https://www.trans-it.app/live-tracking" target="_blank" rel="noopener noreferrer" className="arrow-btn" style={{ color: 'var(--starks-blue)' }}>View Live Tracking Page ↗</a>
                   </div>
 
                   {/* Simulated Live Vehicle Stream Table */}
                   <div style={{ overflowX: 'auto' }}>
                     <table style={{ width: '100%', borderCollapse: 'collapse', color: 'var(--white)', fontSize: '0.85rem' }}>
                       <thead>
-                        <tr style={{ background: 'rgba(255,255,255,0.03)', textAlign: 'left', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                        <tr style={{ background: 'var(--ink2)', textAlign: 'left', borderBottom: '1px solid var(--card-border)' }}>
                           <th style={{ padding: '12px' }}>VEHICLE ID</th>
                           <th style={{ padding: '12px' }}>NAME / TYPE</th>
                           <th style={{ padding: '12px' }}>DRIVER</th>
@@ -333,11 +334,11 @@ export default function TransITPage() {
                       </thead>
                       <tbody>
                         {liveVehicles.map(v => (
-                          <tr key={v.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                          <tr key={v.id} style={{ borderBottom: '1px solid var(--card-border)' }}>
                             <td style={{ padding: '12px', fontFamily: 'var(--ff-mono)', color: 'var(--gold)', fontWeight: '600' }}>{v.id}</td>
                             <td style={{ padding: '12px', fontWeight: '600' }}>{v.name}</td>
                             <td style={{ padding: '12px', color: 'var(--ash2)' }}>{v.driver}</td>
-                            <td style={{ padding: '12px', fontFamily: 'var(--ff-mono)', color: v.speed > 75 ? '#ff6b6b' : '#2c97cf', fontWeight: '700' }}>
+                            <td style={{ padding: '12px', fontFamily: 'var(--ff-mono)', color: v.speed > 75 ? '#ff6b6b' : 'var(--starks-blue)', fontWeight: '700' }}>
                               {v.speed} km/h
                             </td>
                             <td style={{ padding: '12px', color: 'var(--ash2)' }}>{v.location}</td>
@@ -384,8 +385,8 @@ export default function TransITPage() {
                       <div style={{ fontSize: '0.75rem', color: 'var(--ash)', marginTop: '8px', fontFamily: 'var(--ff-mono)' }}>Wasted Fuel Est: 1.8 Litres · Driver Notified</div>
                     </div>
 
-                    <div style={{ padding: '1.2rem', background: 'rgba(44, 151, 207, 0.08)', border: '1px solid rgba(44, 151, 207, 0.3)', borderRadius: '8px' }}>
-                      <div style={{ color: '#2c97cf', fontWeight: '700', fontSize: '0.9rem', marginBottom: '6px' }}>🔌 DEVICE TAMPER / HARSH BRAKE</div>
+                    <div style={{ padding: '1.2rem', background: 'var(--starks-blue-light)', border: '1px solid var(--starks-blue-border)', borderRadius: '8px' }}>
+                      <div style={{ color: 'var(--starks-blue)', fontWeight: '700', fontSize: '0.9rem', marginBottom: '6px' }}>🔌 DEVICE TAMPER / HARSH BRAKE</div>
                       <div style={{ fontSize: '0.85rem', color: 'var(--white)' }}>Abrupt deceleration (-4.2g) detected on STK-305-IKE at Ikeja Along junction.</div>
                       <div style={{ fontSize: '0.75rem', color: 'var(--ash)', marginTop: '8px', fontFamily: 'var(--ff-mono)' }}>Safety Event Recorded · Driver Score updated</div>
                     </div>
@@ -399,22 +400,22 @@ export default function TransITPage() {
                   <p style={{ color: 'var(--ash2)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Draw custom operational boundaries around depots, state lines, or restricted corridors. Supports bulk CSV import/export.</p>
                   
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.2rem' }}>
-                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.2rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ background: 'var(--card-bg)', padding: '1.2rem', borderRadius: '8px', border: '1px solid var(--card-border)' }}>
                       <div style={{ color: 'var(--gold)', fontWeight: '600', marginBottom: '4px' }}>Lagos Island Delivery Zone</div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--ash)' }}>Polygon Zone · 8 Vehicles Active</div>
                       <div style={{ fontSize: '0.85rem', color: '#27c93f', marginTop: '10px', fontWeight: '600' }}>✓ 100% Entry/Exit Compliance</div>
                     </div>
 
-                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.2rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ background: 'var(--card-bg)', padding: '1.2rem', borderRadius: '8px', border: '1px solid var(--card-border)' }}>
                       <div style={{ color: 'var(--gold)', fontWeight: '600', marginBottom: '4px' }}>Abuja Cargo Central Depot</div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--ash)' }}>Circular Zone (500m radius)</div>
                       <div style={{ fontSize: '0.85rem', color: '#27c93f', marginTop: '10px', fontWeight: '600' }}>✓ Auto Depot Check-In Active</div>
                     </div>
 
-                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.2rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ background: 'var(--card-bg)', padding: '1.2rem', borderRadius: '8px', border: '1px solid var(--card-border)' }}>
                       <div style={{ color: 'var(--gold)', fontWeight: '600', marginBottom: '4px' }}>Interstate Corridor (Lagos - IB)</div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--ash)' }}>Route Corridor Zone</div>
-                      <div style={{ fontSize: '0.85rem', color: '#2c97cf', marginTop: '10px', fontWeight: '600' }}>ℹ Detour Monitoring On</div>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--starks-blue)', marginTop: '10px', fontWeight: '600' }}>ℹ Detour Monitoring On</div>
                     </div>
                   </div>
                 </div>
@@ -446,14 +447,14 @@ export default function TransITPage() {
                   <h3 style={{ fontSize: '1.4rem', color: 'var(--white)', fontFamily: 'var(--ff-display)', marginBottom: '0.5rem' }}>Automated Distance-Based Metering & Billing</h3>
                   <p style={{ color: 'var(--ash2)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Daily GPS mileage is metered and automatically charged to client stored payment methods with zero manual paperwork.</p>
                   
-                  <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '8px', border: '1px solid rgba(200, 168, 75, 0.2)' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '10px', marginBottom: '10px' }}>
+                  <div style={{ background: 'var(--card-bg)', padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--card-border)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--card-border)', paddingBottom: '10px', marginBottom: '10px' }}>
                       <span style={{ color: 'var(--ash2)' }}>Client Account: Dangote Logistics Sub-contract #802</span>
                       <span style={{ color: 'var(--gold)', fontFamily: 'var(--ff-mono)' }}>STATUS: AUTO-BILLED</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.1rem', fontWeight: '700' }}>
-                      <span>Metered Distance (Past 24 hrs): 1,480.4 km</span>
-                      <span style={{ color: '#2c97cf' }}>₦ 370,100.00</span>
+                      <span style={{ color: 'var(--white)' }}>Metered Distance (Past 24 hrs): 1,480.4 km</span>
+                      <span style={{ color: 'var(--starks-blue)' }}>₦ 370,100.00</span>
                     </div>
                   </div>
                 </div>
@@ -464,9 +465,9 @@ export default function TransITPage() {
                   <h3 style={{ fontSize: '1.4rem', color: 'var(--white)', fontFamily: 'var(--ff-display)', marginBottom: '0.5rem' }}>Time-Bounded Public Locator Links</h3>
                   <p style={{ color: 'var(--ash2)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Share a single vehicle’s live position on a public tracking link with built-in expiration—no login required for clients.</p>
                   
-                  <div style={{ background: 'rgba(44, 151, 207, 0.1)', padding: '1.5rem', borderRadius: '8px', border: '1px solid rgba(44, 151, 207, 0.3)' }}>
+                  <div style={{ background: 'var(--starks-blue-light)', padding: '1.5rem', borderRadius: '8px', border: '1px solid var(--starks-blue-border)' }}>
                     <div style={{ fontSize: '0.85rem', color: 'var(--ash2)', marginBottom: '6px' }}>Generated Shareable Link:</div>
-                    <div style={{ fontFamily: 'var(--ff-mono)', color: '#2c97cf', fontSize: '0.95rem', background: 'rgba(0,0,0,0.4)', padding: '10px 14px', borderRadius: '4px', marginBottom: '10px' }}>
+                    <div style={{ fontFamily: 'var(--ff-mono)', color: 'var(--starks-blue)', fontSize: '0.95rem', background: 'var(--ink2)', padding: '10px 14px', borderRadius: '4px', marginBottom: '10px' }}>
                       https://trans-it.app/track/loc_8f9a2b7e1c9?exp=2h
                     </div>
                     <div style={{ fontSize: '0.8rem', color: 'var(--ash)' }}>Expires in: 1 hour 45 minutes · Shared with End-Customer</div>
@@ -492,7 +493,7 @@ export default function TransITPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
             
             {/* Calculator Controls */}
-            <div style={{ background: 'var(--ink2)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(200, 168, 75, 0.2)' }}>
+            <div style={{ background: 'var(--card-bg)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--card-border)' }}>
               
               <div style={{ marginBottom: '2rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
@@ -512,7 +513,7 @@ export default function TransITPage() {
               <div style={{ marginBottom: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
                   <label style={{ fontWeight: '600', color: 'var(--white)' }}>Avg. Daily Distance per Vehicle:</label>
-                  <span style={{ fontFamily: 'var(--ff-mono)', color: '#2c97cf', fontWeight: '700', fontSize: '1.2rem' }}>{avgDailyKm} km/day</span>
+                  <span style={{ fontFamily: 'var(--ff-mono)', color: 'var(--starks-blue)', fontWeight: '700', fontSize: '1.2rem' }}>{avgDailyKm} km/day</span>
                 </div>
                 <input 
                   type="range" 
@@ -521,11 +522,11 @@ export default function TransITPage() {
                   step="10"
                   value={avgDailyKm} 
                   onChange={(e) => setAvgDailyKm(parseInt(e.target.value))}
-                  style={{ width: '100%', accentColor: '#2c97cf', cursor: 'pointer' }}
+                  style={{ width: '100%', accentColor: 'var(--starks-blue)', cursor: 'pointer' }}
                 />
               </div>
 
-              <div style={{ fontSize: '0.8rem', color: 'var(--ash)', background: 'rgba(255,255,255,0.03)', padding: '12px', borderRadius: '6px', borderLeft: '3px solid var(--gold)' }}>
+              <div style={{ fontSize: '0.8rem', color: 'var(--ash)', background: 'var(--ink)', padding: '12px', borderRadius: '6px', borderLeft: '3px solid var(--gold)' }}>
                 Based on verified operational data across Nigerian logistics fleets, fuel costs at ₦1,150/L, and average idling rates of 45 mins/day without telemetry monitoring.
               </div>
 
@@ -534,8 +535,8 @@ export default function TransITPage() {
             {/* Calculated Results Display */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '1.2rem' }}>
               
-              <div style={{ background: 'rgba(44, 151, 207, 0.08)', border: '1px solid rgba(44, 151, 207, 0.3)', padding: '1.4rem', borderRadius: '10px', minWidth: 0 }}>
-                <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: '#2c97cf', textTransform: 'uppercase', letterSpacing: '1px' }}>MONTHLY FUEL SAVED</div>
+              <div style={{ background: 'var(--starks-blue-light)', border: '1px solid var(--starks-blue-border)', padding: '1.4rem', borderRadius: '10px', minWidth: 0 }}>
+                <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1px' }}>MONTHLY FUEL SAVED</div>
                 <div style={{ fontFamily: 'var(--ff-body)', fontSize: 'clamp(1.2rem, 1.6vw, 1.65rem)', fontWeight: '700', color: 'var(--white)', margin: '8px 0', lineHeight: 1.3 }}>
                   ₦ {estFuelNairaSaved.toLocaleString()}
                 </div>
@@ -564,7 +565,7 @@ export default function TransITPage() {
                 </div>
               </div>
 
-              <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '1.4rem', borderRadius: '10px', minWidth: 0 }}>
+              <div style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', padding: '1.4rem', borderRadius: '10px', minWidth: 0 }}>
                 <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--ash)', textTransform: 'uppercase', letterSpacing: '1px' }}>TOTAL MONTHLY DISTANCE</div>
                 <div style={{ fontFamily: 'var(--ff-body)', fontSize: 'clamp(1.2rem, 1.6vw, 1.65rem)', fontWeight: '700', color: 'var(--white)', margin: '8px 0', lineHeight: 1.3 }}>
                   {monthlyKm.toLocaleString()} km
@@ -594,7 +595,7 @@ export default function TransITPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             
             {/* Personal Car Owners */}
-            <div style={{ background: 'var(--ink)', padding: '2.2rem', borderRadius: '12px', border: '1px solid rgba(200, 168, 75, 0.2)', display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
+            <div style={{ background: 'var(--card-bg)', padding: '2.2rem', borderRadius: '12px', border: '1px solid var(--card-border)', display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
               <div>
                 <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'rgba(200, 168, 75, 0.15)', display: 'grid', placeItems: 'center', color: 'var(--gold)', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
                   🚗
@@ -623,12 +624,12 @@ export default function TransITPage() {
             </div>
 
             {/* Logistics Companies */}
-            <div style={{ background: 'var(--ink)', padding: '2.2rem', borderRadius: '12px', border: '1px solid rgba(44, 151, 207, 0.3)', display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
+            <div style={{ background: 'var(--card-bg)', padding: '2.2rem', borderRadius: '12px', border: '1px solid var(--starks-blue-border)', display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
               <div>
-                <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'rgba(44, 151, 207, 0.15)', display: 'grid', placeItems: 'center', color: '#2c97cf', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'var(--starks-blue-light)', display: 'grid', placeItems: 'center', color: 'var(--starks-blue)', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
                   🚚
                 </div>
-                <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.75rem', color: '#2c97cf', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '6px' }}>FOR LOGISTICS & DELIVERY COMPANIES</div>
+                <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.75rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '6px' }}>FOR LOGISTICS & DELIVERY COMPANIES</div>
                 <h3 style={{ fontSize: '1.4rem', color: 'var(--white)', fontFamily: 'var(--ff-display)', marginBottom: '1rem' }}>Move Deliveries with Zero Guesswork</h3>
                 <p style={{ color: 'var(--ash2)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   Give dispatch and operations teams one live view of active trucks, drivers, schedules, and alerts as freight moves across Lagos, Abuja, Port Harcourt, and nationwide delivery routes.
@@ -637,22 +638,22 @@ export default function TransITPage() {
 
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--ash2)', fontSize: '0.85rem', marginBottom: '8px' }}>
-                  <span style={{ color: '#2c97cf' }}>✓</span> Multi-vehicle fleet dispatch map
+                  <span style={{ color: 'var(--starks-blue)' }}>✓</span> Multi-vehicle fleet dispatch map
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--ash2)', fontSize: '0.85rem', marginBottom: '8px' }}>
-                  <span style={{ color: '#2c97cf' }}>✓</span> Driver assignment & shift scheduling
+                  <span style={{ color: 'var(--starks-blue)' }}>✓</span> Driver assignment & shift scheduling
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--ash2)', fontSize: '0.85rem', marginBottom: '8px' }}>
-                  <span style={{ color: '#2c97cf' }}>✓</span> Idle fuel waste & overspeed alarms
+                  <span style={{ color: 'var(--starks-blue)' }}>✓</span> Idle fuel waste & overspeed alarms
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--ash2)', fontSize: '0.85rem' }}>
-                  <span style={{ color: '#2c97cf' }}>✓</span> Automated client distance billing
+                  <span style={{ color: 'var(--starks-blue)' }}>✓</span> Automated client distance billing
                 </li>
               </ul>
             </div>
 
             {/* Transport & Bus Services */}
-            <div style={{ background: 'var(--ink)', padding: '2.2rem', borderRadius: '12px', border: '1px solid rgba(39, 201, 63, 0.3)', display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
+            <div style={{ background: 'var(--card-bg)', padding: '2.2rem', borderRadius: '12px', border: '1px solid rgba(39, 201, 63, 0.3)', display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}>
               <div>
                 <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'rgba(39, 201, 63, 0.15)', display: 'grid', placeItems: 'center', color: '#27c93f', fontSize: '1.4rem', marginBottom: '1.2rem' }}>
                   🚌
@@ -703,15 +704,15 @@ export default function TransITPage() {
                   <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--gold)', color: 'var(--ink)', display: 'grid', placeItems: 'center', fontWeight: '700', flexShrink: 0 }}>1</div>
                   <div>
                     <h4 style={{ color: 'var(--white)', fontSize: '1.05rem', fontWeight: '600' }}>One Operational Source of Truth</h4>
-                    <p style={{ color: 'var(--ash)', fontSize: '0.85rem', marginTop: '4px' }}>Owners, dispatchers, drivers, and service teams read the exact same live position and alert data.</p>
+                    <p style={{ color: 'var(--ash2)', fontSize: '0.85rem', marginTop: '4px' }}>Owners, dispatchers, drivers, and service teams read the exact same live position and alert data.</p>
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#2c97cf', color: 'var(--white)', display: 'grid', placeItems: 'center', fontWeight: '700', flexShrink: 0 }}>2</div>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--starks-blue)', color: '#ffffff', display: 'grid', placeItems: 'center', fontWeight: '700', flexShrink: 0 }}>2</div>
                   <div>
                     <h4 style={{ color: 'var(--white)', fontSize: '1.05rem', fontWeight: '600' }}>Engineered for Nigerian Road Realities</h4>
-                    <p style={{ color: 'var(--ash)', fontSize: '0.85rem', marginTop: '4px' }}>ETA calculations run on a self-hosted routing engine pre-loaded with Nigeria OpenStreetMap telemetry data.</p>
+                    <p style={{ color: 'var(--ash2)', fontSize: '0.85rem', marginTop: '4px' }}>ETA calculations run on a self-hosted routing engine pre-loaded with Nigeria OpenStreetMap telemetry data.</p>
                   </div>
                 </div>
 
@@ -719,14 +720,14 @@ export default function TransITPage() {
                   <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#27c93f', color: 'var(--white)', display: 'grid', placeItems: 'center', fontWeight: '700', flexShrink: 0 }}>3</div>
                   <div>
                     <h4 style={{ color: 'var(--white)', fontSize: '1.05rem', fontWeight: '600' }}>Telemetry Freshness Scoring You Can Trust</h4>
-                    <p style={{ color: 'var(--ash)', fontSize: '0.85rem', marginTop: '4px' }}>Every vehicle is scored as Live, Stale, or Offline so a quiet device is never mistaken for safe movement.</p>
+                    <p style={{ color: 'var(--ash2)', fontSize: '0.85rem', marginTop: '4px' }}>Every vehicle is scored as Live, Stale, or Offline so a quiet device is never mistaken for safe movement.</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Generated Feature Image */}
-            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(200, 168, 75, 0.3)', boxShadow: '0 20px 40px rgba(0,0,0,0.6)' }}>
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--card-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
               <img 
                 src="/transit_control_room.png" 
                 alt="Starks TransIT Operations Control Room in Nigeria"
@@ -740,7 +741,7 @@ export default function TransITPage() {
       </section>
 
       {/* FREQUENTLY ASKED QUESTIONS (FAQ) */}
-      <section style={{ padding: '80px 5%', background: 'var(--ink2)', borderTop: '1px solid rgba(200, 168, 75, 0.15)' }}>
+      <section style={{ padding: '80px 5%', background: 'var(--ink2)', borderTop: '1px solid var(--card-border)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           
           <div className="label" style={{ justifyContent: 'center' }}><div className="label-line"></div><span className="label-text">FREQUENTLY ASKED QUESTIONS</span><div className="label-line"></div></div>
@@ -751,9 +752,9 @@ export default function TransITPage() {
               <div 
                 key={idx}
                 style={{
-                  background: 'var(--ink)',
+                  background: 'var(--card-bg)',
                   borderRadius: '8px',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  border: '1px solid var(--card-border)',
                   overflow: 'hidden',
                   transition: 'all 0.3s'
                 }}
@@ -783,7 +784,7 @@ export default function TransITPage() {
                 </button>
 
                 {openFaq === idx && (
-                  <div style={{ padding: '0 1.5rem 1.5rem 1.5rem', color: 'var(--ash2)', fontSize: '0.9rem', lineHeight: 1.7, borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1rem' }}>
+                  <div style={{ padding: '0 1.5rem 1.5rem 1.5rem', color: 'var(--ash2)', fontSize: '0.9rem', lineHeight: 1.7, borderTop: '1px solid var(--card-border)', paddingTop: '1rem' }}>
                     {faq.a}
                   </div>
                 )}
@@ -795,7 +796,7 @@ export default function TransITPage() {
       </section>
 
       {/* FINAL BOTTOM CALL TO ACTION BANNER */}
-      <section style={{ padding: '80px 5%', background: 'linear-gradient(135deg, #0d1829 0%, #152236 100%)', borderTop: '1px solid rgba(200, 168, 75, 0.2)' }}>
+      <section style={{ padding: '80px 5%', background: 'linear-gradient(135deg, var(--ink) 0%, var(--ink2) 100%)', borderTop: '1px solid var(--card-border)' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
           
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '30px', background: 'rgba(200, 168, 75, 0.15)', border: '1px solid var(--gold)', marginBottom: '1.5rem' }}>
@@ -833,8 +834,8 @@ export default function TransITPage() {
               href="https://www.trans-it.app/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn" 
-              style={{ background: '#2c97cf', color: '#fff', padding: '16px 30px', fontSize: '0.9rem' }}
+              className="btn btn-blue" 
+              style={{ padding: '16px 30px', fontSize: '0.9rem' }}
             >
               <span>Get Started on trans-it.app ↗</span>
             </a>
@@ -856,7 +857,7 @@ export default function TransITPage() {
           padding: '1.5rem'
         }}>
           <div style={{
-            background: 'var(--ink2)',
+            background: 'var(--card-bg)',
             border: '1px solid var(--gold)',
             borderRadius: '12px',
             width: '100%',
@@ -865,7 +866,7 @@ export default function TransITPage() {
             overflowY: 'auto',
             padding: '2rem',
             position: 'relative',
-            boxShadow: '0 25px 50px rgba(0,0,0,0.8)'
+            boxShadow: '0 25px 50px rgba(0,0,0,0.5)'
           }}>
             
             {/* Close Button */}
@@ -888,7 +889,7 @@ export default function TransITPage() {
 
             {!formSubmitted ? (
               <div>
-                <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: '#2c97cf', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>
+                <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>
                   STARKS IT CONSULTING · TRANSIT DEMO
                 </div>
                 <h3 style={{ fontSize: '1.6rem', color: 'var(--white)', fontFamily: 'var(--ff-display)', marginBottom: '0.5rem' }}>
@@ -913,7 +914,7 @@ export default function TransITPage() {
                         width: '100%',
                         padding: '10px 14px',
                         background: 'var(--ink)',
-                        border: '1px solid rgba(255,255,255,0.15)',
+                        border: '1px solid var(--card-border)',
                         borderRadius: '6px',
                         color: 'var(--white)',
                         fontFamily: 'inherit'
@@ -935,7 +936,7 @@ export default function TransITPage() {
                           width: '100%',
                           padding: '10px 14px',
                           background: 'var(--ink)',
-                          border: '1px solid rgba(255,255,255,0.15)',
+                          border: '1px solid var(--card-border)',
                           borderRadius: '6px',
                           color: 'var(--white)',
                           fontFamily: 'inherit'
@@ -956,7 +957,7 @@ export default function TransITPage() {
                           width: '100%',
                           padding: '10px 14px',
                           background: 'var(--ink)',
-                          border: '1px solid rgba(255,255,255,0.15)',
+                          border: '1px solid var(--card-border)',
                           borderRadius: '6px',
                           color: 'var(--white)',
                           fontFamily: 'inherit'
@@ -978,7 +979,7 @@ export default function TransITPage() {
                           width: '100%',
                           padding: '10px 14px',
                           background: 'var(--ink)',
-                          border: '1px solid rgba(255,255,255,0.15)',
+                          border: '1px solid var(--card-border)',
                           borderRadius: '6px',
                           color: 'var(--white)',
                           fontFamily: 'inherit'
@@ -996,7 +997,7 @@ export default function TransITPage() {
                           width: '100%',
                           padding: '10px 14px',
                           background: 'var(--ink)',
-                          border: '1px solid rgba(255,255,255,0.15)',
+                          border: '1px solid var(--card-border)',
                           borderRadius: '6px',
                           color: 'var(--white)',
                           fontFamily: 'inherit'
@@ -1022,7 +1023,7 @@ export default function TransITPage() {
                         width: '100%',
                         padding: '10px 14px',
                         background: 'var(--ink)',
-                        border: '1px solid rgba(255,255,255,0.15)',
+                        border: '1px solid var(--card-border)',
                         borderRadius: '6px',
                         color: 'var(--white)',
                         fontFamily: 'inherit',
@@ -1033,7 +1034,7 @@ export default function TransITPage() {
 
                   <button 
                     type="submit" 
-                    className="btn btn-gold" 
+                    className="btn btn-blue" 
                     style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem', padding: '14px' }}
                   >
                     <span>Request TransIT Demo Schedule</span>
@@ -1053,7 +1054,7 @@ export default function TransITPage() {
                 </p>
                 <button 
                   onClick={resetForm}
-                  className="btn btn-gold"
+                  className="btn btn-blue"
                   style={{ padding: '12px 28px' }}
                 >
                   <span>Done</span>

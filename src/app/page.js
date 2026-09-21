@@ -133,7 +133,7 @@ export default function Home() {
           <div>
             <div className="label"><div className="label-line"></div><span className="label-text">PROPRIETARY SAAS PRODUCT</span></div>
             <h2 className="title" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}>
-              Trans<span style={{ color: '#2c97cf' }}>IT</span> — Intelligent Fleet <em>& Transport System</em>
+              Trans<span style={{ color: 'var(--starks-blue)' }}>IT</span> — Intelligent Fleet <em>& Transport System</em>
             </h2>
             <p className="subtitle" style={{ marginBottom: '1.5rem', color: 'var(--ash2)' }}>
               Monitor and regulate vehicle routes, live GPS pings, geofencing compliance, mileage-triggered maintenance, and distance-based billing—all from one live control console built specifically for Nigerian roads.

@@ -68,10 +68,11 @@ export default function Nav() {
             width: '48px',
             height: '48px',
             borderRadius: '50%',
-            background: theme === 'dark' ? 'var(--ink2)' : 'var(--white)',
+            background: 'var(--logo-bg)',
+            border: '1px solid var(--card-border)',
             display: 'grid',
             placeItems: 'center',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
           }}>
             <img 
               src="/logo.png" 
@@ -203,10 +204,11 @@ export default function Nav() {
               width: '56px',
               height: '56px',
               borderRadius: '50%',
-              background: 'var(--ink2)',
+              background: 'var(--logo-bg)',
+              border: '1px solid var(--card-border)',
               display: 'grid',
               placeItems: 'center',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
             }}>
               <img 
                 src="/logo.png" 

@@ -6,6 +6,15 @@
   --gold:#c8a84b;
   --gold-rgb: 200, 168, 75;
   --gold2:#e5c870;--gold3:#f0d98a;
+  --starks-blue:#3b82f6;
+  --starks-blue-rgb: 59, 130, 246;
+  --starks-blue-hover:#2563eb;
+  --starks-blue-light:rgba(59, 130, 246, 0.15);
+  --starks-blue-border:rgba(59, 130, 246, 0.35);
+  --starks-blue-glow:0 0 16px rgba(59, 130, 246, 0.4);
+  --logo-bg:rgba(255, 255, 255, 0.06);
+  --card-bg:var(--ink2);
+  --card-border:rgba(255, 255, 255, 0.08);
   --ash:#8fa0bc;--ash2:#b8c9e0;--ash3:#d8e4f0;
   --white:#ffffff;--cream:#f5f0e8;
   --ff-display:'Playfair Display',serif;
@@ -20,6 +29,15 @@
   --gold:#b8860b;
   --gold-rgb: 184, 134, 11;
   --gold2:#996515;--gold3:#855810;
+  --starks-blue:#1d4ed8;
+  --starks-blue-rgb: 29, 78, 216;
+  --starks-blue-hover:#1e40af;
+  --starks-blue-light:rgba(29, 78, 216, 0.08);
+  --starks-blue-border:rgba(29, 78, 216, 0.3);
+  --starks-blue-glow:0 0 16px rgba(29, 78, 216, 0.25);
+  --logo-bg:#ffffff;
+  --card-bg:#ffffff;
+  --card-border:rgba(0, 0, 0, 0.08);
   --ash:#5a6e85;--ash2:#2c3e50;--ash3:#1a252f;
   --white:#080e1a;--cream:#faf6f0;
 }
@@ -92,6 +110,10 @@ h2.title em{font-style:italic;color:var(--gold)}
 .btn-gold::after{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform 0.4s var(--ease)}
 .btn-gold:hover::after{transform:none}
 .btn-gold span,.btn-gold svg{position:relative;z-index:1}
+.btn-blue{background:var(--starks-blue);color:#ffffff}
+.btn-blue::after{content:'';position:absolute;inset:0;background:var(--starks-blue-hover);transform:translateX(-100%);transition:transform 0.4s var(--ease)}
+.btn-blue:hover::after{transform:none}
+.btn-blue span,.btn-blue svg{position:relative;z-index:1}
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--white)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 .arrow-btn{font-family:var(--ff-mono);font-size:0.75rem;color:var(--gold);letter-spacing:1px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;transition:gap 0.3s var(--ease)}
