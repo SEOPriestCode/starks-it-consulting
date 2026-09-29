@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Head from 'next/head';
 
 export default function Cases() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -81,9 +80,6 @@ export default function Cases() {
 
   return (
     <div className="page active">
-      <Head>
-        <title>Case Studies | Starks IT Consulting</title>
-      </Head>
       <div className="page-hero" style={{ position: 'relative' }}>
         <div id="cases-hero-img"><img src="/cases-hero.jpg" alt="Team at work" /></div>
         <div className="page-hero-vignette" style={{ position: 'absolute', inset: 0 }}></div>

@@ -303,8 +303,15 @@ const servicesData = {
   }
 };
 
+export function generateStaticParams() {
+  return Object.keys(servicesData).map((slug) => ({
+    slug,
+  }));
+}
+
 export async function generateMetadata({ params }) {
-  const service = servicesData[params.slug];
+  const resolvedParams = await params;
+  const service = servicesData[resolvedParams?.slug];
   
   if (!service) {
     return {
@@ -324,8 +331,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ServicePage({ params }) {
-  const service = servicesData[params.slug];
+export default async function ServicePage({ params }) {
+  const resolvedParams = await params;
+  const service = servicesData[resolvedParams?.slug];
 
   if (!service) {
     return (

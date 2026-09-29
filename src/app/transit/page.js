@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
 
 export default function TransITPage() {
   // Modal state
@@ -123,13 +122,6 @@ export default function TransITPage() {
 
   return (
     <div className="page active" style={{ background: 'var(--ink)' }}>
-      {/* Dynamic SEO Meta Head */}
-      <Head>
-        <title>TransIT · Intelligent Fleet Management System | Starks IT Consulting</title>
-        <meta name="description" content="TransIT by Starks IT Consulting: Real-time GPS tracking, vehicle telemetry freshness, automated alert triggers, geofencing, distance-based billing, and maintenance tracking for owners, logistics, and transport services." />
-        <meta name="keywords" content="TransIT fleet management, intelligent transport system Nigeria, GPS tracking Lagos, fleet tracking Nigeria, vehicle telematics Starks, logistics fleet software, distance billing fleet" />
-      </Head>
-
       {/* HERO SECTION */}
       <div className="page-hero" style={{ background: 'linear-gradient(180deg, var(--ink) 0%, var(--ink2) 100%)', minHeight: '85vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
         
@@ -194,37 +186,37 @@ export default function TransITPage() {
           {/* Quick Metrics Bar */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
             gap: '1.2rem',
             background: 'var(--card-bg)',
             backdropFilter: 'blur(12px)',
             border: '1px solid var(--card-border)',
             borderRadius: '12px',
-            padding: '1.5rem 2rem',
+            padding: '1.25rem clamp(1rem, 3vw, 2rem)',
             maxWidth: '1000px',
             boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
           }}>
             <div>
               <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>TELEMETRY STREAM</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--white)' }}>WebSocket Live Pings</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: '700', color: 'var(--white)' }}>WebSocket Live Pings</div>
               <div style={{ fontSize: '0.8rem', color: 'var(--ash)', marginTop: '2px' }}>Sub-second GPS updates</div>
             </div>
 
             <div>
               <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>FRESHNESS SCORING</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--white)' }}>Live · Stale · Offline</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: '700', color: 'var(--white)' }}>Live · Stale · Offline</div>
               <div style={{ fontSize: '0.8rem', color: 'var(--ash)', marginTop: '2px' }}>Clear signal status scoring</div>
             </div>
 
             <div>
               <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>NIGERIAN ROUTING ENGINE</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--white)' }}>Local OSM Engine</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: '700', color: 'var(--white)' }}>Local OSM Engine</div>
               <div style={{ fontSize: '0.8rem', color: 'var(--ash)', marginTop: '2px' }}>Accurate local ETAs & routes</div>
             </div>
 
             <div>
               <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>OPERATIONAL ROI</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--white)' }}>-30% Idleness Waste</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: '700', color: 'var(--white)' }}>-30% Idleness Waste</div>
               <div style={{ fontSize: '0.8rem', color: 'var(--ash)', marginTop: '2px' }}>Prevent unneeded fuel burn</div>
             </div>
           </div>

@@ -147,8 +147,25 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(200,168,75,0.3)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
-            <img src="/transit_hero_dashboard.png" alt="TransIT Fleet Management System UI Console" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          <div className="transit-mockup-container" data-reveal="right">
+            <div className="transit-mockup-header">
+              <div className="transit-mockup-dots">
+                <span className="transit-mockup-dot red"></span>
+                <span className="transit-mockup-dot yellow"></span>
+                <span className="transit-mockup-dot green"></span>
+              </div>
+              <div className="transit-mockup-url">trans-it.app/client</div>
+              <div className="transit-mockup-status">
+                ● LIVE
+              </div>
+            </div>
+            <div className="transit-mockup-img-wrap">
+              <img 
+                src="/transit_hero_dashboard.png" 
+                alt="TransIT Fleet Operations Overview Dashboard Console" 
+                className="transit-mockup-img"
+              />
+            </div>
           </div>
         </div>
       </section>

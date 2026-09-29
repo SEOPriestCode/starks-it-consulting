@@ -41,7 +41,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${syne.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${syne.variable} ${jetbrains.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <ThemeProvider>
           <ClientLayout>
             {children}

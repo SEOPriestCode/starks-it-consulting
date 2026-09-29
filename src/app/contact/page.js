@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Contact() {
@@ -49,11 +48,6 @@ export default function Contact() {
 
   return (
     <div className="page active">
-      <Head>
-        <title>Contact IT Consulting Nigeria | Enterprise IT Services | Starks IT Consulting</title>
-        <meta name="description" content="Contact Starks IT Consulting for professional IT consulting services in Nigeria. Enterprise IT solutions, cloud consulting, cybersecurity, software development, and managed IT services in Lagos and Abuja." />
-        <meta name="keywords" content="contact IT consulting Nigeria, IT services Lagos, IT consulting Abuja, enterprise IT solutions, cloud consulting Nigeria, cybersecurity services, software development Nigeria, managed IT services" />
-      </Head>
       <div id="contact-wrap">
         <div className="contact-left">
           <div className="contact-left-bg">
