@@ -147,6 +147,7 @@ h2.title em{font-style:italic;color:var(--gold)}
 .banner-slider-track{display:flex;height:100%;width:100%;transition:transform 1.2s var(--ease)}
 .banner-slide{flex-shrink:0;width:100%;height:100%;position:relative}
 .banner-slide img{width:100%;height:100%;object-fit:cover}
+.banner-slide::after{content:'';position:absolute;inset:0;background:rgba(8,14,26,0.18);pointer-events:none}
 .banner-slider-dots{position:absolute;bottom:3rem;right:4rem;display:flex;gap:0.8rem;z-index:5}
 .banner-slider-dot{width:36px;height:2px;background:rgba(255,255,255,0.25);border:none;cursor:pointer;transition:background 0.4s,transform 0.4s;padding:0}
 .banner-slider-dot.active{background:var(--gold);transform:scaleY(2)}
@@ -250,8 +251,8 @@ h1.hero-h em{font-style:italic;color:var(--gold)}
    ============================================================ */
 .page-hero{padding:clamp(100px,15vw,160px) clamp(4%,5%,5%) clamp(60px,10vw,100px);position:relative;overflow:hidden}
 .page-hero-bg{position:absolute;inset:0;z-index:0}
-.page-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.08}
-.page-hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,transparent 30%,var(--ink) 80%)}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.4}
+.page-hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,transparent 98%,var(--ink) 99.8%)}
 .page-hero-inner{position:relative;z-index:2;max-width:700px}
 .ph-num{font-family:var(--ff-mono);font-size:clamp(0.6rem,0.8vw,0.68rem);color:var(--gold);letter-spacing:2px;opacity:0.6;margin-bottom:clamp(1rem,2vw,2rem)}
 
@@ -952,10 +953,10 @@ html.light .hcta-grad {
   background: linear-gradient(to right, var(--ink) 0%, transparent 40%, transparent 60%, var(--ink) 100%);
 }
 html.light .page-hero-vignette {
-  background: radial-gradient(ellipse at 50% 100%, transparent 20%, var(--ink) 75%) !important;
+  background: radial-gradient(ellipse at 50% 100%, transparent 98%, var(--ink) 99.8%) !important;
 }
 html.light .page-hero-bg img {
-  opacity: 0.22 !important;
+  opacity: 0.4 !important;
   filter: contrast(1.05) brightness(1.02);
 }
 html.light .hcta-bg img {
@@ -1197,4 +1198,34 @@ html.light .transit-mockup-url {
   .transit-mockup-status {
     display: none;
   }
+}
+
+/* ============================================================
+   TRANSIT FULL WIDTH HERO BANNER
+   ============================================================ */
+.transit-full-banner {
+  width: 100%;
+  min-height: 88vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(8, 14, 26, 0.95) 0%, rgba(8, 14, 26, 0.85) 50%, rgba(8, 14, 26, 0.35) 100%), url("/transit_hero_banner.jpg") center/cover no-repeat;
+  border-bottom: 1px solid var(--starks-blue-border);
+}
+
+.transit-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+html.light .transit-full-banner {
+  background: linear-gradient(90deg, rgba(245, 248, 252, 0.96) 0%, rgba(245, 248, 252, 0.88) 55%, rgba(245, 248, 252, 0.4) 100%), url("/transit_hero_banner.jpg") center/cover no-repeat;
+  border-bottom-color: rgba(29, 78, 216, 0.2);
+}
+
+html.light .transit-banner-overlay {
+  background: radial-gradient(circle at 80% 30%, rgba(29, 78, 216, 0.1) 0%, transparent 60%);
 }

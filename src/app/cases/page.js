@@ -80,10 +80,12 @@ export default function Cases() {
 
   return (
     <div className="page active">
-      <div className="page-hero" style={{ position: 'relative' }}>
-        <div id="cases-hero-img"><img src="/cases-hero.jpg" alt="Team at work" /></div>
-        <div className="page-hero-vignette" style={{ position: 'absolute', inset: 0 }}></div>
-        <div className="page-hero-inner" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="page-hero">
+        <div className="page-hero-bg">
+          <img src="/cases-hero.png" alt="Case studies hero - team collaboration" />
+          <div className="page-hero-vignette"></div>
+        </div>
+        <div className="page-hero-inner">
           <div className="ph-num">WORK / CASE STUDIES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Our Work</span></div>
           <h2 className="title" data-reveal data-delay="1">Proof over <em>promise.</em></h2>

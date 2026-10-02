@@ -122,43 +122,32 @@ export default function TransITPage() {
 
   return (
     <div className="page active" style={{ background: 'var(--ink)' }}>
-      {/* HERO SECTION */}
-      <div className="page-hero" style={{ background: 'linear-gradient(180deg, var(--ink) 0%, var(--ink2) 100%)', minHeight: '85vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
-        
-        {/* Subtle Decorative Background Glow */}
-        <div style={{
-          position: 'absolute',
-          top: '-10%',
-          right: '-10%',
-          width: '600px',
-          height: '600px',
-          background: 'radial-gradient(circle, var(--starks-blue-light) 0%, rgba(200, 168, 75, 0.08) 50%, transparent 70%)',
-          pointerEvents: 'none',
-          zIndex: 0
-        }} />
+      {/* FULL WIDTH HERO BANNER */}
+      <div className="transit-full-banner">
+        <div className="transit-banner-overlay" />
 
-        <div className="page-hero-inner" style={{ position: 'relative', zIndex: 1, paddingTop: '100px', paddingBottom: '60px', width: '100%' }}>
+        <div className="page-hero-inner" style={{ position: 'relative', zIndex: 1, paddingTop: '110px', paddingBottom: '70px', width: '100%', maxWidth: '1300px', margin: '0 auto', paddingLeft: '5%', paddingRight: '5%' }}>
           
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '30px', background: 'var(--starks-blue-light)', border: '1px solid var(--starks-blue-border)', marginBottom: '1.5rem' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--starks-blue)', boxShadow: '0 0 8px var(--starks-blue)' }}></span>
-            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: '600' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 18px', borderRadius: '30px', background: 'var(--starks-blue-light)', border: '1px solid var(--starks-blue-border)', marginBottom: '1.8rem', backdropFilter: 'blur(8px)' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--starks-blue)', boxShadow: '0 0 10px var(--starks-blue)' }}></span>
+            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.75rem', color: 'var(--starks-blue)', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: '700' }}>
               FLAGSHIP PRODUCT BY STARKS IT CONSULTING
             </span>
           </div>
 
-          <h1 className="title" style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)', lineHeight: 1.08, maxWidth: '900px', marginBottom: '1.2rem' }}>
-            Trans<span style={{ color: 'var(--starks-blue)' }}>IT</span> — Every vehicle, <em>tracked live.</em>
-          </h1>
+          <h2 className="title" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)', lineHeight: 1.12, maxWidth: '960px', marginBottom: '1.5rem' }}>
+            Trans<span style={{ color: 'var(--starks-blue)' }}>IT</span> — Every vehicle, <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>tracked live.</em>
+          </h2>
 
-          <p className="subtitle" style={{ fontSize: 'clamp(1.05rem, 1.3vw, 1.25rem)', maxWidth: '760px', lineHeight: 1.7, color: 'var(--ash2)', marginBottom: '2.5rem' }}>
+          <p className="subtitle" style={{ fontSize: 'clamp(1.08rem, 1.4vw, 1.3rem)', maxWidth: '820px', lineHeight: 1.75, color: 'var(--ash2)', marginBottom: '2.8rem', fontWeight: '400' }}>
             Personal car owners, logistics companies, and transport services get one unified console for real-time GPS tracking, automated safety alerts, geofencing, distance-based billing, and mileage maintenance automation—down to the vehicle, in real time across Nigeria.
           </p>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center', marginBottom: '3rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.2rem', alignItems: 'center', marginBottom: '3.5rem' }}>
             <button 
               onClick={() => setIsDemoModalOpen(true)}
               className="btn btn-blue" 
-              style={{ padding: '16px 32px', fontSize: '0.9rem', borderRadius: '4px', cursor: 'pointer' }}
+              style={{ padding: '16px 36px', fontSize: '0.95rem', borderRadius: '6px', cursor: 'pointer', boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)' }}
             >
               <span>Book a Live Demo</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -167,7 +156,7 @@ export default function TransITPage() {
             <button 
               onClick={() => setIsDemoModalOpen(true)}
               className="btn btn-ghost" 
-              style={{ padding: '16px 28px', fontSize: '0.9rem', borderRadius: '4px', cursor: 'pointer' }}
+              style={{ padding: '16px 30px', fontSize: '0.95rem', borderRadius: '6px', cursor: 'pointer', background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(8px)' }}
             >
               <span>Talk to Fleet Specialist</span>
             </button>
@@ -177,7 +166,7 @@ export default function TransITPage() {
               target="_blank" 
               rel="noopener noreferrer" 
               className="arrow-btn"
-              style={{ color: 'var(--starks-blue)', fontSize: '0.9rem', padding: '12px 16px', textDecoration: 'none' }}
+              style={{ color: 'var(--starks-blue)', fontSize: '0.95rem', padding: '12px 20px', textDecoration: 'none', fontWeight: '600' }}
             >
               Launch TransIT Console (trans-it.app) ↗
             </a>
@@ -189,12 +178,12 @@ export default function TransITPage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
             gap: '1.2rem',
             background: 'var(--card-bg)',
-            backdropFilter: 'blur(12px)',
-            border: '1px solid var(--card-border)',
+            backdropFilter: 'blur(16px)',
+            border: '1px solid var(--starks-blue-border)',
             borderRadius: '12px',
             padding: '1.25rem clamp(1rem, 3vw, 2rem)',
-            maxWidth: '1000px',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
+            maxWidth: '1050px',
+            boxShadow: '0 12px 40px rgba(0,0,0,0.25)'
           }}>
             <div>
               <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>TELEMETRY STREAM</div>
