@@ -11,7 +11,7 @@ export default function NetworkInfrastructure() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black network engineer configuring network infrastructure" />
+          <img src="/service-network.jpg" alt="Network Infrastructure Cabling and Switches" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

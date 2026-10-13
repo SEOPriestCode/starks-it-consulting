@@ -92,50 +92,45 @@ export default function Nav() {
         </Link>
         <ul className="nav-links">
           {navLinks.map((link) => (
-            <li key={link.path} style={{ position: 'relative' }}>
+            <li key={link.path} className="nav-item-dropdown" style={{ position: 'relative' }}>
               {link.submenu ? (
                 <div
                   onMouseEnter={() => setServicesDropdownOpen(true)}
                   onMouseLeave={() => setServicesDropdownOpen(false)}
                   style={{ display: 'inline-block' }}
                 >
-                  <button>
-                    {link.name}
+                  <button 
+                    type="button"
+                    className={`nav-dropdown-btn ${servicesDropdownOpen ? 'open' : ''} ${pathname?.startsWith('/services') ? 'active' : ''}`}
+                    onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                  >
+                    <span>{link.name}</span>
+                    <svg className="nav-dropdown-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                   </button>
                   {servicesDropdownOpen && (
-                    <ul style={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: 0,
-                      background: 'var(--ink)',
-                      border: '1px solid var(--gold)',
-                      borderRadius: '8px',
-                      padding: '1rem',
-                      minWidth: '250px',
-                      zIndex: 1000,
-                      listStyle: 'none',
-                      margin: 0
-                    }}>
-                      {link.submenu.map((sublink) => (
-                        <li key={sublink.path} style={{ marginBottom: '0.5rem' }}>
+                    <div className="nav-dropdown-menu">
+                      <div className="nav-dropdown-header">
+                        <span className="nd-title">Our Capabilities</span>
+                        <Link href="/services" className="nd-view-all" onClick={() => setServicesDropdownOpen(false)}>
+                          All Services →
+                        </Link>
+                      </div>
+                      <div className="nav-dropdown-grid">
+                        {link.submenu.map((sublink) => (
                           <Link
+                            key={sublink.path}
                             href={sublink.path}
-                            style={{
-                              color: 'var(--text)',
-                              textDecoration: 'none',
-                              display: 'block',
-                              padding: '0.5rem',
-                              borderRadius: '4px',
-                              transition: 'all 0.3s'
-                            }}
-                            onMouseEnter={(e) => e.target.style.background = 'var(--ink2)'}
-                            onMouseLeave={(e) => e.target.style.background = 'transparent'}
+                            className={`nav-dropdown-item ${pathname === sublink.path ? 'active' : ''}`}
+                            onClick={() => setServicesDropdownOpen(false)}
                           >
-                            {sublink.name}
+                            <span className="nd-dot"></span>
+                            <span className="nd-name">{sublink.name}</span>
                           </Link>
-                        </li>
-                      ))}
-                    </ul>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </div>
               ) : (
@@ -234,38 +229,19 @@ export default function Nav() {
                 <>
                   <button
                     onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                    style={{
-                      background: 'transparent',
-                      border: 'none',
-                      color: 'var(--white)',
-                      cursor: 'pointer',
-                      fontSize: '1.1rem',
-                      fontFamily: 'inherit',
-                      padding: '0.5rem 0',
-                      width: '100%',
-                      textAlign: 'left'
-                    }}
+                    className="mobile-dropdown-btn"
                   >
-                    {link.name} {servicesDropdownOpen ? '▼' : '▶'}
+                    <span>{link.name}</span>
+                    <span className="mobile-chevron">{servicesDropdownOpen ? '▾' : '▸'}</span>
                   </button>
                   {servicesDropdownOpen && (
-                    <ul style={{
-                      listStyle: 'none',
-                      padding: '0 0 0 1rem',
-                      margin: '0.5rem 0'
-                    }}>
+                    <ul className="mobile-submenu">
                       {link.submenu.map((sublink) => (
-                        <li key={sublink.path} style={{ marginBottom: '0.5rem' }}>
+                        <li key={sublink.path}>
                           <Link
                             href={sublink.path}
                             onClick={() => { setServicesDropdownOpen(false); closeMobileNav(); }}
-                            style={{
-                              color: 'var(--text)',
-                              textDecoration: 'none',
-                              display: 'block',
-                              padding: '0.5rem',
-                              fontSize: '1rem'
-                            }}
+                            className={`mobile-sublink ${pathname === sublink.path ? 'active' : ''}`}
                           >
                             {sublink.name}
                           </Link>

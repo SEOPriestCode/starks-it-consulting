@@ -11,7 +11,7 @@ export default function CCTVAccessControl() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black security professional monitoring CCTV systems" />
+          <img src="/service-cctv-access-control.jpg" alt="CCTV & Biometric Access Control System" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

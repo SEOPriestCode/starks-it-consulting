@@ -11,7 +11,7 @@ export default function ManagedITServices() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black IT professional managing network infrastructure" />
+          <img src="/service-managed-it.jpg" alt="Managed IT Services 24/7 NOC Infrastructure Monitoring" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

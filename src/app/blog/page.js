@@ -83,7 +83,7 @@ export default function Blog() {
       author: 'Adaeze Emeka',
       date: '20 Dec 2024',
       readTime: '8 min',
-      img: '/service-cloud.jpg',
+      img: '/service-cloud.png',
       delay: ''
     },
     {

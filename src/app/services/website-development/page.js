@@ -11,7 +11,7 @@ export default function WebsiteDevelopment() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black web developer working on website design" />
+          <img src="/service-website-dev.png" alt="Website Development & UI Wireframing" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

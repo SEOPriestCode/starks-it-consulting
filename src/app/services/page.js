@@ -9,9 +9,9 @@ export const metadata = {
 export default function Services() {
   return (
     <div className="page active">
-      <div className="page-hero" style={{ background: 'var(--ink2)' }}>
+      <div className="page-hero">
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black IT professionals working on technology solutions" />
+          <img src="/about-hero.jpg" alt="Black IT professionals working on technology solutions" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">
@@ -32,7 +32,7 @@ export default function Services() {
         <div className="svc-list" style={{ marginBottom: '4rem' }}>
           <Link href="/services/managed-it-services" className="svc-item" data-reveal style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black IT professional" />
+              <img src="/service-managed-it.jpg" alt="Managed IT Services NOC Monitoring" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">CORE SERVICE</div>
@@ -49,7 +49,7 @@ export default function Services() {
 
           <Link href="/services/it-support-services" className="svc-item" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-tech.jpg" alt="Black IT support professional" />
+              <img src="/service-it-support-gen.jpg" alt="IT Support Services Technician Workstation" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">CORE SERVICE</div>
@@ -66,7 +66,7 @@ export default function Services() {
 
           <Link href="/services/cloud-solutions" className="svc-item" data-reveal style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-cloud.jpg" alt="Black cloud architect" />
+              <img src="/service-cloud-new.jpg" alt="Cloud Infrastructure & Architecture" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">CLOUD & INFRASTRUCTURE</div>
@@ -83,7 +83,7 @@ export default function Services() {
 
           <Link href="/services/cybersecurity-services" className="svc-item" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-tech.jpg" alt="Black cybersecurity professional" />
+              <img src="/service-cybersecurity.jpg" alt="Cybersecurity SOC Shield Operations" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">SECURITY</div>
@@ -100,7 +100,7 @@ export default function Services() {
 
           <Link href="/services/network-infrastructure" className="svc-item" data-reveal style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black network engineer" />
+              <img src="/service-network.jpg" alt="Network Infrastructure Cabling and Switches" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">INFRASTRUCTURE</div>
@@ -117,7 +117,7 @@ export default function Services() {
 
           <Link href="/services/server-deployment" className="svc-item" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black server administrator" />
+              <img src="/service-server-deployment.png" alt="Server Deployment and Data Center" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">INFRASTRUCTURE</div>
@@ -140,7 +140,7 @@ export default function Services() {
         <div className="svc-list" style={{ marginBottom: '4rem' }}>
           <Link href="/services/software-development" className="svc-item" data-reveal style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black software developer" />
+              <img src="/service-software-dev.png" alt="Custom Software Development Engineers" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">DEVELOPMENT</div>
@@ -157,7 +157,7 @@ export default function Services() {
 
           <Link href="/services/website-development" className="svc-item" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black web developer" />
+              <img src="/service-website-dev.png" alt="Website Development & UI Wireframing" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">DEVELOPMENT</div>
@@ -174,7 +174,7 @@ export default function Services() {
 
           <Link href="/services/data-analytics" className="svc-item" data-reveal style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black data analyst" />
+              <img src="/service-data-analytics.png" alt="Data Analytics and Business Intelligence" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">ANALYTICS</div>
@@ -191,7 +191,7 @@ export default function Services() {
 
           <Link href="/services/it-strategy" className="svc-item" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black IT consultant" />
+              <img src="/service-it-strategy.png" alt="IT Strategy Whiteboard Architecture" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">STRATEGY</div>
@@ -214,7 +214,7 @@ export default function Services() {
         <div className="svc-list">
           <Link href="/services/microsoft-365-solutions" className="svc-item" data-reveal style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black IT consultant" />
+              <img src="/service-microsoft-365.jpg" alt="Microsoft 365 Cloud Productivity Solutions" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">PRODUCTIVITY</div>
@@ -231,7 +231,7 @@ export default function Services() {
 
           <Link href="/services/cctv-access-control" className="svc-item" data-reveal data-delay="1" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="svc-img">
-              <img src="/service-generic.jpg" alt="Black security professional" />
+              <img src="/service-cctv-access-control.jpg" alt="CCTV & Biometric Access Control System" />
             </div>
             <div className="svc-body">
               <div className="svc-num2">PHYSICAL SECURITY</div>

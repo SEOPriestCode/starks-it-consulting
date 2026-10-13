@@ -11,7 +11,7 @@ export default function DataAnalytics() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black data analyst working on business intelligence dashboard" />
+          <img src="/service-data-analytics.png" alt="Data Analytics and Business Intelligence" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

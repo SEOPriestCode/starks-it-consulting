@@ -11,7 +11,7 @@ export default function ServerDeployment() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black server administrator managing server infrastructure" />
+          <img src="/service-server-deployment.png" alt="Server Deployment and Data Center" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

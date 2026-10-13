@@ -11,7 +11,7 @@ export default function SoftwareDevelopment() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black software developer coding custom applications" />
+          <img src="/service-software-dev.png" alt="Custom Software Development Engineers" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

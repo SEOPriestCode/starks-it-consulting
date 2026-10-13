@@ -11,7 +11,7 @@ export default function CybersecurityServices() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-tech.jpg" alt="Black cybersecurity professional working on security systems" />
+          <img src="/service-cybersecurity.jpg" alt="Cybersecurity SOC Shield Operations" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

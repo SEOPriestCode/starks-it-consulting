@@ -11,7 +11,7 @@ export default function ITStrategy() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black IT consultant leading digital transformation strategy" />
+          <img src="/service-it-strategy.png" alt="IT Strategy Whiteboard Architecture" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">

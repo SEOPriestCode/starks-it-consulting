@@ -11,7 +11,7 @@ export default function Microsoft365Solutions() {
     <div className="page active">
       <div className="page-hero" style={{ background: 'var(--ink2)' }}>
         <div className="page-hero-bg">
-          <img src="/service-generic.jpg" alt="Black IT consultant working on Microsoft 365 solutions" />
+          <img src="/service-microsoft-365.png" alt="Microsoft 365 Cloud Productivity Collaboration" />
           <div className="page-hero-vignette"></div>
         </div>
         <div className="page-hero-inner">
