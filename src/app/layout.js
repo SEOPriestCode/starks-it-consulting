@@ -1,29 +1,6 @@
-import { Playfair_Display, Syne, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import ClientLayout from './ClientLayout';
 import { ThemeProvider } from '../context/ThemeContext';
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--ff-display',
-  display: 'swap',
-  style: ['normal', 'italic'],
-  weight: ['400', '700'],
-});
-
-const syne = Syne({
-  subsets: ['latin'],
-  variable: '--ff-body',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--ff-mono',
-  display: 'swap',
-  weight: ['400', '500'],
-});
 
 export const metadata = {
   title: 'IT Consulting Nigeria | Enterprise IT Services | Starks IT Consulting',
@@ -41,8 +18,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${syne.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
