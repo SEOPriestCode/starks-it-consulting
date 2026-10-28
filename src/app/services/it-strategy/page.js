@@ -17,7 +17,7 @@ export default function ITStrategy() {
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Service Detail</span></div>
-          <h2 className="title" data-reveal data-delay="1">IT Strategy & Digital Transformation</h2>
+          <h1 className="title" data-reveal data-delay="1">IT Strategy & Digital Transformation</h1>
           <p className="subtitle" data-reveal data-delay="2">Executive-level technology advisory</p>
         </div>
       </div>

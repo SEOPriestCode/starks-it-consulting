@@ -17,7 +17,7 @@ export default function Services() {
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES / CAPABILITIES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">What We Offer</span></div>
-          <h2 className="title" data-reveal data-delay="1">Full-spectrum IT solutions for <em>modern enterprises</em></h2>
+          <h1 className="title" data-reveal data-delay="1">Full-spectrum IT solutions for <em>modern enterprises</em></h1>
           <p className="subtitle" data-reveal data-delay="2">We don&apos;t just build systems — we build competitive advantage. Every service is delivered by certified specialists who understand both the technology and the business context behind it.</p>
         </div>
       </div>

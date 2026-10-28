@@ -17,7 +17,7 @@ export default function DataAnalytics() {
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Service Detail</span></div>
-          <h2 className="title" data-reveal data-delay="1">Data Engineering & Analytics</h2>
+          <h1 className="title" data-reveal data-delay="1">Data Engineering & Analytics</h1>
           <p className="subtitle" data-reveal data-delay="2">Transform data into strategic intelligence</p>
         </div>
       </div>

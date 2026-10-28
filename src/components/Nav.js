@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
@@ -9,8 +9,43 @@ export default function Nav() {
   const [isSolid, setIsSolid] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
+
+  // Close dropdown on click outside or Escape key
+  useEffect(() => {
+    if (!servicesDropdownOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [servicesDropdownOpen]);
+
+  // Close dropdown on route change without triggering useEffect cascading render error
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setServicesDropdownOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,26 +130,43 @@ export default function Nav() {
             <li key={link.path} className="nav-item-dropdown" style={{ position: 'relative' }}>
               {link.submenu ? (
                 <div
-                  onMouseEnter={() => setServicesDropdownOpen(true)}
-                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                  ref={dropdownRef}
+                  className="nav-dropdown-wrapper"
                   style={{ display: 'inline-block' }}
                 >
                   <button 
                     type="button"
+                    id="services-dropdown-btn"
+                    aria-expanded={servicesDropdownOpen}
+                    aria-haspopup="true"
+                    aria-controls="services-dropdown-menu"
                     className={`nav-dropdown-btn ${servicesDropdownOpen ? 'open' : ''} ${pathname?.startsWith('/services') ? 'active' : ''}`}
-                    onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setServicesDropdownOpen((prev) => !prev);
+                    }}
                   >
                     <span>{link.name}</span>
-                    <svg className="nav-dropdown-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="nav-dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                   </button>
                   {servicesDropdownOpen && (
-                    <div className="nav-dropdown-menu">
+                    <div 
+                      id="services-dropdown-menu" 
+                      className="nav-dropdown-menu"
+                      role="menu"
+                      aria-labelledby="services-dropdown-btn"
+                    >
                       <div className="nav-dropdown-header">
                         <span className="nd-title">Our Capabilities</span>
-                        <Link href="/services" className="nd-view-all" onClick={() => setServicesDropdownOpen(false)}>
-                          All Services →
+                        <Link 
+                          href="/services" 
+                          className="nd-view-all" 
+                          onClick={() => setServicesDropdownOpen(false)}
+                        >
+                          <span>All Services</span>
+                          <span>→</span>
                         </Link>
                       </div>
                       <div className="nav-dropdown-grid">
@@ -122,11 +174,15 @@ export default function Nav() {
                           <Link
                             key={sublink.path}
                             href={sublink.path}
+                            role="menuitem"
                             className={`nav-dropdown-item ${pathname === sublink.path ? 'active' : ''}`}
                             onClick={() => setServicesDropdownOpen(false)}
                           >
-                            <span className="nd-dot"></span>
-                            <span className="nd-name">{sublink.name}</span>
+                            <div className="nd-item-left">
+                              <span className="nd-dot"></span>
+                              <span className="nd-name">{sublink.name}</span>
+                            </div>
+                            <span className="nd-arrow-indicator">›</span>
                           </Link>
                         ))}
                       </div>
@@ -228,8 +284,10 @@ export default function Nav() {
               {link.submenu ? (
                 <>
                   <button
-                    onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                    className="mobile-dropdown-btn"
+                    type="button"
+                    onClick={() => setServicesDropdownOpen((prev) => !prev)}
+                    className={`mobile-dropdown-btn ${servicesDropdownOpen ? 'open' : ''} ${pathname?.startsWith('/services') ? 'active' : ''}`}
+                    aria-expanded={servicesDropdownOpen}
                   >
                     <span>{link.name}</span>
                     <span className="mobile-chevron">{servicesDropdownOpen ? '▾' : '▸'}</span>

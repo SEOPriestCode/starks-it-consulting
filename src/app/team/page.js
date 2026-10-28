@@ -1,7 +1,16 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Team | Starks IT Consulting',
+  title: 'Leadership & Technology Team | Starks IT Consulting Nigeria',
+  description: 'Meet the leadership and engineering team at Starks IT Consulting. Enterprise architects, cloud consultants, and software engineers delivering transformative IT in Nigeria.',
+  keywords: 'Starks IT leadership, technology team Lagos, IT consultants Nigeria, Michael Omotayo, enterprise engineering team Nigeria',
+  openGraph: {
+    title: 'Leadership & Technology Team | Starks IT Consulting',
+    description: '65+ technology professionals united by a single conviction: that excellent technology, applied with integrity, creates extraordinary outcomes.',
+    url: 'https://starks.com.ng/team',
+    siteName: 'Starks IT Consulting',
+    type: 'website',
+  },
 };
 
 export default function Team() {
@@ -15,7 +24,7 @@ export default function Team() {
         <div className="page-hero-inner">
           <div className="ph-num">TEAM / LEADERSHIP</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Our People</span></div>
-          <h2 className="title" data-reveal data-delay="1">The people behind <em>the work</em></h2>
+          <h1 className="title" data-reveal data-delay="1">The people behind <em>the work</em></h1>
           <p className="subtitle" data-reveal data-delay="2">65+ professionals united by a single conviction: that excellent technology, applied with integrity, creates extraordinary outcomes.</p>
         </div>
       </div>

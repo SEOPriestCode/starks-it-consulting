@@ -13,7 +13,7 @@ export default function TermsAndConditions() {
         <div className="page-hero-inner">
           <div className="ph-num">LEGAL</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Terms & Conditions</span></div>
-          <h2 className="title" data-reveal data-delay="1">Terms & <em>Conditions</em></h2>
+          <h1 className="title" data-reveal data-delay="1">Terms & <em>Conditions</em></h1>
           <p className="subtitle" data-reveal data-delay="2">Please read these terms carefully before engaging our IT consulting services.</p>
         </div>
       </div>

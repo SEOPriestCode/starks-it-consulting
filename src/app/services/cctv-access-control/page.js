@@ -17,7 +17,7 @@ export default function CCTVAccessControl() {
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Service Detail</span></div>
-          <h2 className="title" data-reveal data-delay="1">CCTV & Access Control Systems</h2>
+          <h1 className="title" data-reveal data-delay="1">CCTV & Access Control Systems</h1>
           <p className="subtitle" data-reveal data-delay="2">Comprehensive physical security solutions</p>
         </div>
       </div>

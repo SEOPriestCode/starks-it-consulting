@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <div className="page-hero-inner">
           <div className="ph-num">LEGAL</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Privacy Policy</span></div>
-          <h2 className="title" data-reveal data-delay="1">Privacy <em>Policy</em></h2>
+          <h1 className="title" data-reveal data-delay="1">Privacy <em>Policy</em></h1>
           <p className="subtitle" data-reveal data-delay="2">Your privacy is important to us. This policy explains how we collect, use, and protect your information.</p>
         </div>
       </div>

@@ -2,6 +2,49 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 const articles = {
+  'why-nigerian-enterprises-cloud-migration': {
+    category: 'Cloud Strategy',
+    title: 'Why Nigerian Enterprises Are Getting Cloud Migration Wrong — and How to Fix It',
+    author: 'Adaeze Emeka',
+    role: 'Chief Technology Officer',
+    date: '12 April 2025',
+    readTime: '8 min',
+    img: '/blog-featured.jpg',
+    content: `
+      <p>Too many Nigerian organisations migrate to the cloud chasing the promise of massive cost savings and infinite elasticity, only to discover eighteen months later that their cloud bills have tripled, latency has increased for local customers, and the CFO is asking why they ever left the on-premise data centre. Having architected and audited over 40 enterprise cloud migrations across West Africa, we have seen this story repeat itself across banking, oil and gas, government, and retail.</p>
+
+      <p>The issue is almost never AWS, Azure, or Google Cloud. The issue is treating the cloud as merely "someone else's computer" — a passive hosting environment rather than an entirely different operational, architectural, and financial paradigm.</p>
+
+      <h2>1. The Lift-and-Shift Fallacy</h2>
+      <p>The single most destructive mistake is replicating an on-premise topology 1:1 in the cloud. Organisations take monolithic, vertically scaled virtual machines running on VMware, convert them into oversized Amazon EC2 or Azure VMs, and leave them running 24/7/365.</p>
+      <p>On-premise infrastructure is a capital expenditure (CapEx) model: once purchased, running a server at 10% CPU utilisation costs virtually the same as running it at 80%. In the cloud, compute is operational expenditure (OpEx) billed by the second. An idle 64GB RAM instance in AWS eu-west-1 costs the same whether it processes one transaction or one million. Without adopting containerisation (Docker, Kubernetes), auto-scaling, and managed serverless services, lift-and-shift guarantees an astronomical bill.</p>
+
+      <h2>2. Ignoring FX Volatility and Egress Bandwidth</h2>
+      <p>Unlike global multinationals whose revenue and cloud expenses are denominated in US Dollars, Nigerian enterprises generate revenue in Naira while paying AWS, Microsoft, or Google in USD. A currency depreciation of 40% immediately inflates technology operating costs by 40% in local terms, regardless of optimisation.</p>
+      <p>Furthermore, cloud providers charge heavily for data egress (data transferring out of their cloud to the internet or on-premise data centres). When an enterprise leaves databases in Lagos and moves application servers to Europe (or vice-versa), every query pays a latency penalty (often 80–120ms round-trip over submarine cables) and an egress bandwidth invoice at month-end. Data locality and edge caching via CDNs (like Cloudflare or CloudFront) are non-negotiable architectural requirements for Nigerian deployments.</p>
+
+      <h2>3. Underestimating Data Residency & NDPR Compliance</h2>
+      <p>Under NDPR 2.0 and CBN cybersecurity guidelines, specific categories of citizen PII and financial transaction logs must either reside locally within Nigerian territory or satisfy strict jurisdictional adequacy criteria. Migrating all workloads indiscriminately to AWS regions in Ireland (eu-west-1) or South Africa (af-south-1) creates immediate audit exposure.</p>
+      <p>The modern architectural solution is a <strong>hybrid cloud topology</strong>: sensitive database storage and identity stores stay in tier-3 Nigerian data centres (such as Rack Centre or MDXi) or local private clouds, while stateless compute, microservices, and customer-facing web tiers leverage hyperscale global regions with encrypted interconnects.</p>
+
+      <h2>4. The Absence of FinOps from Day One</h2>
+      <p>Engineers love provisioning high-spec resources during development. Without continuous FinOps governance, staging clusters, unattached EBS storage volumes, unindexed database snapshots, and oversized elastic IPs remain running indefinitely. We regularly discover that 35% to 50% of an unoptimised cloud bill is composed of abandoned orphan resources.</p>
+      <p>Implementing AWS Cost Explorer anomaly alerts, tagging every resource by environment and business unit, and purchasing 1-year or 3-year Savings Plans for baseline workloads typically slashes monthly cloud spend by 40% immediately.</p>
+
+      <h2>The 5-Point Remediation Blueprint</h2>
+      <p>If your organisation is either planning a migration or struggling with existing cloud costs, follow this sequence:</p>
+      <ol>
+        <li><strong>Deconstruct before you migrate:</strong> Refactor monolithic services into modular containers (ECS/EKS) before moving, or containerise during migration rather than post-facto.</li>
+        <li><strong>Deploy FinOps governance gates:</strong> Set hard budget caps, automate off-hours shutdown of non-production environments (saving 65% on dev/QA clusters), and institute mandatory tagging.</li>
+        <li><strong>Solve for network latency:</strong> Use Edge CDN caching for static assets and API responses to shield your cloud servers from unnecessary egress charges and give Lagos users sub-30ms experiences.</li>
+        <li><strong>Adopt Reserved Instances and Savings Plans:</strong> Commit to predictable baseline compute capacity to secure up to 72% discounts over on-demand rates.</li>
+        <li><strong>Institute hybrid data boundaries:</strong> Keep regulated sovereign data in Nigerian data centres while orchestrating application logic in the cloud.</li>
+      </ol>
+
+      <p>Cloud transformation is the most powerful operational lever available to African enterprises when executed with engineering discipline. By designing for the local economic and regulatory reality from day one, you unlock speed and resilience without falling into the cost trap.</p>
+    `,
+    tags: ['Cloud Strategy', 'AWS', 'Azure', 'FinOps', 'Architecture', 'Nigeria']
+  },
   'ai-ready-data-pipelines': {
     category: 'Data & AI',
     title: 'Building AI-Ready Data Pipelines for African Financial Institutions',

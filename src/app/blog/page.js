@@ -144,7 +144,7 @@ export default function Blog() {
         <div className="page-hero-inner">
           <div className="ph-num">INSIGHTS / THINKING</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">From Our Consultants</span></div>
-          <h2 className="title" data-reveal data-delay="1">Ideas that <em>move</em><br />the industry forward.</h2>
+          <h1 className="title" data-reveal data-delay="1">Ideas that <em>move</em><br />the industry forward.</h1>
           <p className="subtitle" data-reveal data-delay="2">Expert perspectives on enterprise technology, cloud strategy, cybersecurity, data, and digital transformation — written by the practitioners doing the work.</p>
           <div className="blog-hero-cats" data-reveal data-delay="3">
             {categories.map(cat => (
@@ -164,13 +164,15 @@ export default function Blog() {
         {/* FEATURED ARTICLE */}
         {activeCat === 'All Topics' && (
           <div className="blog-featured">
-            <div className="blog-feat-img">
+            <Link href="/blog/why-nigerian-enterprises-cloud-migration" className="blog-feat-img" style={{ display: 'block', textDecoration: 'none' }}>
               <img src="/blog-featured.jpg" alt="Cloud migration strategy" />
               <div className="img-overlay"></div>
-            </div>
+            </Link>
             <div className="blog-feat-body">
               <div className="blog-feat-label">Cloud Strategy</div>
-              <div className="blog-feat-title">Why Nigerian Enterprises Are Getting Cloud Migration Wrong — and How to Fix It</div>
+              <Link href="/blog/why-nigerian-enterprises-cloud-migration" style={{ textDecoration: 'none' }}>
+                <div className="blog-feat-title">Why Nigerian Enterprises Are Getting Cloud Migration Wrong — and How to Fix It</div>
+              </Link>
               <p className="blog-feat-excerpt">Too many organisations migrate to the cloud chasing cost savings, only to discover their bills have tripled within a year. We examine the five most common architectural mistakes and the engineering principles that prevent them — drawn from 40+ real migrations across West Africa.</p>
               <div className="blog-feat-meta">
                 <span className="author-dot"></span>
@@ -180,7 +182,7 @@ export default function Blog() {
                 <span>·</span>
                 <span style={{ fontFamily: 'var(--ff-mono)' }}>8 min read</span>
               </div>
-              <Link href="#" className="arrow-btn" style={{ marginTop: '1.5rem', display: 'inline-flex', textDecoration: 'none' }}>Read Article →</Link>
+              <Link href="/blog/why-nigerian-enterprises-cloud-migration" className="arrow-btn" style={{ marginTop: '1.5rem', display: 'inline-flex', textDecoration: 'none' }}>Read Article →</Link>
             </div>
           </div>
         )}

@@ -15,7 +15,7 @@ export default function About() {
         <div className="page-hero-inner">
           <div className="ph-num">ABOUT US / OUR STORY</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Who We Are</span></div>
-          <h2 className="title" data-reveal data-delay="1">Built in Lagos.<br /><em>Trusted globally.</em></h2>
+          <h1 className="title" data-reveal data-delay="1">Built in Lagos.<br /><em>Trusted globally.</em></h1>
           <p className="subtitle" data-reveal data-delay="2">Since 2017, we have been proving that African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world.</p>
         </div>
       </div>

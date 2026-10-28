@@ -17,7 +17,7 @@ export default function SoftwareDevelopment() {
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Service Detail</span></div>
-          <h2 className="title" data-reveal data-delay="1">Software Development</h2>
+          <h1 className="title" data-reveal data-delay="1">Software Development</h1>
           <p className="subtitle" data-reveal data-delay="2">Bespoke software solutions for your business</p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Cases() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -9,6 +10,7 @@ export default function Cases() {
   
   const cases = [
     {
+      slug: 'core-banking-api-modernisation',
       category: 'Financial Services',
       year: '2023',
       title: 'Core Banking API Platform Modernisation — Tier-1 Nigerian Bank',
@@ -20,6 +22,7 @@ export default function Cases() {
       delay: ''
     },
     {
+      slug: 'field-operations-erp',
       category: 'Energy',
       year: '2022',
       title: 'Field Operations ERP — Major Oil & Gas Operator',
@@ -31,6 +34,7 @@ export default function Cases() {
       delay: '1'
     },
     {
+      slug: 'lagos-state-revenue-portal',
       category: 'Public Sector',
       year: '2021',
       title: 'Revenue Management & Citizen Portal — Lagos State',
@@ -42,6 +46,7 @@ export default function Cases() {
       delay: '2'
     },
     {
+      slug: 'unified-patient-records',
       category: 'Healthcare',
       year: '2022',
       title: 'Unified Patient Records — National Hospital Group (14 Sites)',
@@ -53,6 +58,7 @@ export default function Cases() {
       delay: ''
     },
     {
+      slug: 'network-outage-prediction',
       category: 'Telecoms',
       year: '2023',
       title: 'Network Outage Prediction Engine — ML Pipeline',
@@ -64,6 +70,7 @@ export default function Cases() {
       delay: '1'
     },
     {
+      slug: 'omnichannel-commerce-platform',
       category: 'Retail',
       year: '2024',
       title: 'Omnichannel Commerce Platform — Leading West African Retailer',
@@ -88,7 +95,7 @@ export default function Cases() {
         <div className="page-hero-inner">
           <div className="ph-num">WORK / CASE STUDIES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Our Work</span></div>
-          <h2 className="title" data-reveal data-delay="1">Proof over <em>promise.</em></h2>
+          <h1 className="title" data-reveal data-delay="1">Proof over <em>promise.</em></h1>
           <p className="subtitle" data-reveal data-delay="2">Ten years of transformative engagements across Nigeria and beyond. Real outcomes, real numbers, real partnerships.</p>
         </div>
       </div>
@@ -107,8 +114,9 @@ export default function Cases() {
         </div>
         <div className={`cases-masonry ${activeFilter !== 'All' ? 'has-horizontal' : ''}`}>
           {filteredCases.map((c, i) => (
-            <div 
+            <Link 
               key={i} 
+              href={`/cases/${c.slug}`}
               className={`case-card2 ${c.featured ? 'featured' : ''} ${activeFilter !== 'All' ? 'horizontal' : ''}`}
             >
               <div className="cc-img"><img src={c.img} alt={c.title} /></div>
@@ -116,9 +124,13 @@ export default function Cases() {
                 <div className="cc-ind">{c.category} · {c.year}</div>
                 <div className="cc-title">{c.title}</div>
                 <p className="cc-text">{c.description}</p>
-                <div className="cc-result"><div className="cc-val">{c.resultVal}</div><div className="cc-unit">{c.resultUnit}</div></div>
+                <div className="cc-result">
+                  <div className="cc-val">{c.resultVal}</div>
+                  <div className="cc-unit">{c.resultUnit}</div>
+                </div>
+                <div className="cc-link">Read Case Study →</div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

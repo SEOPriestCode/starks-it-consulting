@@ -1,6 +1,19 @@
 import Link from 'next/link';
 import BannerSlider from '../components/BannerSlider';
 
+export const metadata = {
+  title: 'IT Consulting Nigeria | Enterprise IT Services & Solutions | Starks IT Consulting',
+  description: 'Leading IT consulting company in Nigeria providing enterprise IT services, cloud solutions, cybersecurity, bespoke software, and managed IT services for businesses in Lagos, Abuja, and across Africa.',
+  keywords: 'IT consulting Nigeria, IT services Lagos, enterprise IT solutions, cloud consulting Nigeria, cybersecurity services Lagos, software development Nigeria, managed IT services Abuja, digital transformation Africa',
+  openGraph: {
+    title: 'Starks IT Consulting | Enterprise IT Services Nigeria',
+    description: 'Transforming African enterprises through world-class IT consulting, cloud engineering, cybersecurity, and managed services.',
+    url: 'https://starks.com.ng',
+    siteName: 'Starks IT Consulting',
+    type: 'website',
+  },
+};
+
 export default function Home() {
   return (
     <div className="page active">
@@ -60,7 +73,7 @@ export default function Home() {
           </div>
         </div>
         <div className="home-svc-grid">
-          <Link href="/services" className="hsvc" data-reveal style={{ textDecoration: 'none' }}>
+          <Link href="/services/software-development" className="hsvc" data-reveal style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">01</div>
             <span className="hsvc-icon">💻</span>
@@ -68,7 +81,7 @@ export default function Home() {
             <p className="hsvc-text">Bespoke CRM, ERP, SaaS platforms and mobile apps engineered to your exact operational requirements.</p>
             <span className="hsvc-link">Explore → </span>
           </Link>
-          <Link href="/services" className="hsvc" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
+          <Link href="/services/cloud-solutions" className="hsvc" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">02</div>
             <span className="hsvc-icon">🌐</span>
@@ -76,7 +89,7 @@ export default function Home() {
             <p className="hsvc-text">Robust, cost-optimised cloud environments across AWS, Azure, and GCP with ongoing management and CI/CD.</p>
             <span className="hsvc-link">Explore → </span>
           </Link>
-          <Link href="/services" className="hsvc" data-reveal data-delay="2" style={{ textDecoration: 'none' }}>
+          <Link href="/services/cybersecurity-services" className="hsvc" data-reveal data-delay="2" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">03</div>
             <span className="hsvc-icon">🛡️</span>
@@ -84,7 +97,7 @@ export default function Home() {
             <p className="hsvc-text">Penetration testing, zero-trust architectures, NDPR/GDPR compliance, and 24/7 threat monitoring.</p>
             <span className="hsvc-link">Explore → </span>
           </Link>
-          <Link href="/services" className="hsvc" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
+          <Link href="/services/data-analytics" className="hsvc" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">04</div>
             <span className="hsvc-icon">📈</span>
@@ -92,7 +105,7 @@ export default function Home() {
             <p className="hsvc-text">Data warehouses, real-time pipelines, and intelligent dashboards that turn raw data into strategy.</p>
             <span className="hsvc-link">Explore → </span>
           </Link>
-          <Link href="/services" className="hsvc" data-reveal data-delay="2" style={{ textDecoration: 'none' }}>
+          <Link href="/services/it-strategy" className="hsvc" data-reveal data-delay="2" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">05</div>
             <span className="hsvc-icon">🎯</span>
@@ -100,7 +113,7 @@ export default function Home() {
             <p className="hsvc-text">Executive-level advisory: IT roadmaps, operating model redesign, vendor selection, and business case development.</p>
             <span className="hsvc-link">Explore → </span>
           </Link>
-          <Link href="/services" className="hsvc" data-reveal data-delay="3" style={{ textDecoration: 'none' }}>
+          <Link href="/services/managed-it-services" className="hsvc" data-reveal data-delay="3" style={{ textDecoration: 'none' }}>
             <div className="hsvc-bar"></div>
             <div className="hsvc-num">06</div>
             <span className="hsvc-icon">🖥️</span>
@@ -221,7 +234,7 @@ export default function Home() {
           <Link href="/cases" className="arrow-btn" data-reveal style={{ textDecoration: 'none' }}>View all projects →</Link>
         </div>
         <div className="hcase-grid">
-          <Link href="/cases" className="hcase" data-reveal style={{ textDecoration: 'none' }}>
+          <Link href="/cases/core-banking-api-modernisation" className="hcase" data-reveal style={{ textDecoration: 'none' }}>
             <div className="hcase-img">
               <img src="/home-banking.jpg" alt="Banking technology" />
             </div>
@@ -232,7 +245,7 @@ export default function Home() {
               <div className="hcase-stat"><div className="hcase-val">87%</div><div className="hcase-desc">Reduction in API latency</div></div>
             </div>
           </Link>
-          <Link href="/cases" className="hcase" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
+          <Link href="/cases/field-operations-erp" className="hcase" data-reveal data-delay="1" style={{ textDecoration: 'none' }}>
             <div className="hcase-img">
               <img src="/blog-erp.png" alt="Energy sector operations" />
             </div>

@@ -135,9 +135,9 @@ export default function TransITPage() {
             </span>
           </div>
 
-          <h2 className="title" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)', lineHeight: 1.12, maxWidth: '960px', marginBottom: '1.5rem' }}>
+          <h1 className="title" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.2rem)', lineHeight: 1.12, maxWidth: '960px', marginBottom: '1.5rem' }}>
             Trans<span style={{ color: 'var(--starks-blue)' }}>IT</span> — Every vehicle, <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>tracked live.</em>
-          </h2>
+          </h1>
 
           <p className="subtitle" style={{ fontSize: 'clamp(1.08rem, 1.4vw, 1.3rem)', maxWidth: '820px', lineHeight: 1.75, color: 'var(--ash2)', marginBottom: '2.8rem', fontWeight: '400' }}>
             Personal car owners, logistics companies, and transport services get one unified console for real-time GPS tracking, automated safety alerts, geofencing, distance-based billing, and mileage maintenance automation—down to the vehicle, in real time across Nigeria.

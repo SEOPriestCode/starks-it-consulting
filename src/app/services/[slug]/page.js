@@ -340,7 +340,7 @@ export default async function ServicePage({ params }) {
       <div className="page active">
         <div className="page-hero" style={{ background: 'var(--ink2)' }}>
           <div className="page-hero-inner">
-            <h2 className="title">Service Not Found</h2>
+            <h1 className="title">Service Not Found</h1>
             <p className="subtitle">The service you're looking for doesn't exist.</p>
             <Link href="/services" style={{ color: 'var(--gold)' }}>Return to Services</Link>
           </div>
@@ -359,7 +359,7 @@ export default async function ServicePage({ params }) {
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Service Detail</span></div>
-          <h2 className="title" data-reveal data-delay="1">{service.heading}</h2>
+          <h1 className="title" data-reveal data-delay="1">{service.heading}</h1>
           <p className="subtitle" data-reveal data-delay="2">{service.subheading}</p>
         </div>
       </div>

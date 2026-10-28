@@ -55,7 +55,7 @@ export default function Contact() {
           </div>
           <div className="contact-left-inner">
             <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Get in Touch</span></div>
-            <h2 className="title" data-reveal data-delay="1" style={{ fontSize: '2.4rem' }}>Let&apos;s start a <em>conversation.</em></h2>
+            <h1 className="title" data-reveal data-delay="1" style={{ fontSize: '2.4rem' }}>Let&apos;s start a <em>conversation.</em></h1>
             <p style={{ fontSize: '0.9rem', color: 'var(--ash2)', fontWeight: 300, lineHeight: 1.75, marginBottom: '2.5rem' }} data-reveal data-delay="2">Whether you have a fully-formed brief or just a challenge worth solving, we&apos;d like to hear from you. The first conversation is always free and carries no obligation.</p>
             <div className="cd" data-reveal>
               <div className="cd-ico">📍</div>

@@ -17,7 +17,7 @@ export default function ServerDeployment() {
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES</div>
           <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Service Detail</span></div>
-          <h2 className="title" data-reveal data-delay="1">Server Deployment & Management</h2>
+          <h1 className="title" data-reveal data-delay="1">Server Deployment & Management</h1>
           <p className="subtitle" data-reveal data-delay="2">Expert server setup and ongoing management</p>
         </div>
       </div>
