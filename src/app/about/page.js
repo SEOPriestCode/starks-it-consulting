@@ -38,7 +38,7 @@ export default function About() {
           <p>Over the decade that followed, we grew into a full-spectrum IT consultancy with over 65 professionals, serving clients across banking, energy, telecoms, healthcare, and the public sector. Our work has helped organisations launch new revenue lines, dramatically reduce operational costs, and navigate complex regulatory landscapes — always with rigour and integrity.</p>
           <p>We are proudly Nigerian, globally fluent, and deeply committed to building technology that lasts. Not the kind that impresses in a demo and disappoints in production. The kind that becomes core infrastructure.</p>
           <div className="about-certs">
-            {/* <div className="acert"><span className="acert-icon">✓</span>ISO 27001:2022 Information Security Management Certified</div> */}
+            { <div className="acert"><span className="acert-icon">✓</span>ISO 27001:2022 Information Security Management Certified</div> }
             {/*<div className="acert"><span className="acert-icon">✓</span>Microsoft Gold Partner & AWS Select Consulting Partner</div>*/}
             {/* <div className="acert"><span className="acert-icon">✓</span>NITDA registered and fully NDPR compliant across all engagements</div>
             <div className="acert"><span className="acert-icon">✓</span>CBN-accredited fintech solution provider since 2017</div> */}

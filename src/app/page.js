@@ -23,7 +23,7 @@ export default function Home() {
         <div className="home-hero-left">
           <div className="hero-tag" data-reveal>
             <div className="hero-dot"></div>
-            <span className="hero-tag-text">Est. 2017 · Lagos, Nigeria · {/* ISO 27001*/}</span>
+            <span className="hero-tag-text">Est. 2017 · Lagos, Nigeria · ISO 27001</span>
           </div>
           <h1 className="hero-h" data-reveal data-delay="1">
             IT Consulting that <em>moves</em><br />your business<br />forward.
@@ -204,14 +204,14 @@ export default function Home() {
           <h2 className="title">About a decade of delivering <em>what matters</em></h2>
           <p className="subtitle">Founded in Lagos in 2017, we&apos;ve grown from a boutique development shop into a full-spectrum IT consultancy serving clients across different countries — always with rigour and integrity.</p>
           <div className="why-features">
-            {/* <div className="why-feat">
+            { <div className="why-feat">
               <div className="wf-icon">🏆</div>
               <div><div className="wf-title">ISO 27001:2022 Certified</div><p className="wf-text">Information security management to international standards, across every client engagement.</p></div>
-            </div> */}
-            {/*<div className="why-feat">
+            </div> }
+            {<div className="why-feat">
               <div className="wf-icon">⚡</div>
               <div><div className="wf-title">Microsoft Gold & AWS Partner</div><p className="wf-text">Certified at the highest partner tier on both leading cloud platforms — giving you access to enterprise pricing and priority support.</p></div>
-            </div>*/}
+            </div>}
             <div className="why-feat">
               <div className="wf-icon">🌍</div>
               <div><div className="wf-title">{/*18 Countries,*/}Deep Local Roots</div><p className="wf-text">Genuinely pan-African expertise with global standards. We understand the unique constraints and opportunities of operating on this continent.</p></div>

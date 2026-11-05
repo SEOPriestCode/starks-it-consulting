@@ -750,8 +750,27 @@ footer{background:var(--ink);border-top:1px solid rgba(200,168,75,0.06);padding:
    BLOG / INSIGHTS PAGE  (#10)
    ============================================================ */
 .blog-hero-cats{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:2rem;position:relative;z-index:100}
-.blog-cat-pill{background:transparent;border:1px solid rgba(200,168,75,0.2);color:var(--ash2);padding:8px 20px;font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;border-radius:0;position:relative;z-index:101;pointer-events:auto}
-.blog-cat-pill:hover,.blog-cat-pill.active{border-color:var(--gold);color:var(--gold);background:rgba(200,168,75,0.06)}
+.blog-cat-pill{background:rgba(8,14,26,0.6);border:1px solid rgba(200,168,75,0.3);color:#e2e8f0;padding:8px 20px;font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;border-radius:0;position:relative;z-index:101;pointer-events:auto;backdrop-filter:blur(8px)}
+.blog-cat-pill:hover,.blog-cat-pill.active{border-color:var(--gold);color:var(--gold);background:rgba(200,168,75,0.18)}
+
+/* Blog post hero metadata under H1 */
+.blog-post-meta {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding: 8px 18px;
+  background: rgba(8, 14, 26, 0.7) !important;
+  border: 1px solid rgba(200, 168, 75, 0.35) !important;
+  border-radius: 30px !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  width: fit-content;
+}
+.blog-post-meta span {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8) !important;
+}
 
 /* Featured article */
 .blog-featured{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;background:var(--ink2);margin-bottom:1px}
@@ -1535,6 +1554,7 @@ html.light .numbers-band {
 }
 html.light .filter-btn {
   border: 1px solid rgba(184, 134, 11, 0.15);
+
 }
 html.light .filter-btn:hover {
   border-color: var(--gold);
@@ -1547,7 +1567,13 @@ html.light .filter-btn.active {
   background: rgba(184, 134, 11, 0.05);
 }
 html.light .blog-cat-pill {
-  border: 1px solid rgba(184, 134, 11, 0.15);
+  border: 1px solid rgba(200, 168, 75, 0.4) !important;
+  color: #e2e8f0 !important;
+  background: rgba(8, 14, 26, 0.65) !important;
+}
+html.light .blog-post-meta {
+  background: rgba(8, 14, 26, 0.75) !important;
+  border-color: rgba(200, 168, 75, 0.45) !important;
 }
 html.light .blog-cat-pill:hover, html.light .blog-cat-pill.active {
   border-color: var(--gold);
@@ -1555,8 +1581,9 @@ html.light .blog-cat-pill:hover, html.light .blog-cat-pill.active {
   background: rgba(184, 134, 11, 0.05);
 }
 html.light .fg input, html.light .fg select, html.light .fg textarea {
-  background: var(--ink2);
   border: 1px solid rgba(184, 134, 11, 0.15);
+  background: var(--ink2);
+
 }
 html.light .fg input:focus, html.light .fg select:focus, html.light .fg textarea:focus {
   border-color: var(--gold);

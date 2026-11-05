@@ -5,7 +5,7 @@ const articles = {
   'why-nigerian-enterprises-cloud-migration': {
     category: 'Cloud Strategy',
     title: 'Why Nigerian Enterprises Are Getting Cloud Migration Wrong — and How to Fix It',
-    author: 'Adaeze Emeka',
+    author: 'Busayo Famutimi',
     role: 'Chief Technology Officer',
     date: '12 April 2025',
     readTime: '8 min',
@@ -48,7 +48,7 @@ const articles = {
   'ai-ready-data-pipelines': {
     category: 'Data & AI',
     title: 'Building AI-Ready Data Pipelines for African Financial Institutions',
-    author: 'Ngozi Okafor',
+    author: 'Busayo Famutimi',
     role: 'Head of Data Engineering',
     date: '28 March 2025',
     readTime: '6 min',
@@ -102,7 +102,7 @@ const articles = {
   'ndpr-2.0-regulations': {
     category: 'Compliance',
     title: 'NDPR 2.0: What the New Regulations Mean for Your Technology Stack',
-    author: 'Tunde Fashola',
+    author: 'Clive Akporube',
     role: 'Head of Cybersecurity',
     date: '15 March 2025',
     readTime: '5 min',
@@ -163,8 +163,8 @@ const articles = {
   'cio-digital-transformation': {
     category: 'Digital Transformation',
     title: "The CIO's Playbook for Leading Digital Transformation Without Losing the Organisation",
-    author: 'Kola Balogun',
-    role: 'Managing Director',
+    author: 'Michael Omotayo',
+    role: 'Founder/Team Lead',
     date: '1 March 2025',
     readTime: '9 min',
     img: '/blog-digital-transformation.png',
@@ -222,8 +222,8 @@ const articles = {
   'erp-implementation-mistakes': {
     category: 'Enterprise Software',
     title: 'ERP Implementation in Africa: 7 Mistakes That Cost Organisations Millions',
-    author: 'Emeka Okonkwo',
-    role: 'Enterprise Solutions Director',
+    author: 'Michael Omotayo',
+    role: 'Founder/Team Lead',
     date: '14 February 2025',
     readTime: '7 min',
     img: '/blog-erp.png',
@@ -268,7 +268,7 @@ const articles = {
   'zero-trust-architecture': {
     category: 'Cybersecurity',
     title: "Zero Trust Is Not a Product — It's an Architecture. Here's How to Build It.",
-    author: 'Tunde Fashola',
+    author: 'Clive Akporube',
     role: 'Head of Cybersecurity',
     date: '28 January 2025',
     readTime: '11 min',
@@ -368,7 +368,7 @@ const articles = {
   'finops-aws-cost-optimization': {
     category: 'Cloud Strategy',
     title: "FinOps in Practice: How We Cut a Client's AWS Bill by 58% Without Touching the Architecture",
-    author: 'Amaka Osei',
+    author: 'Busayo Famutimi',
     role: 'Cloud Practice Lead',
     date: '10 January 2025',
     readTime: '6 min',
@@ -423,7 +423,7 @@ const articles = {
   'multi-cloud-strategy': {
     category: 'Cloud Strategy',
     title: 'Multi-Cloud vs Single-Cloud: When to Choose Which for African Enterprises',
-    author: 'Adaeze Emeka',
+    author: 'Busayo Famutimi',
     role: 'CTO',
     date: '20 December 2024',
     readTime: '8 min',
@@ -483,7 +483,7 @@ const articles = {
   'cloud-migration-checklist': {
     category: 'Cloud Strategy',
     title: 'The Pre-Migration Checklist: 15 Things to Do Before Moving to the Cloud',
-    author: 'Chinedu Nwosu',
+    author: 'Samuel Olugbennga',
     role: 'Infrastructure Lead',
     date: '5 November 2024',
     readTime: '7 min',
@@ -553,7 +553,7 @@ const articles = {
   'spreadsheets-to-snowflake': {
     category: 'Data & AI',
     title: 'From Spreadsheets to Snowflake: A Practical Data Modernisation Roadmap',
-    author: 'Ngozi Okafor',
+    author: 'Busayo Famutimi',
     role: 'Head of Data Engineering',
     date: '18 December 2024',
     readTime: '8 min',
@@ -663,7 +663,7 @@ const articles = {
   'building-engineering-team': {
     category: 'Culture & Careers',
     title: "Building a World-Class Engineering Team in Lagos: What We've Learned in 10 Years",
-    author: 'Funke Adeyemi',
+    author: 'Michael Omotayo',
     role: 'Head of People & Culture',
     date: '15 November 2024',
     readTime: '7 min',
@@ -737,14 +737,38 @@ export default async function BlogPost({ params }) {
           <h1 className="title" data-reveal data-delay="1" style={{ maxWidth: '700px' }}>
             {article.title}
           </h1>
-          <div data-reveal data-delay="2" style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--ash2)', letterSpacing: '0.5px' }}>
-              {article.author} · {article.role}
+          <div 
+            className="blog-post-meta"
+            data-reveal 
+            data-delay="2" 
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '1rem', 
+              flexWrap: 'wrap', 
+              marginTop: '1.5rem',
+              padding: '8px 18px',
+              background: 'rgba(8, 14, 26, 0.7)',
+              border: '1px solid rgba(200, 168, 75, 0.35)',
+              borderRadius: '30px',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+              width: 'fit-content'
+            }}
+          >
+            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.78rem', color: '#f1f5f9', letterSpacing: '0.5px', textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
+              <span style={{ color: '#ffffff', fontWeight: 600 }}>{article.author}</span>
+              <span style={{ color: 'rgba(200, 168, 75, 0.7)', margin: '0 6px' }}>·</span>
+              <span style={{ color: '#e2e8f0' }}>{article.role}</span>
             </span>
             <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }}></span>
-            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--ash2)' }}>{article.date}</span>
+            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.78rem', color: '#e2e8f0', textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
+              {article.date}
+            </span>
             <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }}></span>
-            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--gold)' }}>{article.readTime} read</span>
+            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.78rem', color: '#f0d98a', fontWeight: 600, textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>
+              {article.readTime} read
+            </span>
           </div>
         </div>
       </div>
