@@ -2,6 +2,15 @@ import Link from 'next/link';
 import BannerSlider from '../components/BannerSlider';
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://starks.com.ng',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Starks IT Consulting | Enterprise IT Services Nigeria',
+    description: 'Transforming African enterprises through world-class IT consulting, cloud engineering, fleet telematics, and software engineering practice labs.',
+    images: ['/logo.png'],
+  },
   title: 'IT Consulting Nigeria | Enterprise IT Services & Solutions | Starks IT Consulting',
   description: 'Leading IT consulting company in Nigeria providing enterprise IT services, cloud solutions, cybersecurity, bespoke software, and managed IT services for businesses in Lagos, Abuja, and across Africa.',
   keywords: 'IT consulting Nigeria, IT services Lagos, enterprise IT solutions, cloud consulting Nigeria, cybersecurity services Lagos, software development Nigeria, managed IT services Abuja, digital transformation Africa',
@@ -178,6 +187,79 @@ export default function Home() {
                 alt="TransIT Fleet Operations Overview Dashboard Console" 
                 className="transit-mockup-img"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRAINING & ACADEMY SPOTLIGHT */}
+      <section style={{ padding: '80px 5%', background: 'var(--ink3)', borderBottom: '1px solid rgba(200,168,75,0.15)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
+          <div data-reveal="left">
+            <div className="label"><div className="label-line"></div><span className="label-text">TRAINING & WORKSPACE</span></div>
+            <h2 className="title" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}>
+              Starks <em>Learning Workspace</em> & Practice Labs
+            </h2>
+            <p className="subtitle" style={{ marginBottom: '1.5rem', color: 'var(--ash2)' }}>
+              Where modern developers and enterprise teams build real-world capability. Featuring our live in-browser <strong>Frontend Practice Lab</strong> with automated test verification, progressive exercises, and line-by-line code reviews from active senior consultants.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '2rem' }}>
+              <Link href="/training" className="btn btn-gold" style={{ textDecoration: 'none' }}>
+                <span>Explore Starks Training</span>
+              </Link>
+              <a href="https://learn.starks.com.ng/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ textDecoration: 'none' }}>
+                Join Training Waitlist ↗
+              </a>
+            </div>
+          </div>
+          <div style={{
+            background: 'var(--ink2)',
+            border: '1px solid rgba(200, 168, 75, 0.3)',
+            borderRadius: '16px',
+            overflow: 'hidden',
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.45)'
+          }} data-reveal="right">
+            <div style={{
+              background: 'var(--ink)',
+              padding: '12px 18px',
+              borderBottom: '1px solid rgba(200, 168, 75, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f56', display: 'inline-block' }}></span>
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ffbd2e', display: 'inline-block' }}></span>
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27c93f', display: 'inline-block' }}></span>
+                <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--ash)', marginLeft: '8px' }}>starks-learning // waitlist</span>
+              </div>
+              <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.65rem', color: 'var(--gold)', background: 'rgba(200,168,75,0.1)', padding: '3px 8px', borderRadius: '4px' }}>WAITLIST OPEN</span>
+            </div>
+            <div style={{ padding: '2rem' }}>
+              <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.7rem', color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                Flagship Course · Coming Soon
+              </div>
+              <div style={{ fontFamily: 'var(--ff-display)', fontSize: '1.35rem', color: 'var(--white)', marginBottom: '0.8rem' }}>
+                Frontend Practice Lab
+              </div>
+              <p style={{ color: 'var(--ash2)', fontSize: '0.88rem', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: 300 }}>
+                Write real code directly in the browser with automated exercise checks, live DOM rendering, and instant feedback. Join the priority waitlist for early access.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.8rem' }}>
+                <div style={{ background: 'rgba(200, 168, 75, 0.05)', border: '1px solid rgba(200, 168, 75, 0.15)', padding: '10px 14px', borderRadius: '6px' }}>
+                  <div style={{ fontSize: '0.7rem', fontFamily: 'var(--ff-mono)', color: 'var(--gold)' }}>FORMAT</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--white)', fontWeight: 500, marginTop: '2px' }}>Interactive Browser Lab</div>
+                </div>
+                <div style={{ background: 'rgba(200, 168, 75, 0.05)', border: '1px solid rgba(200, 168, 75, 0.15)', padding: '10px 14px', borderRadius: '6px' }}>
+                  <div style={{ fontSize: '0.7rem', fontFamily: 'var(--ff-mono)', color: 'var(--gold)' }}>VERIFICATION</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--white)', fontWeight: 500, marginTop: '2px' }}>Automated Test Checks</div>
+                </div>
+              </div>
+              <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                <a href="https://learn.starks.com.ng/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.78rem', color: 'var(--gold)', textDecoration: 'none' }}>
+                  learn.starks.com.ng →
+                </a>
+              </div>
             </div>
           </div>
         </div>

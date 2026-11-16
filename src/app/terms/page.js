@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://starks.com.ng/terms',
+  },
   title: 'Terms & Conditions | Starks IT Consulting',
   description: 'Terms and Conditions for Starks IT Consulting Ltd. Read our service terms, payment terms, and legal agreements.',
   keywords: 'terms and conditions Nigeria, service terms Nigeria, IT consulting terms Lagos, legal terms Nigeria',

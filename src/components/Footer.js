@@ -19,6 +19,7 @@ export default function Footer() {
 
   let col1Links = [
     { name: 'TransIT (Fleet System)', path: '/transit' },
+    { name: 'Training & Practice Lab', path: '/training' },
     { name: 'Custom Software', path: '/services' },
     { name: 'Cloud & DevOps', path: '/services' },
     { name: 'Cybersecurity', path: '/services' },

@@ -88,6 +88,7 @@ export default function Nav() {
       ]
     },
     { name: 'TransIT (Fleet)', path: '/transit' },
+    { name: 'Training', path: '/training' },
     { name: 'About', path: '/about' },
     { name: 'Case Studies', path: '/cases' },
     { name: 'Team', path: '/team' },

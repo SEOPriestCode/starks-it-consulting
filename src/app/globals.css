@@ -1601,6 +1601,160 @@ html.light .contact-map-placeholder {
 }
 
 /* ============================================================
+   TRAINING PAGE — IDE LIGHT MODE
+   ============================================================ */
+html.light .training-ide {
+  background: #f8fafc !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12) !important;
+}
+html.light .training-ide > div:first-child {
+  background: #e2e8f0 !important;
+  border-bottom-color: rgba(184, 134, 11, 0.2) !important;
+}
+html.light .training-ide > div:first-child span[style*="color: var(--ash2)"] {
+  color: #475569 !important;
+}
+html.light .training-ide > div:nth-child(2) {
+  background: #f1f5f9 !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+html.light .training-ide > div:nth-child(2) button {
+  color: #475569 !important;
+}
+html.light .training-ide > div:nth-child(2) button[style*="background: #0d1527"] {
+  background: #ffffff !important;
+  color: #b8860b !important;
+}
+html.light .training-ide > div:nth-child(2) button[style*="borderTop: 2px solid var(--gold)"] {
+  border-top-color: #b8860b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:first-child {
+  background: #f8fafc !important;
+  border-right-color: rgba(184, 134, 11, 0.15) !important;
+  color: #1e293b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:first-child code {
+  color: #1e293b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child {
+  background: #f1f5f9 !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child {
+  border-bottom-color: rgba(184, 134, 11, 0.15) !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child > div:nth-child(2) {
+  background: #ffffff !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+  color: #1e293b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child > div:nth-child(2) > div:first-child {
+  color: #b8860b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child > div:nth-child(2) > h4 {
+  color: #1e293b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child > div:nth-child(2) > p {
+  color: #475569 !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child > div:nth-child(2) > div:last-child {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child > div:nth-child(2) > div:last-child > span:first-child {
+  color: #b8860b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:first-child > div:nth-child(2) > div:last-child > div button:first-child {
+  border-color: rgba(184, 134, 11, 0.3) !important;
+  color: #1e293b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child {
+  background: #e2e8f0 !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child > div:first-child {
+  background: rgba(184, 134, 11, 0.08) !important;
+  border-color: rgba(184, 134, 11, 0.25) !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child > div:first-child > span:first-child {
+  color: #1e293b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child > div:nth-child(2) > div {
+  color: #059669 !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child > div:nth-child(2) > div span:last-child {
+  color: #475569 !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child > div:nth-child(3) {
+  background: rgba(184, 134, 11, 0.08) !important;
+  border-color: rgba(184, 134, 11, 0.25) !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child > div:nth-child(3) > span:first-child {
+  color: #1e293b !important;
+}
+html.light .training-ide > div:nth-child(3) > div:last-child > div:last-child > div:nth-child(3) > a {
+  color: #b8860b !important;
+}
+
+/* ============================================================
+   TRAINING PAGE — WAITLIST BANNER LIGHT MODE
+   ============================================================ */
+html.light .waitlist-banner {
+  background: var(--ink2) !important;
+  border-bottom-color: rgba(184, 134, 11, 0.15) !important;
+}
+html.light .waitlist-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border-color: rgba(184, 134, 11, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+html.light .waitlist-card h2 {
+  color: #080e1a !important;
+}
+html.light .waitlist-card h2 em {
+  color: #b8860b !important;
+}
+html.light .waitlist-card p {
+  color: #475569 !important;
+}
+html.light .waitlist-card p strong {
+  color: #1e293b !important;
+}
+html.light .waitlist-reason {
+  background: #ffffff !important;
+  border-color: rgba(184, 134, 11, 0.25) !important;
+}
+html.light .waitlist-reason h4 {
+  color: #080e1a !important;
+}
+html.light .waitlist-reason p {
+  color: #475569 !important;
+}
+
+/* ============================================================
+   TRAINING PAGE — PRE-LAUNCH CTA LIGHT MODE
+   ============================================================ */
+html.light .prelaunch-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border-color: rgba(184, 134, 11, 0.45) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1) !important;
+}
+html.light .prelaunch-card h2 {
+  color: #080e1a !important;
+}
+html.light .prelaunch-card h2 em {
+  color: #b8860b !important;
+}
+html.light .prelaunch-card p {
+  color: #475569 !important;
+}
+html.light .prelaunch-card p strong {
+  color: #1e293b !important;
+}
+html.light .prelaunch-card span[style*="color: #f0d98a"] {
+  color: #b8860b !important;
+}
+
+/* ============================================================
    TRANSIT DASHBOARD MOCKUP — Responsive & Theme-Adaptive
    ============================================================ */
 .transit-mockup-container {
@@ -1793,4 +1947,210 @@ html.light .transit-full-banner h2 {
 html.light .transit-full-banner .subtitle {
   color: #f1f5f9 !important;
   text-shadow: 0 1px 16px rgba(8, 14, 26, 0.85), 0 1px 4px rgba(8, 14, 26, 0.9) !important;
+}
+
+/* ============================================================
+   TRAINING WORKSPACE & WAITLIST LIGHT/DARK THEME STYLES
+   ============================================================ */
+.training-ticker {
+  background: linear-gradient(90deg, #0b1324 0%, #15223c 50%, #0b1324 100%);
+  border-bottom: 1px solid rgba(200, 168, 75, 0.35);
+  padding: 10px 5%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.training-ticker-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: #f1f5f9;
+  font-family: var(--ff-mono);
+}
+
+html.light .training-ticker {
+  background: linear-gradient(90deg, #f8fafc 0%, #edf2f7 50%, #f8fafc 100%) !important;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.25) !important;
+}
+
+html.light .training-ticker-text {
+  color: #1e293b !important;
+}
+
+/* Waitlist Privilege Box (Section After Banner) */
+.training-waitlist-box {
+  background: linear-gradient(135deg, rgba(14, 22, 38, 0.95) 0%, rgba(20, 32, 56, 0.95) 100%);
+  border: 1px solid rgba(200, 168, 75, 0.4);
+  border-radius: 16px;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+html.light .training-waitlist-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(184, 134, 11, 0.28) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05), 0 0 20px rgba(184, 134, 11, 0.05) !important;
+}
+
+.training-privilege-card {
+  background: rgba(8, 14, 26, 0.6);
+  border: 1px solid rgba(200, 168, 75, 0.25);
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s var(--ease);
+}
+
+.training-privilege-card:hover {
+  border-color: rgba(200, 168, 75, 0.5);
+  transform: translateY(-2px);
+}
+
+html.light .training-privilege-card {
+  background: #f8fafc !important;
+  border: 1px solid rgba(184, 134, 11, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light .training-privilege-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(184, 134, 11, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(184, 134, 11, 0.08) !important;
+}
+
+/* FAQ Items */
+.training-faq-item {
+  background: var(--ink2);
+  border: 1px solid rgba(200, 168, 75, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.training-faq-btn {
+  width: 100%;
+  padding: 1.3rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+html.light .training-faq-item {
+  background: #ffffff !important;
+  border: 1px solid rgba(184, 134, 11, 0.22) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light .training-faq-btn {
+  color: #080e1a !important;
+}
+
+/* Pre-Launch CTA Card */
+.training-cta-card {
+  background: linear-gradient(135deg, rgba(8, 14, 26, 0.98) 0%, rgba(18, 28, 48, 0.98) 100%);
+  border: 1px solid rgba(200, 168, 75, 0.45);
+  border-radius: 16px;
+  padding: clamp(2.5rem, 6vw, 4.5rem);
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.training-cta-card h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.training-cta-card p {
+  color: #e2e8f0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+html.light .training-cta-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(184, 134, 11, 0.32) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05), 0 0 25px rgba(184, 134, 11, 0.06) !important;
+}
+
+html.light .training-cta-card h2 {
+  color: #080e1a !important;
+}
+
+html.light .training-cta-card h2 em {
+  color: #b8860b !important;
+}
+
+html.light .training-cta-card p {
+  color: #334155 !important;
+}
+
+/* Three Metric Highlight Box in Tracks */
+.training-metric-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--ink);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 2rem;
+}
+
+html.light .training-metric-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Modal Window */
+.training-modal-box {
+  background: var(--ink2);
+  border: 1px solid rgba(200, 168, 75, 0.3);
+  border-radius: 12px;
+  max-width: 520px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+html.light .training-modal-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(184, 134, 11, 0.3) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+html.light .training-modal-box input,
+html.light .training-modal-box select,
+html.light .training-modal-box textarea {
+  background: #f8fafc !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #080e1a !important;
+}
+
+html.light .training-modal-box select option {
+  background: #ffffff !important;
+  color: #080e1a !important;
 }

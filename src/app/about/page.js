@@ -1,4 +1,22 @@
 export const metadata = {
+  alternates: {
+    canonical: 'https://starks.com.ng/about',
+  },
+  openGraph: {
+    title: 'About Our IT Consulting Company | Starks IT Consulting Nigeria',
+    description: 'Learn about Starks IT Consulting, providing enterprise IT services, cloud solutions, cybersecurity, and practical software engineering training since 2017.',
+    url: 'https://starks.com.ng/about',
+    siteName: 'Starks IT Consulting',
+    locale: 'en_NG',
+    type: 'website',
+    images: [{ url: '/about-hero.jpg', width: 1200, height: 630, alt: 'About Starks IT Consulting' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Our IT Consulting Company | Starks IT Consulting',
+    description: 'Since 2017, proving African enterprises deserve world-class technology partnership.',
+    images: ['/about-hero.jpg'],
+  },
   title: 'About Our IT Consulting Company | Starks IT Consulting Nigeria',
   description: 'Learn about Starks IT Consulting, a leading IT consulting company in Nigeria providing enterprise IT services, cloud solutions, cybersecurity, and digital transformation since 2017.',
   keywords: 'IT consulting company Nigeria, about Starks IT, IT services provider Lagos, enterprise IT solutions Nigeria, cloud consulting, cybersecurity services, digital transformation Africa',

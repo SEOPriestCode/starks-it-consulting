@@ -183,6 +183,29 @@ export async function generateMetadata({ params }) {
   return {
     title: `${c.title} — ${c.client} | Starks IT Case Studies`,
     description: c.summary,
+    alternates: {
+      canonical: `https://starks.com.ng/cases/${slug}`,
+    },
+    openGraph: {
+      title: `${c.title} — ${c.client} | Starks IT Consulting`,
+      description: c.summary,
+      url: `https://starks.com.ng/cases/${slug}`,
+      type: 'article',
+      images: [
+        {
+          url: c.img,
+          width: 1200,
+          height: 630,
+          alt: c.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${c.title} — ${c.client} | Starks IT Case Studies`,
+      description: c.summary,
+      images: [c.img],
+    },
   };
 }
 

@@ -1,6 +1,15 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://starks.com.ng/team',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Leadership & Technology Team | Starks IT Consulting Nigeria',
+    description: 'Meet the leadership and engineering team at Starks IT Consulting in Lagos.',
+    images: ['/team-hero.jpg'],
+  },
   title: 'Leadership & Technology Team | Starks IT Consulting Nigeria',
   description: 'Meet the leadership and engineering team at Starks IT Consulting. Enterprise architects, cloud consultants, and software engineers delivering transformative IT in Nigeria.',
   keywords: 'Starks IT leadership, technology team Lagos, IT consultants Nigeria, Michael Omotayo, enterprise engineering team Nigeria',

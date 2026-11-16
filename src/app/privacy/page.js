@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://starks.com.ng/privacy',
+  },
   title: 'Privacy Policy | Starks IT Consulting',
   description: 'Privacy Policy for Starks IT Consulting Ltd. Learn how we collect, use, and protect your personal information.',
   keywords: 'privacy policy Nigeria, data protection Nigeria, NDPR compliance Nigeria, privacy policy Lagos',

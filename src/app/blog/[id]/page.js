@@ -709,9 +709,35 @@ export async function generateMetadata({ params }) {
   const { id } = await params;
   const article = articles[id];
   if (!article) return { title: 'Article Not Found' };
+  const cleanExcerpt = article.content.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 160);
   return {
     title: `${article.title} | Starks IT Insights`,
-    description: article.content.replace(/<[^>]+>/g, '').slice(0, 160),
+    description: cleanExcerpt,
+    alternates: {
+      canonical: `https://starks.com.ng/blog/${id}`,
+    },
+    openGraph: {
+      title: `${article.title} | Starks IT Insights`,
+      description: cleanExcerpt,
+      url: `https://starks.com.ng/blog/${id}`,
+      type: 'article',
+      publishedTime: article.date,
+      authors: [article.author],
+      images: [
+        {
+          url: article.img,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${article.title} | Starks IT Insights`,
+      description: cleanExcerpt,
+      images: [article.img],
+    },
   };
 }
 
@@ -720,8 +746,38 @@ export default async function BlogPost({ params }) {
   const article = articles[id];
   if (!article) notFound();
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.content.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 160),
+    image: `https://starks.com.ng${article.img}`,
+    datePublished: article.date,
+    author: {
+      '@type': 'Person',
+      name: article.author,
+      jobTitle: article.role,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Starks IT Consulting',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://starks.com.ng/logo.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://starks.com.ng/blog/${id}`,
+    },
+  };
+
   return (
     <div className="page active">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* HERO */}
       <div className="page-hero">
         <div className="page-hero-bg">

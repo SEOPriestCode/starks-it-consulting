@@ -1,6 +1,24 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: {
+    canonical: 'https://starks.com.ng/services',
+  },
+  openGraph: {
+    title: 'Enterprise IT Consulting Services Nigeria | Starks IT Consulting',
+    description: 'Comprehensive IT solutions tailored for African enterprises. Certified specialists delivering managed IT, cloud, security, and software.',
+    url: 'https://starks.com.ng/services',
+    siteName: 'Starks IT Consulting',
+    locale: 'en_NG',
+    type: 'website',
+    images: [{ url: '/about-hero.jpg', width: 1200, height: 630, alt: 'Starks IT Consulting Enterprise Services' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise IT Consulting Services Nigeria | Starks IT Consulting',
+    description: 'Certified specialists delivering managed IT, cloud, security, software, and training.',
+    images: ['/about-hero.jpg'],
+  },
   title: 'IT Consulting Services Nigeria | Enterprise IT Solutions | Starks IT Consulting',
   description: 'Professional IT consulting services in Nigeria. Enterprise IT solutions including managed IT services, cloud consulting, cybersecurity, software development, and digital transformation for businesses in Lagos, Abuja, and across Africa.',
   keywords: 'IT consulting services Nigeria, enterprise IT solutions, IT consulting Lagos, IT consulting Abuja, managed IT services Nigeria, cloud consulting, cybersecurity consulting, software development Nigeria, digital transformation Africa, IT strategy consulting',
@@ -245,6 +263,29 @@ export default function Services() {
             </div>
             <div className="svc-hover-bar"></div>
           </Link>
+        </div>
+      </section>
+
+      {/* TRAINING & ACADEMY BANNER */}
+      <section style={{ padding: '0 clamp(4%,5%,5%) 60px' }}>
+        <div style={{ padding: 'clamp(2rem, 4vw, 3rem)', background: 'linear-gradient(135deg, rgba(8,14,26,0.95) 0%, rgba(18,28,48,0.95) 100%)', border: '1px solid rgba(200, 168, 75, 0.3)', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+          <div style={{ maxWidth: '640px' }}>
+            <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.68rem', color: 'var(--gold)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Starks Academy & Workspace</div>
+            <h3 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)', color: 'var(--white)', marginBottom: '0.6rem' }}>
+              Hands-On Developer Training & Engineering Labs
+            </h3>
+            <p style={{ color: 'var(--ash2)', fontSize: '0.92rem', lineHeight: '1.7', fontWeight: 300 }}>
+              Build production engineering skills with our interactive browser workspace. Featuring our flagship <strong>Frontend Practice Lab</strong> with automated test checks, project capstones, and senior consultant code reviews.
+            </p>
+          </div>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/training" className="btn btn-gold" style={{ textDecoration: 'none' }}>
+              <span>Explore Training Tracks →</span>
+            </Link>
+            <a href="https://learn.starks.com.ng/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ textDecoration: 'none' }}>
+              Join Waitlist ↗
+            </a>
+          </div>
         </div>
       </section>
 
