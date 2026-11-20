@@ -1982,7 +1982,19 @@ html.light .training-ticker-text {
   color: #1e293b !important;
 }
 
-/* Waitlist Privilege Box (Section After Banner) */
+/* Waitlist Privilege Banner (Section Directly on Top of IDE) */
+.waitlist-banner {
+  padding: clamp(50px, 6vw, 80px) 5%;
+  background: var(--ink2);
+  border-bottom: 1px solid rgba(200, 168, 75, 0.15);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+html.light .waitlist-banner {
+  background: #f8fafc !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
 .training-waitlist-box {
   background: linear-gradient(135deg, rgba(14, 22, 38, 0.95) 0%, rgba(20, 32, 56, 0.95) 100%);
   border: 1px solid rgba(200, 168, 75, 0.4);
@@ -1997,7 +2009,31 @@ html.light .training-ticker-text {
 html.light .training-waitlist-box {
   background: #ffffff !important;
   border: 1px solid rgba(184, 134, 11, 0.28) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05), 0 0 20px rgba(184, 134, 11, 0.05) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05), 0 0 20px rgba(184, 134, 11, 0.05) !important;
+}
+
+.training-waitlist-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  color: var(--white);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+html.light .training-waitlist-title {
+  color: #080e1a !important;
+}
+
+.training-waitlist-desc {
+  color: var(--ash2);
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+html.light .training-waitlist-desc {
+  color: #334155 !important;
 }
 
 .training-privilege-card {
@@ -2023,6 +2059,308 @@ html.light .training-privilege-card:hover {
   background: #ffffff !important;
   border-color: rgba(184, 134, 11, 0.4) !important;
   box-shadow: 0 8px 24px rgba(184, 134, 11, 0.08) !important;
+}
+
+html.light .training-privilege-card h4 {
+  color: #080e1a !important;
+}
+
+html.light .training-privilege-card p {
+  color: #475569 !important;
+}
+
+/* Practice Lab Header Pill (Directly on top of IDE) */
+.ide-sim-pill {
+  margin-top: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200, 168, 75, 0.1);
+  padding: 6px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(200, 168, 75, 0.3);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+html.light .ide-sim-pill {
+  background: rgba(184, 134, 11, 0.08) !important;
+  border-color: rgba(184, 134, 11, 0.28) !important;
+}
+
+/* ============================================================
+   INTERACTIVE PRACTICE LAB IDE (LIGHT & DARK THEMES)
+   ============================================================ */
+.training-ide {
+  background: #090e1a;
+  border: 1px solid rgba(200, 168, 75, 0.35);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+html.light .training-ide {
+  background: #ffffff !important;
+  border: 1px solid rgba(184, 134, 11, 0.3) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08), 0 0 20px rgba(184, 134, 11, 0.04) !important;
+}
+
+/* IDE Title Bar */
+.ide-title-bar {
+  background: #0e172a;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(200, 168, 75, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+html.light .ide-title-bar {
+  background: #f1f5f9 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.ide-title-text {
+  font-family: var(--ff-mono);
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-left: 10px;
+}
+
+html.light .ide-title-text {
+  color: #334155 !important;
+  font-weight: 500;
+}
+
+/* IDE File Tabs Bar */
+.ide-tabs-bar {
+  background: #070b14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  overflow-x: auto;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+html.light .ide-tabs-bar {
+  background: #e2e8f0 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.ide-tab {
+  padding: 10px 18px;
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  background: transparent;
+  color: #94a3b8;
+}
+
+.ide-tab.active {
+  background: #0d1527;
+  color: var(--gold);
+  border-top: 2px solid var(--gold);
+}
+
+html.light .ide-tab {
+  color: #475569 !important;
+}
+
+html.light .ide-tab:hover {
+  color: #0f172a !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+html.light .ide-tab.active {
+  background: #ffffff !important;
+  color: #b8860b !important;
+  border-top: 2px solid #b8860b !important;
+  font-weight: 600;
+}
+
+/* IDE Split Pane */
+.ide-split-pane {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  min-height: 460px;
+}
+
+/* IDE Code Editor Pane (Left) */
+.ide-editor-pane {
+  background: #0a101f;
+  padding: 1.5rem;
+  border-right: 1px solid rgba(200, 168, 75, 0.15);
+  overflow-x: auto;
+  font-family: var(--ff-mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: #d4d4d4;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+html.light .ide-editor-pane {
+  background: #f8fafc !important;
+  color: #1e293b !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* IDE Live Preview & Test Suite (Right) */
+.ide-preview-pane {
+  background: #0d1424;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s;
+}
+
+html.light .ide-preview-pane {
+  background: #ffffff !important;
+}
+
+.ide-preview-top {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(200, 168, 75, 0.15);
+  flex: 1;
+  transition: border-color 0.3s;
+}
+
+html.light .ide-preview-top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Interactive Component Demo Card Inside Preview */
+.ide-widget-card {
+  background: #070c18;
+  border: 1px solid rgba(200, 168, 75, 0.3);
+  border-radius: 10px;
+  padding: 1.4rem;
+  color: #ffffff;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+html.light .ide-widget-card {
+  background: #f8fafc !important;
+  border: 1px solid rgba(184, 134, 11, 0.25) !important;
+  color: #080e1a !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+
+.ide-widget-card h4 {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+html.light .ide-widget-card h4 {
+  color: #080e1a !important;
+}
+
+.ide-widget-card p {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+html.light .ide-widget-card p {
+  color: #475569 !important;
+}
+
+.ide-counter-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+html.light .ide-counter-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+}
+
+.ide-btn-dec {
+  background: transparent;
+  border: 1px solid rgba(200, 168, 75, 0.3);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  transition: all 0.2s;
+}
+
+html.light .ide-btn-dec {
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+  background: #ffffff !important;
+}
+
+html.light .ide-btn-dec:hover {
+  background: #f1f5f9 !important;
+}
+
+/* IDE Test Assertions Runner (Bottom Right) */
+.ide-tests-pane {
+  padding: 1.4rem;
+  background: #090f1d;
+  transition: background 0.3s;
+}
+
+html.light .ide-tests-pane {
+  background: #f1f5f9 !important;
+}
+
+.ide-test-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  transition: color 0.3s;
+}
+
+html.light .ide-test-item {
+  color: #334155 !important;
+}
+
+.ide-waitlist-callout {
+  margin-top: 1.2rem;
+  padding: 10px 14px;
+  background: rgba(200, 168, 75, 0.08);
+  border-radius: 6px;
+  border: 1px solid rgba(200, 168, 75, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+html.light .ide-waitlist-callout {
+  background: #ffffff !important;
+  border: 1px solid rgba(184, 134, 11, 0.25) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light .ide-waitlist-callout span {
+  color: #0f172a !important;
 }
 
 /* FAQ Items */
@@ -2154,3 +2492,4 @@ html.light .training-modal-box select option {
   background: #ffffff !important;
   color: #080e1a !important;
 }
+

@@ -251,7 +251,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
   ];
 
   return (
-    <div className="page active">
+    <main className="page active" itemScope itemType="https://schema.org/EducationalOccupationalProgram">
       {/* PRE-LAUNCH ANNOUNCEMENT TICKER */}
       <div className="training-ticker">
         <div className="training-ticker-text">
@@ -285,7 +285,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
       </div>
 
       {/* HERO SECTION */}
-      <div className="page-hero">
+      <header className="page-hero">
         <div className="page-hero-bg">
           <img src="/team-developer.jpg" alt="Developer practicing code in Starks learning workspace" />
           <div className="page-hero-vignette"></div>
@@ -345,24 +345,12 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* WAITLIST ADVANTAGE HIGHLIGHT BANNER */}
-      <section className="waitlist-banner" style={{
-        padding: 'clamp(50px, 6vw, 80px) 5%',
-        background: 'var(--ink2)',
-        borderBottom: '1px solid rgba(200, 168, 75, 0.15)'
-      }}>
+      {/* WAITLIST ADVANTAGE HIGHLIGHT BANNER (SECTION DIRECTLY ON TOP OF IDE) */}
+      <section className="waitlist-banner" aria-label="Training Waitlist Advantage">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div className="waitlist-card" style={{
-            background: 'linear-gradient(135deg, rgba(14,22,38,0.95) 0%, rgba(20,32,56,0.95) 100%)',
-            border: '1px solid rgba(200, 168, 75, 0.4)',
-            borderRadius: '16px',
-            padding: 'clamp(2rem, 5vw, 3.5rem)',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.45)',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
+          <div className="training-waitlist-box">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
               <div>
                 <span style={{
@@ -378,20 +366,13 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                 }}>
                   WAITLIST PRIVILEGE
                 </span>
-                <h2 style={{
-                  fontFamily: 'var(--ff-display)',
-                  fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)',
-                  color: 'var(--white)',
-                  marginTop: '1rem',
-                  marginBottom: '1rem',
-                  lineHeight: '1.2'
-                }}>
+                <h2 className="training-waitlist-title">
                   Why join the waitlist before <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>public launch</em>?
                 </h2>
-                <p style={{ color: 'var(--ash2)', fontSize: '1rem', lineHeight: '1.75', marginBottom: '1.5rem', fontWeight: 300 }}>
+                <p className="training-waitlist-desc" style={{ marginBottom: '1.5rem' }}>
                   Training will be announced publicly across all media channels soon. However, cohort seats are strictly capped to maintain senior consultant code review quality.
                 </p>
-                <p style={{ color: 'var(--ash2)', fontSize: '1rem', lineHeight: '1.75', marginBottom: '2rem', fontWeight: 300 }}>
+                <p className="training-waitlist-desc" style={{ marginBottom: '2rem' }}>
                   By joining the waitlist at <strong>learn.starks.com.ng</strong>, you get direct notification first, ensuring you secure your spot before general admissions open, and you unlock a guaranteed early-bird tuition discount.
                 </p>
 
@@ -408,34 +389,34 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
 
               {/* 4 REASONS GRID */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.2rem' }}>
-                <div className="waitlist-reason" style={{ background: 'rgba(8, 14, 26, 0.6)', border: '1px solid rgba(200, 168, 75, 0.25)', padding: '1.5rem', borderRadius: '10px' }}>
+                <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>01</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', color: 'var(--white)', marginBottom: '0.4rem' }}>First to Know</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--ash2)', lineHeight: '1.6', fontWeight: 300 }}>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>First to Know</h4>
+                  <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
                     Official dates, curriculum releases, and onboarding details sent to your inbox before social media release.
                   </p>
                 </div>
 
-                <div className="waitlist-reason" style={{ background: 'rgba(8, 14, 26, 0.6)', border: '1px solid rgba(200, 168, 75, 0.25)', padding: '1.5rem', borderRadius: '10px' }}>
+                <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>02</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', color: 'var(--white)', marginBottom: '0.4rem' }}>Tuition Discount</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--ash2)', lineHeight: '1.6', fontWeight: 300 }}>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Tuition Discount</h4>
+                  <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
                     Exclusive discount advantage provided only to waitlist members before the general public launch.
                   </p>
                 </div>
 
-                <div className="waitlist-reason" style={{ background: 'rgba(8, 14, 26, 0.6)', border: '1px solid rgba(200, 168, 75, 0.25)', padding: '1.5rem', borderRadius: '10px' }}>
+                <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>03</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', color: 'var(--white)', marginBottom: '0.4rem' }}>Reserved Seats</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--ash2)', lineHeight: '1.6', fontWeight: 300 }}>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Reserved Seats</h4>
+                  <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
                     Priority access to reserve your slot before the initial intensive cohort reaches maximum mentor capacity.
                   </p>
                 </div>
 
-                <div className="waitlist-reason" style={{ background: 'rgba(8, 14, 26, 0.6)', border: '1px solid rgba(200, 168, 75, 0.25)', padding: '1.5rem', borderRadius: '10px' }}>
+                <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>04</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', color: 'var(--white)', marginBottom: '0.4rem' }}>Starter Tooling</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--ash2)', lineHeight: '1.6', fontWeight: 300 }}>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Starter Tooling</h4>
+                  <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
                     Receive environment guides, recommended tooling, and Git essentials prior to day-one orientation.
                   </p>
                 </div>
@@ -463,38 +444,23 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           <p style={{ color: 'var(--ash2)', fontSize: '1.05rem', lineHeight: '1.8', fontWeight: 300 }}>
             This is what learning looks like at Starks. No passive videos. Write code in the editor, run automated test suites, and see real-time updates right in your browser.
           </p>
-          <div style={{ marginTop: '1.2rem', display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(200, 168, 75, 0.1)', padding: '6px 16px', borderRadius: '30px', border: '1px solid rgba(200, 168, 75, 0.3)' }}>
+          <div className="ide-sim-pill">
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#27c93f' }}></span>
-            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--gold)' }}>
+            <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--gold)', fontWeight: 600 }}>
               LIVE SIMULATED LAB // TRY RUNNING CHECKS BELOW
             </span>
           </div>
         </div>
 
         {/* SIMULATED BROWSER WORKSPACE IDE */}
-        <div className="training-ide" style={{
-          background: '#090e1a',
-          border: '1px solid rgba(200, 168, 75, 0.35)',
-          borderRadius: '16px',
-          overflow: 'hidden',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.65)'
-        }}>
+        <div className="training-ide">
           {/* WINDOW TITLE BAR */}
-          <div style={{
-            background: '#0e172a',
-            padding: '12px 20px',
-            borderBottom: '1px solid rgba(200, 168, 75, 0.2)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '12px'
-          }}>
+          <div className="ide-title-bar">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#ff5f56', display: 'inline-block' }}></span>
               <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#ffbd2e', display: 'inline-block' }}></span>
               <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#27c93f', display: 'inline-block' }}></span>
-              <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.75rem', color: 'var(--ash2)', marginLeft: '10px' }}>
+              <span className="ide-title-text">
                 starks-workspace // Frontend-Practice-Lab.jsx
               </span>
             </div>
@@ -538,32 +504,12 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           </div>
 
           {/* FILE TABS BAR */}
-          <div style={{
-            background: '#070b14',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0 10px',
-            overflowX: 'auto'
-          }}>
+          <div className="ide-tabs-bar">
             {Object.keys(ideFiles).map(fileName => (
               <button
                 key={fileName}
                 onClick={() => setActiveIdeFile(fileName)}
-                style={{
-                  padding: '10px 18px',
-                  fontFamily: 'var(--ff-mono)',
-                  fontSize: '0.72rem',
-                  background: activeIdeFile === fileName ? '#0d1527' : 'transparent',
-                  color: activeIdeFile === fileName ? 'var(--gold)' : 'var(--ash)',
-                  border: 'none',
-                  borderTop: activeIdeFile === fileName ? '2px solid var(--gold)' : '2px solid transparent',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  transition: 'all 0.2s'
-                }}
+                className={`ide-tab ${activeIdeFile === fileName ? 'active' : ''}`}
               >
                 <span>{fileName.endsWith('.jsx') ? '⚛' : fileName.endsWith('.css') ? '🎨' : '🧪'}</span>
                 <span>{fileName}</span>
@@ -572,39 +518,18 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           </div>
 
           {/* SPLIT PANE: CODE EDITOR (LEFT) + LIVE PREVIEW & TEST SUITE (RIGHT) */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            minHeight: '460px'
-          }}>
+          <div className="ide-split-pane">
             {/* EDITOR CODE AREA */}
-            <div style={{
-              background: '#0a101f',
-              padding: '1.5rem',
-              borderRight: '1px solid rgba(200, 168, 75, 0.15)',
-              overflowX: 'auto',
-              fontFamily: 'var(--ff-mono)',
-              fontSize: '0.78rem',
-              lineHeight: '1.7',
-              color: '#d4d4d4'
-            }}>
-              <pre style={{ margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+            <div className="ide-editor-pane">
+              <pre style={{ margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word', fontFamily: 'inherit' }}>
                 <code>{ideFiles[activeIdeFile]}</code>
               </pre>
             </div>
 
             {/* LIVE PREVIEW & TEST ASSERTIONS RUNNER */}
-            <div style={{
-              background: '#0d1424',
-              display: 'flex',
-              flexDirection: 'column'
-            }}>
+            <div className="ide-preview-pane">
               {/* TOP: LIVE COMPONENT PREVIEW */}
-              <div style={{
-                padding: '1.5rem',
-                borderBottom: '1px solid rgba(200, 168, 75, 0.15)',
-                flex: 1
-              }}>
+              <div className="ide-preview-top">
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -620,48 +545,25 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                 </div>
 
                 {/* INTERACTIVE DEMO CARD WIDGET */}
-                <div style={{
-                  background: '#070c18',
-                  border: '1px solid rgba(200, 168, 75, 0.3)',
-                  borderRadius: '10px',
-                  padding: '1.4rem',
-                  color: '#ffffff'
-                }}>
-                  <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.62rem', color: '#f0d98a', letterSpacing: '1px', marginBottom: '4px' }}>
+                <div className="ide-widget-card">
+                  <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.62rem', color: 'var(--gold)', letterSpacing: '1px', marginBottom: '4px' }}>
                     STARKS WORKSPACE LAB WIDGET
                   </div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.15rem', color: '#ffffff', margin: '0 0 6px' }}>
+                  <h4>
                     Interactive Component Lab
                   </h4>
-                  <p style={{ fontSize: '0.82rem', color: 'var(--ash2)', margin: '0 0 1rem', lineHeight: '1.5', fontWeight: 300 }}>
+                  <p>
                     Click the buttons below to test live interactive state updates inside the lab component.
                   </p>
 
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '10px 14px',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    borderRadius: '8px',
-                    border: '1px solid rgba(255, 255, 255, 0.06)'
-                  }}>
+                  <div className="ide-counter-box">
                     <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.2rem', color: 'var(--gold)', fontWeight: 700 }}>
                       {demoCount} / 10
                     </span>
                     <div style={{ display: 'flex', gap: '8px' }}>
                       <button
                         onClick={() => setDemoCount(c => Math.max(0, c - 1))}
-                        style={{
-                          background: 'transparent',
-                          border: '1px solid rgba(200, 168, 75, 0.3)',
-                          color: '#ffffff',
-                          padding: '6px 12px',
-                          borderRadius: '6px',
-                          cursor: 'pointer',
-                          fontFamily: 'var(--ff-mono)',
-                          fontSize: '0.72rem'
-                        }}
+                        className="ide-btn-dec"
                       >
                         − Dec
                       </button>
@@ -687,10 +589,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
               </div>
 
               {/* BOTTOM: AUTOMATED TEST CHECK RUNNER */}
-              <div style={{
-                padding: '1.4rem',
-                background: '#090f1d'
-              }}>
+              <div className="ide-tests-pane">
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.8rem' }}>
                   <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.68rem', color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>
                     Automated Exercise Verification
@@ -700,39 +599,28 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                   </span>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontFamily: 'var(--ff-mono)', fontSize: '0.72rem' }}>
-                  <div style={{ color: testsPassed ? '#4ec9b0' : '#8fa0bc', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div className="ide-test-item" style={{ color: testsPassed ? '#10b981' : '#94a3b8' }}>
                     <span>{testsPassed ? '✓' : '○'}</span>
                     <span>Component renders semantically with proper markup</span>
                   </div>
-                  <div style={{ color: testsPassed ? '#4ec9b0' : '#8fa0bc', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div className="ide-test-item" style={{ color: testsPassed ? '#10b981' : '#94a3b8' }}>
                     <span>{testsPassed ? '✓' : '○'}</span>
                     <span>State updates immediately and bounds checking enforced</span>
                   </div>
-                  <div style={{ color: testsPassed ? '#4ec9b0' : '#8fa0bc', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div className="ide-test-item" style={{ color: testsPassed ? '#10b981' : '#94a3b8' }}>
                     <span>{testsPassed ? '✓' : '○'}</span>
                     <span>Accessibility standards pass WCAG AAA color contrast</span>
                   </div>
-                  <div style={{ color: testsPassed ? '#4ec9b0' : '#8fa0bc', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div className="ide-test-item" style={{ color: testsPassed ? '#10b981' : '#94a3b8' }}>
                     <span>{testsPassed ? '✓' : '○'}</span>
                     <span>Zero layout shifts on dynamic re-render</span>
                   </div>
                 </div>
 
                 {/* WAITLIST CALLOUT INSIDE LAB */}
-                <div style={{
-                  marginTop: '1.2rem',
-                  padding: '10px 14px',
-                  background: 'rgba(200, 168, 75, 0.08)',
-                  borderRadius: '6px',
-                  border: '1px solid rgba(200, 168, 75, 0.25)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  flexWrap: 'wrap',
-                  gap: '8px'
-                }}>
-                  <span style={{ fontSize: '0.75rem', color: '#f1f5f9', fontFamily: 'var(--ff-mono)' }}>
+                <div className="ide-waitlist-callout">
+                  <span style={{ fontSize: '0.75rem', fontFamily: 'var(--ff-mono)' }}>
                     Ready for the full workspace? Trainings commence soon.
                   </span>
                   <a
@@ -826,7 +714,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
               </p>
 
               {/* THREE CORE METRICS */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', padding: '1.5rem', background: 'var(--ink)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '2rem' }}>
+              <div className="training-metric-box">
                 <div>
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.65rem', color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase' }}>Duration</div>
                   <div style={{ fontSize: '0.95rem', color: 'var(--white)', fontWeight: 600, marginTop: '4px' }}>{currentTrack.duration}</div>
@@ -960,29 +848,11 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           {faqs.map((faq, idx) => (
             <div 
               key={idx}
-              style={{
-                background: 'var(--ink2)',
-                border: '1px solid rgba(200, 168, 75, 0.2)',
-                borderRadius: '8px',
-                overflow: 'hidden'
-              }}
+              className="training-faq-item"
             >
               <button
                 onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)}
-                style={{
-                  width: '100%',
-                  padding: '1.3rem 1.6rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  background: 'none',
-                  border: 'none',
-                  color: '#ffffff',
-                  fontFamily: 'var(--ff-display)',
-                  fontSize: '1.1rem',
-                  textAlign: 'left',
-                  cursor: 'pointer'
-                }}
+                className="training-faq-btn"
               >
                 <span>{faq.q}</span>
                 <span style={{ color: 'var(--gold)', fontSize: '1.3rem', marginLeft: '1rem' }}>
@@ -1001,21 +871,12 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
 
       {/* FINAL HIGH-IMPACT PRE-LAUNCH CTA */}
       <section className="prelaunch-cta" style={{ padding: '0 5% clamp(60px, 8vw, 100px)', maxWidth: '1200px', margin: '0 auto' }}>
-        <div className="prelaunch-card" style={{
-          background: 'linear-gradient(135deg, rgba(8,14,26,0.98) 0%, rgba(18,28,48,0.98) 100%)',
-          border: '1px solid rgba(200, 168, 75, 0.45)',
-          borderRadius: '16px',
-          padding: 'clamp(2.5rem, 6vw, 4.5rem)',
-          textAlign: 'center',
-          boxShadow: '0 25px 50px rgba(0,0,0,0.5)',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
+        <div className="training-cta-card">
           <div style={{ maxWidth: '720px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
             <span style={{
               fontFamily: 'var(--ff-mono)',
               fontSize: '0.72rem',
-              color: '#f0d98a',
+              color: 'var(--gold)',
               letterSpacing: '2px',
               textTransform: 'uppercase',
               background: 'rgba(200, 168, 75, 0.15)',
@@ -1027,10 +888,10 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
             }}>
               LIMITED PRE-LAUNCH SEATS
             </span>
-            <h2 style={{ fontFamily: 'var(--ff-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: '#ffffff', marginBottom: '1.2rem', lineHeight: 1.2 }}>
-              Don&apos;t miss the first cohort announcement. Lock in your <em style={{ fontStyle: 'italic', color: '#f0d98a' }}>discount advantage</em>.
+            <h2>
+              Don&apos;t miss the first cohort announcement. Lock in your <em>discount advantage</em>.
             </h2>
-            <p style={{ color: '#e2e8f0', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '2.5rem', fontWeight: 300 }}>
+            <p>
               Be the first to receive the official training schedule and private registration link at <strong>learn.starks.com.ng</strong> before general admissions open to the public.
             </p>
             <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -1066,16 +927,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           zIndex: 9999,
           padding: '1.5rem'
         }}>
-          <div style={{
-            background: 'var(--ink2)',
-            border: '1px solid rgba(200, 168, 75, 0.3)',
-            borderRadius: '12px',
-            maxWidth: '520px',
-            width: '100%',
-            padding: '2.5rem',
-            position: 'relative',
-            boxShadow: '0 25px 60px rgba(0,0,0,0.6)'
-          }}>
+          <div className="training-modal-box">
             <button 
               onClick={() => { setInquiryModalOpen(false); setInquirySubmitted(false); }}
               style={{
@@ -1205,6 +1057,6 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 }

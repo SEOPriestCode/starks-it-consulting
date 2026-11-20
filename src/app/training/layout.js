@@ -125,6 +125,22 @@ export default function TrainingLayout({ children }) {
               '@type': 'Answer',
               text: 'The Frontend Practice Lab is a 6 Months Intensive Training designed from Beginner to Advance, combining an interactive in-browser IDE with progressive test-checked exercises and production capstone projects.'
             }
+          },
+          {
+            '@type': 'Question',
+            name: 'Who conducts the code reviews and mentorship?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Unlike automated bootcamps, your capstone projects and pull requests are reviewed by active senior consultants and practice leads from Starks IT Consulting.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Can corporate engineering teams enroll?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. We offer Corporate Engineering Upskilling cohorts customized to enterprise stacks, legacy modernization roadmaps, and delivery timelines.'
+            }
           }
         ]
       }
