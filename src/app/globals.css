@@ -2493,3 +2493,13 @@ html.light .training-modal-box select option {
   color: #080e1a !important;
 }
 
+/* Legal & Compliance Table Light Mode */
+html.light table tr {
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light table tr:hover {
+  background: rgba(184, 134, 11, 0.04) !important;
+}
+
+

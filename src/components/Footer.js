@@ -47,8 +47,8 @@ export default function Footer() {
   let legalLinks = [
     { name: 'Privacy Policy', path: '/privacy' },
     { name: 'Terms & Conditions', path: '/terms' },
-    { name: 'NDPR Statement', path: '#ndpr' },
-    { name: 'Cookies', path: '#cookies' },
+    { name: 'NDPR Statement', path: '/ndpr' },
+    { name: 'Cookies', path: '/cookies' },
   ];
 
   // Adjust values based on the page
@@ -75,10 +75,11 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '/privacy' },
-      { name: 'Terms', path: '/terms' },
-      { name: 'NDPR', path: '#ndpr' }
-    ];
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms & Conditions', path: '/terms' },
+    { name: 'NDPR Statement', path: '/ndpr' },
+    { name: 'Cookies', path: '/cookies' },
+  ];
   } else if (pathname === '/about') {
     certs = ['ISO 27001', 'NITDA Reg.'];
     tagline = 'Enterprise technology consulting built for the African market and trusted globally.';
@@ -99,10 +100,11 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '/privacy' },
-      { name: 'Terms', path: '/terms' },
-      { name: 'NDPR', path: '#ndpr' }
-    ];
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms & Conditions', path: '/terms' },
+    { name: 'NDPR Statement', path: '/ndpr' },
+    { name: 'Cookies', path: '/cookies' },
+  ];
   } else if (pathname === '/cases') {
     certs = ['ISO 27001', 'AWS Partner'];
     tagline = 'Enterprise technology consulting built for the African market.';
@@ -118,9 +120,11 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '/privacy' },
-      { name: 'Terms', path: '#terms' }
-    ];
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms & Conditions', path: '/terms' },
+    { name: 'NDPR Statement', path: '/ndpr' },
+    { name: 'Cookies', path: '/cookies' },
+  ];
   } else if (pathname === '/team') {
     certs = [];
     tagline = 'Enterprise technology consulting built for the African market.';
@@ -136,9 +140,11 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '/privacy' },
-      { name: 'Terms', path: '#terms' }
-    ];
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms & Conditions', path: '/terms' },
+    { name: 'NDPR Statement', path: '/ndpr' },
+    { name: 'Cookies', path: '/cookies' },
+  ];
   } else if (pathname === '/blog') {
     certs = ['ISO 27001', 'NITDA Reg.'];
     tagline = 'Enterprise technology consulting built for the African market and trusted globally.';
@@ -159,10 +165,11 @@ export default function Footer() {
     ];
     copyText = '© 2017–2026 Starks IT Consulting Ltd.';
     legalLinks = [
-      { name: 'Privacy', path: '/privacy' },
-      { name: 'Terms', path: '/terms' },
-      { name: 'NDPR', path: '#ndpr' }
-    ];
+    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms & Conditions', path: '/terms' },
+    { name: 'NDPR Statement', path: '/ndpr' },
+    { name: 'Cookies', path: '/cookies' },
+  ];
   }
 
   return (

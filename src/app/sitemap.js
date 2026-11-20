@@ -13,8 +13,10 @@ export default function sitemap() {
     { url: `${baseUrl}/team`, priority: 0.75, changeFrequency: 'monthly' },
     { url: `${baseUrl}/blog`, priority: 0.85, changeFrequency: 'daily' },
     { url: `${baseUrl}/contact`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${baseUrl}/privacy`, priority: 0.3, changeFrequency: 'yearly' },
-    { url: `${baseUrl}/terms`, priority: 0.3, changeFrequency: 'yearly' },
+    { url: `${baseUrl}/privacy`, priority: 0.5, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/terms`, priority: 0.5, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/ndpr`, priority: 0.6, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/cookies`, priority: 0.5, changeFrequency: 'monthly' },
   ];
 
   // Core Service pages
