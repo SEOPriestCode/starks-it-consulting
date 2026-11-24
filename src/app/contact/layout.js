@@ -4,18 +4,21 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Starks IT Consulting | Lagos, Nigeria',
-    description: 'Start a conversation with our technology consultants. Head office in Ikeja, Lagos, Nigeria.',
+    title: 'Contact Starks IT | IT Consulting Firm in Lagos, Nigeria',
+    description: 'Connect with Starks IT Consulting in Lagos, Nigeria. Visit our Ikeja office at 16 Shagamu Avenue or book an enterprise IT consultation.',
     images: ['/logo.png'],
   },
-  title: 'Contact Us | Starks IT Consulting Lagos, Nigeria',
-  description: 'Connect with Starks IT Consulting for enterprise IT consulting, cloud infrastructure, cybersecurity assessments, and bespoke software development in Lagos, Nigeria.',
-  keywords: 'contact IT consulting Lagos, Starks IT phone email, hire IT consultants Nigeria, enterprise software company Lagos',
+  title: {
+    absolute: 'Contact Starks IT | IT Consulting Firm in Lagos, Nigeria',
+  },
+  description: 'Connect with Starks IT Consulting in Lagos, Nigeria. Visit our Ikeja office at 16 Shagamu Avenue or schedule a discovery consultation for enterprise IT solutions.',
+  keywords: 'IT Consulting, Starks IT, IT Consulting in Lagos, contact Starks IT, IT consulting Ikeja Lagos, hire IT consultants Nigeria, enterprise IT services Lagos',
   openGraph: {
-    title: 'Contact Starks IT Consulting | Lagos, Nigeria',
-    description: 'Start a conversation with our technology consultants. Head office in Ilupeju, Lagos, Nigeria.',
+    title: 'Contact Starks IT | IT Consulting Firm in Lagos, Nigeria',
+    description: 'Connect with Starks IT Consulting in Lagos, Nigeria. Visit our Ikeja office at 16 Shagamu Avenue or book an enterprise IT consultation.',
     url: 'https://starks.com.ng/contact',
     siteName: 'Starks IT Consulting',
+    locale: 'en_NG',
     type: 'website',
   },
 };

@@ -7,37 +7,83 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Starks IT Consulting | Enterprise IT Services Nigeria',
-    description: 'Transforming African enterprises through world-class IT consulting, cloud engineering, fleet telematics, and software engineering practice labs.',
+    title: 'IT Consulting in Lagos | Starks IT – Enterprise Technology Solutions',
+    description: 'Premier enterprise IT consulting firm in Lagos, Nigeria. Architecting scalable cloud, cybersecurity, managed IT, and custom software solutions.',
     images: ['/logo.png'],
   },
-  title: 'IT Consulting Nigeria | Enterprise IT Services & Solutions | Starks IT Consulting',
-  description: 'Leading IT consulting company in Nigeria providing enterprise IT services, cloud solutions, cybersecurity, bespoke software, and managed IT services for businesses in Lagos, Abuja, and across Africa.',
-  keywords: 'IT consulting Nigeria, IT services Lagos, enterprise IT solutions, cloud consulting Nigeria, cybersecurity services Lagos, software development Nigeria, managed IT services Abuja, digital transformation Africa',
+  title: {
+    absolute: 'IT Consulting in Lagos | Starks IT – Enterprise Technology Solutions',
+  },
+  description: 'Starks IT is a premier IT consulting firm in Lagos, Nigeria. We provide enterprise IT consulting, cloud infrastructure, cybersecurity, managed IT, and digital transformation across Africa.',
+  keywords: 'IT Consulting, Starks IT, IT Consulting in Lagos, IT consulting Nigeria, IT consulting firm in Lagos, enterprise IT solutions Lagos, IT services Lagos, managed IT services Lagos, IT company Lagos, technology consulting Lagos',
   openGraph: {
-    title: 'Starks IT Consulting | Enterprise IT Services Nigeria',
-    description: 'Transforming African enterprises through world-class IT consulting, cloud engineering, cybersecurity, and managed services.',
+    title: 'IT Consulting in Lagos | Starks IT – Enterprise Technology Solutions',
+    description: 'Premier enterprise IT consulting firm in Lagos, Nigeria providing cloud engineering, cybersecurity, managed IT, and custom software across Africa.',
     url: 'https://starks.com.ng',
     siteName: 'Starks IT Consulting',
+    locale: 'en_NG',
     type: 'website',
   },
+};
+
+const homeFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'What IT consulting services does Starks IT provide in Lagos?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Starks IT provides end-to-end IT consulting services in Lagos, Nigeria. Our capabilities include enterprise IT strategy, custom software development, cloud infrastructure (AWS & Azure), cybersecurity & ISO 27001/NDPR compliance, data engineering, managed IT services, and Microsoft 365 solutions.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Why choose Starks IT for IT consulting in Lagos, Nigeria?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Founded in Lagos in 2017, Starks IT combines deep local market insight with international engineering standards. We hold ISO 27001:2022 certification, maintain a 10-year record of zero security breaches across managed client environments, and have delivered 150+ high-impact IT consulting projects for Nigerian and multinational enterprises.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Where is Starks IT located in Lagos?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Starks IT is headquartered in Lagos, Nigeria, at 16 Shagamu Avenue, Ikeja, Lagos State. We serve enterprises across Ikeja, Victoria Island, Ikoyi, Lekki, Marina, and the broader West African region.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How can businesses engage Starks IT for IT consulting?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Businesses can schedule a discovery consultation with Starks IT via our contact page (https://starks.com.ng/contact) or reach our Lagos advisory team directly at info@starks.com.ng to discuss technology roadmaps, system audits, or implementation projects.'
+      }
+    }
+  ]
 };
 
 export default function Home() {
   return (
     <div className="page active">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }}
+      />
       <section id="home-hero">
         <div className="hero-grid"></div>
         <div className="hero-float-num">10</div>
         <div className="home-hero-left">
           <div className="hero-tag" data-reveal>
             <div className="hero-dot"></div>
-            <span className="hero-tag-text">Est. 2017 · Lagos, Nigeria · ISO 27001</span>
+            <span className="hero-tag-text">Starks IT · Premier IT Consulting in Lagos, Nigeria · ISO 27001</span>
           </div>
           <h1 className="hero-h" data-reveal data-delay="1">
-            IT Consulting that <em>moves</em><br />your business<br />forward.
+            Enterprise <em>IT Consulting</em><br />in Lagos that moves<br />your business forward.
           </h1>
-          <p className="hero-p" data-reveal data-delay="2">Starks IT Consulting partners with organisations across Africa and beyond to architect, deliver, and manage transformative IT solutions — from enterprise software to cloud infrastructure.</p>
+          <p className="hero-p" data-reveal data-delay="2">Starks IT is a premier IT consulting firm in Lagos, Nigeria. We partner with organisations across Africa and beyond to architect, deliver, and manage transformative IT solutions — from enterprise software to cloud infrastructure.</p>
           <div className="hero-btns" data-reveal data-delay="3">
             <Link href="/cases" className="btn btn-gold" style={{ textDecoration: 'none' }}><span>View Our Work</span></Link>
             <Link href="/contact" className="btn btn-ghost" style={{ textDecoration: 'none' }}>Book a Consultation</Link>
@@ -208,7 +254,7 @@ export default function Home() {
                 <span>Explore Starks Training</span>
               </Link>
               <a href="https://learn.starks.com.ng/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{ textDecoration: 'none' }}>
-                Join Training Waitlist ↗
+                Enrol Now ↗
               </a>
             </div>
           </div>
@@ -231,19 +277,19 @@ export default function Home() {
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ff5f56', display: 'inline-block' }}></span>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ffbd2e', display: 'inline-block' }}></span>
                 <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27c93f', display: 'inline-block' }}></span>
-                <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--ash)', marginLeft: '8px' }}>starks-learning // waitlist</span>
+                <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.72rem', color: 'var(--ash)', marginLeft: '8px' }}>starks-learning // enrolment</span>
               </div>
-              <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.65rem', color: 'var(--gold)', background: 'rgba(200,168,75,0.1)', padding: '3px 8px', borderRadius: '4px' }}>WAITLIST OPEN</span>
+              <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.65rem', color: 'var(--gold)', background: 'rgba(200,168,75,0.1)', padding: '3px 8px', borderRadius: '4px' }}>ENROLMENT OPEN</span>
             </div>
             <div style={{ padding: '2rem' }}>
               <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.7rem', color: 'var(--gold)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                Flagship Course · Coming Soon
+                Flagship Course · Enrolment Open (Nov 25 – Dec 12)
               </div>
               <div style={{ fontFamily: 'var(--ff-display)', fontSize: '1.35rem', color: 'var(--white)', marginBottom: '0.8rem' }}>
                 Frontend Practice Lab
               </div>
               <p style={{ color: 'var(--ash2)', fontSize: '0.88rem', lineHeight: '1.6', marginBottom: '1.5rem', fontWeight: 300 }}>
-                Write real code directly in the browser with automated exercise checks, live DOM rendering, and instant feedback. Join the priority waitlist for early access.
+                Enrolment for this cohort runs 25th Nov – 12th Dec. Early birds get discounts. Class starts 14th Dec. Enroll now to access your student portal and start learning.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.8rem' }}>
                 <div style={{ background: 'rgba(200, 168, 75, 0.05)', border: '1px solid rgba(200, 168, 75, 0.15)', padding: '10px 14px', borderRadius: '6px' }}>
@@ -284,7 +330,7 @@ export default function Home() {
         <div data-reveal="right">
           <div className="label"><div className="label-line"></div><span className="label-text">Why Starks IT</span></div>
           <h2 className="title">About a decade of delivering <em>what matters</em></h2>
-          <p className="subtitle">Founded in Lagos in 2017, we&apos;ve grown from a boutique development shop into a full-spectrum IT consultancy serving clients across different countries — always with rigour and integrity.</p>
+          <p className="subtitle">Founded in Lagos in 2017, Starks IT has grown from a boutique development shop into a premier IT consulting firm serving enterprise clients across Nigeria and West Africa — always with rigour and integrity.</p>
           <div className="why-features">
             { <div className="why-feat">
               <div className="wf-icon">🏆</div>

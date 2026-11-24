@@ -3,23 +3,25 @@ export const metadata = {
     canonical: 'https://starks.com.ng/about',
   },
   openGraph: {
-    title: 'About Our IT Consulting Company | Starks IT Consulting Nigeria',
-    description: 'Learn about Starks IT Consulting, providing enterprise IT services, cloud solutions, cybersecurity, and practical software engineering training since 2017.',
+    title: 'About Starks IT | Premier IT Consulting Firm in Lagos, Nigeria',
+    description: 'Learn about Starks IT Consulting, providing enterprise IT consulting, cloud solutions, cybersecurity, and practical software engineering training since 2017.',
     url: 'https://starks.com.ng/about',
     siteName: 'Starks IT Consulting',
     locale: 'en_NG',
     type: 'website',
-    images: [{ url: '/about-hero.jpg', width: 1200, height: 630, alt: 'About Starks IT Consulting' }],
+    images: [{ url: '/about-hero.jpg', width: 1200, height: 630, alt: 'About Starks IT Consulting Lagos' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Our IT Consulting Company | Starks IT Consulting',
-    description: 'Since 2017, proving African enterprises deserve world-class technology partnership.',
+    title: 'About Starks IT | IT Consulting Firm in Lagos',
+    description: 'Since 2017, proving African enterprises deserve world-class IT consulting and technology partnership.',
     images: ['/about-hero.jpg'],
   },
-  title: 'About Our IT Consulting Company | Starks IT Consulting Nigeria',
-  description: 'Learn about Starks IT Consulting, a leading IT consulting company in Nigeria providing enterprise IT services, cloud solutions, cybersecurity, and digital transformation since 2017.',
-  keywords: 'IT consulting company Nigeria, about Starks IT, IT services provider Lagos, enterprise IT solutions Nigeria, cloud consulting, cybersecurity services, digital transformation Africa',
+  title: {
+    absolute: 'About Starks IT | Premier IT Consulting Firm in Lagos, Nigeria',
+  },
+  description: 'Founded in Lagos in 2017, Starks IT is an ISO 27001 certified IT consulting firm providing enterprise technology architecture, cybersecurity, and cloud solutions across Nigeria.',
+  keywords: 'IT Consulting, Starks IT, IT Consulting in Lagos, IT consulting firm Lagos, IT company Lagos, enterprise IT Nigeria, Starks IT Consulting, IT services provider Lagos',
 };
 
 export default function About() {
@@ -32,8 +34,8 @@ export default function About() {
         </div>
         <div className="page-hero-inner">
           <div className="ph-num">ABOUT US / OUR STORY</div>
-          <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Who We Are</span></div>
-          <h1 className="title" data-reveal data-delay="1">Built in Lagos.<br /><em>Trusted globally.</em></h1>
+          <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Starks IT · Lagos, Nigeria</span></div>
+          <h1 className="title" data-reveal data-delay="1">Premier <em>IT Consulting</em> in Lagos.<br />Trusted Across Africa.</h1>
           <p className="subtitle" data-reveal data-delay="2">Since 2017, we have been proving that African enterprises deserve the same calibre of technology partnership available to multinationals anywhere in the world.</p>
         </div>
       </div>

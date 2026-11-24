@@ -54,12 +54,51 @@ export default function Contact() {
             <img src="/home-cta.jpg" alt="Lagos city skyline" />
           </div>
           <div className="contact-left-inner">
-            <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Get in Touch</span></div>
-            <h1 className="title" data-reveal data-delay="1" style={{ fontSize: '2.4rem' }}>Let&apos;s start a <em>conversation.</em></h1>
-            <p style={{ fontSize: '0.9rem', color: 'var(--ash2)', fontWeight: 300, lineHeight: 1.75, marginBottom: '2.5rem' }} data-reveal data-delay="2">Whether you have a fully-formed brief or just a challenge worth solving, we&apos;d like to hear from you. The first conversation is always free and carries no obligation.</p>
+            <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Starks IT · Lagos Office</span></div>
+            <h1 className="title" data-reveal data-delay="1" style={{ fontSize: '2.4rem' }}>Consult with <em>Starks IT</em> in Lagos.</h1>
+            <p style={{ fontSize: '0.9rem', color: 'var(--ash2)', fontWeight: 300, lineHeight: 1.75, marginBottom: '2.5rem' }} data-reveal data-delay="2">Whether you require enterprise IT consulting, cloud infrastructure, cybersecurity auditing, or managed IT services in Lagos and beyond, our senior partners are ready to assist. The initial consultation is completely complimentary.</p>
+                        <div className="contact-xmas-banner" data-reveal style={{
+              margin: '1.5rem 0',
+              padding: '1.25rem',
+              background: 'rgba(200, 168, 75, 0.1)',
+              border: '1px solid rgba(200, 168, 75, 0.35)',
+              borderRadius: '12px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px' }}>
+                <span>🎄</span>
+                <span style={{ fontFamily: 'var(--ff-mono)', fontSize: '0.68rem', color: 'var(--gold)', fontWeight: 700, letterSpacing: '1px' }}>CHRISTMAS CAME EARLY</span>
+              </div>
+              <div style={{ fontFamily: 'var(--ff-display)', fontSize: '1.08rem', color: 'var(--white)', marginBottom: '4px' }}>
+                Get Huge Discounts From Every Of Our Services
+              </div>
+              <p style={{ fontSize: '0.82rem', color: 'var(--ash2)', lineHeight: 1.5, marginBottom: '12px' }}>
+                Celebrate the season with exclusive savings across all our enterprise IT solutions. Send a WhatsApp message to claim your discount immediately.
+              </p>
+              <a
+                href="https://wa.me/2348084026140?text=Hello%20Starks%20IT%2C%20Christmas%20came%20early!%20I%20would%20like%20to%20get%20a%20huge%20discount%20from%20every%20of%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  borderRadius: '8px',
+                  padding: '9px 15px',
+                  boxShadow: '0 4px 14px rgba(37, 211, 102, 0.35)'
+                }}
+              >
+                <span>Send WhatsApp Message on +234 808 402 6140 ↗</span>
+              </a>
+            </div>
+
             <div className="cd" data-reveal>
               <div className="cd-ico">📍</div>
-              <div><div className="cd-lbl">Head Office</div><div className="cd-val">16 Shagamu Avenue, Ilupeju,<br />Lagos, Nigeria 100252</div></div>
+              <div><div className="cd-lbl">Head Office</div><div className="cd-val">16 Shagamu Avenue, Ikeja,<br />Lagos, Nigeria 100271</div></div>
             </div>
             <div className="cd" data-reveal data-delay="1">
               <div className="cd-ico">📞</div>

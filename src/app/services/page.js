@@ -5,23 +5,25 @@ export const metadata = {
     canonical: 'https://starks.com.ng/services',
   },
   openGraph: {
-    title: 'Enterprise IT Consulting Services Nigeria | Starks IT Consulting',
-    description: 'Comprehensive IT solutions tailored for African enterprises. Certified specialists delivering managed IT, cloud, security, and software.',
+    title: 'IT Consulting Services Lagos | Enterprise IT Solutions | Starks IT',
+    description: 'Enterprise IT consulting services in Lagos by Starks IT. Expert advisory in cloud architecture, cybersecurity, managed IT, custom software, and digital strategy.',
     url: 'https://starks.com.ng/services',
     siteName: 'Starks IT Consulting',
     locale: 'en_NG',
     type: 'website',
-    images: [{ url: '/about-hero.jpg', width: 1200, height: 630, alt: 'Starks IT Consulting Enterprise Services' }],
+    images: [{ url: '/about-hero.jpg', width: 1200, height: 630, alt: 'Starks IT – IT Consulting Services Lagos' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise IT Consulting Services Nigeria | Starks IT Consulting',
-    description: 'Certified specialists delivering managed IT, cloud, security, software, and training.',
+    title: 'IT Consulting Services Lagos | Starks IT',
+    description: 'Enterprise IT consulting services in Lagos, Nigeria: cloud architecture, cybersecurity, managed IT, and custom software.',
     images: ['/about-hero.jpg'],
   },
-  title: 'IT Consulting Services Nigeria | Enterprise IT Solutions | Starks IT Consulting',
-  description: 'Professional IT consulting services in Nigeria. Enterprise IT solutions including managed IT services, cloud consulting, cybersecurity, software development, and digital transformation for businesses in Lagos, Abuja, and across Africa.',
-  keywords: 'IT consulting services Nigeria, enterprise IT solutions, IT consulting Lagos, IT consulting Abuja, managed IT services Nigeria, cloud consulting, cybersecurity consulting, software development Nigeria, digital transformation Africa, IT strategy consulting',
+  title: {
+    absolute: 'IT Consulting Services Lagos | Enterprise IT Solutions | Starks IT',
+  },
+  description: 'Starks IT provides enterprise IT consulting services in Lagos, Nigeria. We engineer managed IT services, cloud consulting, cybersecurity, bespoke software, and digital transformation for African businesses.',
+  keywords: 'IT Consulting, Starks IT, IT Consulting in Lagos, IT consulting services Lagos, IT consulting firm Nigeria, managed IT services Lagos, enterprise IT solutions Lagos, IT support Lagos',
 };
 
 export default function Services() {
@@ -34,9 +36,9 @@ export default function Services() {
         </div>
         <div className="page-hero-inner">
           <div className="ph-num">SERVICES / CAPABILITIES</div>
-          <div className="label" data-reveal><div className="label-line"></div><span className="label-text">What We Offer</span></div>
-          <h1 className="title" data-reveal data-delay="1">Full-spectrum IT solutions for <em>modern enterprises</em></h1>
-          <p className="subtitle" data-reveal data-delay="2">We don&apos;t just build systems — we build competitive advantage. Every service is delivered by certified specialists who understand both the technology and the business context behind it.</p>
+          <div className="label" data-reveal><div className="label-line"></div><span className="label-text">Starks IT · Lagos, Nigeria</span></div>
+          <h1 className="title" data-reveal data-delay="1">Enterprise <em>IT Consulting</em> & Technology Services in Lagos</h1>
+          <p className="subtitle" data-reveal data-delay="2">Starks IT delivers full-spectrum IT consulting and technology solutions tailored for enterprises in Lagos, Nigeria, and across West Africa. Every service is backed by certified specialists committed to operational excellence and business impact.</p>
         </div>
       </div>
 

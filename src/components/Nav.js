@@ -5,8 +5,29 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '../context/ThemeContext';
 
+function WhatsAppIcon({ size = 18, color = 'currentColor' }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill={color} 
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ flexShrink: 0 }}
+      aria-hidden="true"
+    >
+      <path 
+        fillRule="evenodd" 
+        clipRule="evenodd" 
+        d="M12 2C6.477 2 2 6.477 2 12C2 13.82 2.49 15.53 3.34 17.01L2.05 21.75C1.98 22.01 2.05 22.28 2.24 22.47C2.39 22.62 2.6 22.7 2.81 22.7C2.9 22.7 2.99 22.68 3.08 22.64L7.54 21.05C8.94 21.84 10.45 22.28 12 22.28C17.52 22.28 22 17.8 22 12.28C22 6.76 17.52 2 12 2ZM17.38 15.65C17.16 16.27 16.3 16.8 15.64 16.94C15.19 17.03 14.61 17.1 12.63 16.28C10.1 15.23 8.46 12.66 8.33 12.49C8.21 12.32 7.33 11.15 7.33 9.94C7.33 8.73 7.95 8.14 8.19 7.89C8.39 7.69 8.68 7.6 8.96 7.6C9.05 7.6 9.14 7.6 9.22 7.61C9.45 7.62 9.57 7.63 9.72 7.99C9.91 8.45 10.37 9.58 10.43 9.7C10.49 9.82 10.53 9.98 10.45 10.14C10.38 10.3 10.32 10.38 10.2 10.52C10.08 10.66 9.97 10.76 9.85 10.91C9.72 11.06 9.59 11.22 9.74 11.48C9.89 11.74 10.41 12.59 11.18 13.27C12.18 14.16 13 14.44 13.28 14.56C13.51 14.66 13.73 14.63 13.89 14.45C14.09 14.22 14.34 13.86 14.59 13.51C14.77 13.26 15 13.29 15.26 13.39C15.52 13.48 16.91 14.17 17.19 14.31C17.47 14.45 17.66 14.52 17.73 14.64C17.8 14.76 17.8 15.35 17.58 15.97L17.38 15.65Z" 
+      />
+    </svg>
+  );
+}
+
 export default function Nav() {
   const [isSolid, setIsSolid] = useState(false);
+  const [dangleDismissed, setDangleDismissed] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -201,7 +222,7 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
           <button 
             onClick={toggleTheme}
             style={{
@@ -240,6 +261,51 @@ export default function Nav() {
         >
           <span></span><span></span><span></span>
         </button>
+              {/* FLOATING & DANGLING HOLIDAY SPOT SUSPENDED FROM NAVBAR (REMAINS ON SCROLL, NO MODAL) */}
+        {!dangleDismissed && !mobileNavOpen && (
+          <div className="nav-dangle-wrapper">
+            <div className="ndw-hanger">
+              <span className="ndw-ring"></span>
+              <span className="ndw-cord"></span>
+            </div>
+            <a
+              href="https://wa.me/2348084026140?text=Hello%20Starks%20IT%2C%20Christmas%20came%20early!%20I%20would%20like%20to%20get%20a%20huge%20discount%20from%20every%20of%20your%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-dangle-tag"
+              title="Christmas Came Early! Chat on WhatsApp (+234 808 402 6140)"
+            >
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setDangleDismissed(true);
+                }}
+                className="ndw-close-btn"
+                aria-label="Dismiss holiday banner"
+              >
+                ×
+              </button>
+              <div className="ndw-tag-body">
+                <div className="ndw-top-line">
+                  <span className="ndw-tree">🎄</span>
+                  <span className="ndw-tag-badge">CHRISTMAS CAME EARLY</span>
+                </div>
+                <div className="ndw-mid-line">
+                  Get <strong className="ndw-gold-text">Huge Discounts</strong> From Every Of Our Services
+                </div>
+                <div className="ndw-cta-row">
+                  <div className="ndw-wa-pill">
+                    <WhatsAppIcon size={15} color="#ffffff" />
+                    <span className="ndw-phone-text">Send WhatsApp: +234 808 402 6140</span>
+                    <span className="ndw-arrow">→</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* MOBILE NAV OVERLAY */}

@@ -1,10 +1,12 @@
 export const metadata = {
-  title: 'Starks Learning Workspace & Practice Labs | Developer Training & Waitlist',
-  description: 'Hands-on software engineering training commences soon. Join the priority waitlist at learn.starks.com.ng to be notified first and secure exclusive early-bird tuition discounts. Featuring the 6-Month Intensive Frontend Practice Lab.',
+  title: 'Starks Learning Workspace & Practice Labs | Enrol Now – Cohort Admissions',
+  description: 'Enrolment for this cohort starts 25th November and ends 12th December. Early birds get tuition discounts. Class starts 14th December. Enrol at learn.starks.com.ng and have immediate access to your student portal to start learning.',
   keywords: [
     'software engineering training Nigeria',
     'frontend practice lab Lagos',
-    'coding academy Nigeria waitlist',
+    'coding academy Nigeria enrolment',
+    'enrol software engineering Lagos',
+    'student portal start learning',
     'learn React Nigeria discount',
     'interactive browser IDE practice',
     'corporate IT training Lagos',
@@ -16,8 +18,8 @@ export const metadata = {
     canonical: 'https://starks.com.ng/training',
   },
   openGraph: {
-    title: 'Starks Learning Workspace & Practice Labs | Priority Waitlist Open',
-    description: 'Training commences soon. Join the waitlist at learn.starks.com.ng for first-to-know notification and exclusive early-bird discount advantages before public launch.',
+    title: 'Starks Learning Workspace & Practice Labs | Enrolment Open',
+    description: 'Enrolment for this cohort starts 25th November and ends 12th December. Early birds get tuition discounts. Classes start 14th December. Enrol at learn.starks.com.ng and access your student portal.',
     url: 'https://starks.com.ng/training',
     siteName: 'Starks IT Consulting',
     locale: 'en_NG',
@@ -33,8 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Starks Training & Frontend Practice Lab | Join Priority Waitlist',
-    description: 'Hands-on software engineering training commencing soon. Secure early-bird discount advantages before public release.',
+    title: 'Starks Training & Frontend Practice Lab | Enrol Now',
+    description: 'Cohort enrolment open 25th Nov – 12th Dec. Early birds get discount. Classes start 14th Dec. Enroll and access your student portal to start learning.',
     images: ['/team-developer.jpg'],
   },
 };
@@ -65,9 +67,9 @@ export default function TrainingLayout({ children }) {
           '@type': 'Offer',
           category: 'Professional Software Engineering',
           priceCurrency: 'NGN',
-          availability: 'https://schema.org/PreOrder',
+          availability: 'https://schema.org/InStock',
           url: 'https://learn.starks.com.ng',
-          description: 'Early-bird discount advantage and priority notification available exclusively to waitlist members before public release.'
+          description: 'Cohort enrolment runs 25th November to 12th December with early bird tuition discounts. Classes start 14th December. Enroll for student portal access and start learning.'
         }
       },
       {
@@ -104,18 +106,18 @@ export default function TrainingLayout({ children }) {
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'When does the Starks software training commence?',
+            name: 'When does cohort enrolment start and when do classes begin?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Trainings commence soon and the official launch will be made public. Waitlist members on learn.starks.com.ng will receive private announcement notifications first before the general public.'
+              text: 'Enrolment for this cohort starts 25th November and ends 12th December. Early birds get exclusive tuition discounts. Classes officially start on 14th December. Enroll at learn.starks.com.ng for instant student portal access.'
             }
           },
           {
             '@type': 'Question',
-            name: 'What is the advantage of joining the waitlist at learn.starks.com.ng?',
+            name: 'What advantages do early birds receive and what happens after enrolling?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Joining the waitlist guarantees that you receive the launch notification first and locks in an exclusive early-bird tuition discount advantage that will not be available once public admissions open.'
+              text: 'Early birds who enrol between 25th November and 12th December lock in discounted tuition. Upon enrollment, you gain immediate access to your student portal so you can explore coursework and start learning.'
             }
           },
           {

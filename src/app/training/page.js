@@ -41,7 +41,7 @@ export default function TrainingPage() {
   const tracks = [
     {
       id: 'frontend',
-      badge: 'Flagship Program · Waitlist Open',
+      badge: 'Flagship Program · Enrolment Open',
       title: 'Frontend Practice Lab',
       desc: 'Our flagship 6-month hands-on intensive training program. Learn modern frontend engineering by writing code directly in our in-browser IDE with instant automated test validation, real-world portfolio capstones, and line-by-line code reviews from active Starks consultants.',
       duration: '6 Months Intensive Training',
@@ -66,7 +66,7 @@ export default function TrainingPage() {
     },
     {
       id: 'fullstack',
-      badge: 'Advanced Track · Waitlist Open',
+      badge: 'Advanced Track · Enrolment Open',
       title: 'Full-Stack Software Engineering',
       desc: 'Master the complete engineering lifecycle from responsive client interfaces to high-throughput backend APIs, transactional SQL databases, secure token authentication, and containerized cloud deployment.',
       duration: '6 Months Intensive Training',
@@ -91,7 +91,7 @@ export default function TrainingPage() {
     },
     {
       id: 'cloud',
-      badge: 'Infrastructure Track · Waitlist Open',
+      badge: 'Infrastructure Track · Enrolment Open',
       title: 'Cloud & DevOps Architecture',
       desc: 'Master the art of deploying, orchestrating, and optimizing resilient infrastructure. Learn how Starks engineers design cloud topologies for leading banks and telecom providers across Africa with an emphasis on cost optimization (FinOps).',
       duration: '4 Months Intensive Training',
@@ -229,12 +229,16 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
 
   const faqs = [
     {
-      q: 'When does the training commence?',
-      a: 'Trainings commence soon! While public notification and social media campaigns will be released across all channels, waitlist members on learn.starks.com.ng will receive private announcement notifications first, giving you early access to enrollment before the general public.'
+      q: 'When does enrolment take place and when do classes begin?',
+      a: 'Enrolment for this cohort starts on 25th November and ends on 12th December. Classes officially start on 14th December. Early birds who register within this window receive exclusive tuition discounts.'
     },
     {
-      q: 'What is the advantage of joining the waitlist at learn.starks.com.ng?',
-      a: 'Joining the waitlist gives you two major advantages: 1) You get first notification before the public release, allowing you to secure a seat in our strictly capped cohorts. 2) You receive an exclusive early-bird tuition discount that will not be available once admissions open to the general public.'
+      q: 'What happens after I enrol?',
+      a: 'Immediately upon enrolment at learn.starks.com.ng, you receive full access credentials to your student portal. From the portal, you can explore curriculum modules, setup guides, and start learning right away ahead of class commencement.'
+    },
+    {
+      q: 'Do early birds get a discount?',
+      a: 'Yes! Early birds who enrol between 25th November and 12th December receive an exclusive tuition discount advantage before general cohort admissions close.'
     },
     {
       q: 'What is the duration, format, and skill level of the Frontend Practice Lab?',
@@ -265,9 +269,9 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
             letterSpacing: '1px',
             border: '1px solid rgba(200, 168, 75, 0.4)'
           }}>
-            COMMENCING SOON
+            ENROLMENT OPEN
           </span>
-          <span>Public announcements launch shortly. Join the priority waitlist for first access &amp; exclusive tuition discounts.</span>
+          <span>Cohort Enrolment: 25th Nov – 12th Dec · Early birds get discounts · Class starts 14th Dec · Enroll to access your student portal.</span>
           <a
             href="https://learn.starks.com.ng"
             target="_blank"
@@ -279,7 +283,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
               textUnderlineOffset: '3px'
             }}
           >
-            Join Waitlist at learn.starks.com.ng ↗
+            Enrol Now at learn.starks.com.ng ↗
           </a>
         </div>
       </div>
@@ -294,13 +298,13 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           <div className="ph-num">STARKS LEARNING WORKSPACE // COHORT 2026</div>
           <div className="label" data-reveal>
             <div className="label-line"></div>
-            <span className="label-text">Training Division · Early Access Open</span>
+            <span className="label-text">Training Division · Cohort Admissions Open</span>
           </div>
           <h1 className="title" data-reveal data-delay="1" style={{ maxWidth: '840px' }}>
             Where engineering talent is forged through <em>practice</em>, not theory.
           </h1>
           <p className="subtitle" data-reveal data-delay="2" style={{ maxWidth: '700px' }}>
-            Training commences soon! Starks IT Consulting is opening its interactive learning workspace for intensive engineering training. Join the waitlist now at <strong>learn.starks.com.ng</strong> to be notified before the general public and lock in an exclusive early-bird tuition discount.
+            Enrolment for this cohort starts <strong>25th November</strong> and ends <strong>12th December</strong>. Early birds get exclusive tuition discounts. Classes officially start <strong>14th December</strong>. Enrol now at <strong>learn.starks.com.ng</strong> to have immediate access to your student portal and start learning!
           </p>
 
           <div data-reveal data-delay="3" style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap', marginTop: '2.5rem', alignItems: 'center' }}>
@@ -311,7 +315,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
               className="btn btn-gold"
               style={{ textDecoration: 'none' }}
             >
-              <span>Join the Waitlist (learn.starks.com.ng) ↗</span>
+              <span>Enrol Now (learn.starks.com.ng) ↗</span>
             </a>
             <a 
               href="#practice-lab" 
@@ -333,22 +337,22 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: '#f1f5f9', fontFamily: 'var(--ff-mono)' }}>
               <span style={{ color: 'var(--gold)', fontSize: '1rem' }}>✓</span>
-              <span>First-to-Know Public Notification</span>
+              <span>Enrolment: 25th Nov – 12th Dec</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: '#f1f5f9', fontFamily: 'var(--ff-mono)' }}>
               <span style={{ color: 'var(--gold)', fontSize: '1rem' }}>✓</span>
-              <span>Exclusive Waitlist Discount Advantage</span>
+              <span>Early Birds Get Tuition Discount</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: '#f1f5f9', fontFamily: 'var(--ff-mono)' }}>
               <span style={{ color: 'var(--gold)', fontSize: '1rem' }}>✓</span>
-              <span>6 Months Intensive · Beginner to Advance</span>
+              <span>Class Starts 14th Dec · Student Portal Access</span>
             </div>
           </div>
         </div>
       </header>
 
-      {/* WAITLIST ADVANTAGE HIGHLIGHT BANNER (SECTION DIRECTLY ON TOP OF IDE) */}
-      <section className="waitlist-banner" aria-label="Training Waitlist Advantage">
+      {/* ENROLMENT ADVANTAGE HIGHLIGHT BANNER (SECTION DIRECTLY ON TOP OF IDE) */}
+      <section className="waitlist-banner" aria-label="Training Enrolment & Admissions Advantage">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div className="training-waitlist-box">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
@@ -364,16 +368,16 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                   borderRadius: '20px',
                   border: '1px solid rgba(200, 168, 75, 0.3)'
                 }}>
-                  WAITLIST PRIVILEGE
+                  COHORT ADMISSIONS OPEN
                 </span>
                 <h2 className="training-waitlist-title">
-                  Why join the waitlist before <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>public launch</em>?
+                  Cohort Enrolment Open: <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>25th Nov – 12th Dec</em>
                 </h2>
                 <p className="training-waitlist-desc" style={{ marginBottom: '1.5rem' }}>
-                  Training will be announced publicly across all media channels soon. However, cohort seats are strictly capped to maintain senior consultant code review quality.
+                  Enrolment for this cohort is now officially open! Admissions start on <strong>25th November</strong> and close on <strong>12th December</strong>. Early birds get exclusive discounts. Classes commence on <strong>14th December</strong>.
                 </p>
                 <p className="training-waitlist-desc" style={{ marginBottom: '2rem' }}>
-                  By joining the waitlist at <strong>learn.starks.com.ng</strong>, you get direct notification first, ensuring you secure your spot before general admissions open, and you unlock a guaranteed early-bird tuition discount.
+                  Enroll now at <strong>learn.starks.com.ng</strong> and have instant access to your student portal. Set up your dev tools, explore progressive course modules, and start learning ahead of day one!
                 </p>
 
                 <a
@@ -383,7 +387,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                   className="btn btn-gold"
                   style={{ textDecoration: 'none' }}
                 >
-                  <span>Claim Waitlist Advantage ↗</span>
+                  <span>Enrol Now &amp; Access Portal ↗</span>
                 </a>
               </div>
 
@@ -391,33 +395,33 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.2rem' }}>
                 <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>01</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>First to Know</h4>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Enrolment Dates</h4>
                   <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
-                    Official dates, curriculum releases, and onboarding details sent to your inbox before social media release.
+                    Enrolment window runs from 25th November to 12th December. Strictly capped cohorts for quality mentorship.
                   </p>
                 </div>
 
                 <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>02</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Tuition Discount</h4>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Early-Bird Discount</h4>
                   <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
-                    Exclusive discount advantage provided only to waitlist members before the general public launch.
+                    Early birds get exclusive tuition discounts when enrolling before admissions close on 12th December.
                   </p>
                 </div>
 
                 <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>03</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Reserved Seats</h4>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Class Starts Dec 14</h4>
                   <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
-                    Priority access to reserve your slot before the initial intensive cohort reaches maximum mentor capacity.
+                    Intensive classes begin on 14th December. Dive straight into interactive browser labs and real projects.
                   </p>
                 </div>
 
                 <div className="training-privilege-card">
                   <div style={{ fontFamily: 'var(--ff-mono)', fontSize: '1.4rem', color: 'var(--gold)', marginBottom: '0.5rem' }}>04</div>
-                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Starter Tooling</h4>
+                  <h4 style={{ fontFamily: 'var(--ff-display)', fontSize: '1.1rem', marginBottom: '0.4rem' }}>Student Portal</h4>
                   <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontWeight: 300 }}>
-                    Receive environment guides, recommended tooling, and Git essentials prior to day-one orientation.
+                    Enroll and have direct access to your student portal. Prepare your workspace and start learning.
                   </p>
                 </div>
               </div>
@@ -618,10 +622,10 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                   </div>
                 </div>
 
-                {/* WAITLIST CALLOUT INSIDE LAB */}
+                {/* ENROLMENT CALLOUT INSIDE LAB */}
                 <div className="ide-waitlist-callout">
                   <span style={{ fontSize: '0.75rem', fontFamily: 'var(--ff-mono)' }}>
-                    Ready for the full workspace? Trainings commence soon.
+                    Cohort enrolment open (25th Nov – 12th Dec). Classes start 14th Dec.
                   </span>
                   <a
                     href="https://learn.starks.com.ng"
@@ -635,7 +639,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                       textDecoration: 'none'
                     }}
                   >
-                    Join Waitlist for First Access &amp; Discounts ↗
+                    Enrol Now for Early-Bird Discount ↗
                   </a>
                 </div>
               </div>
@@ -737,7 +741,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                   className="btn btn-gold"
                   style={{ textDecoration: 'none' }}
                 >
-                  <span>Join Waitlist for Discounts ↗</span>
+                  <span>Enrol Now for Early-Bird Discount ↗</span>
                 </a>
                 <a
                   href="#practice-lab"
@@ -886,13 +890,13 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
               display: 'inline-block',
               marginBottom: '1.2rem'
             }}>
-              LIMITED PRE-LAUNCH SEATS
+              ENROLMENT CLOSES 12TH DECEMBER
             </span>
             <h2>
-              Don&apos;t miss the first cohort announcement. Lock in your <em>discount advantage</em>.
+              Enrolment open now. Classes start 14th December. Early birds get <em>discounts</em>.
             </h2>
             <p>
-              Be the first to receive the official training schedule and private registration link at <strong>learn.starks.com.ng</strong> before general admissions open to the public.
+              Enrolment runs from <strong>25th November</strong> to <strong>12th December</strong>. Early birds get tuition discounts. Class starts <strong>14th December</strong>. Enroll and have access to your student portal to start learning today.
             </p>
             <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a 
@@ -902,7 +906,7 @@ describe('Exercise 04: Starks State Assertion Checks', () => {
                 className="btn btn-gold"
                 style={{ textDecoration: 'none' }}
               >
-                <span>Join Waitlist on learn.starks.com.ng ↗</span>
+                <span>Enrol Now on learn.starks.com.ng ↗</span>
               </a>
               <button 
                 onClick={() => setInquiryModalOpen(true)}
